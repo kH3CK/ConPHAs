@@ -3,7 +3,7 @@
 session_start();
 
 $uri = strtok($_SERVER["REQUEST_URI"], "?"); // strtok for removing the query string (thing starting with ?, e.g. ?id=4)
-$path = "resources/views";
+$path = "../template/views";
 $fileext = ".php";
 if ($uri == "" || $uri == "/") {
     require_once $path."/index".$fileext;
