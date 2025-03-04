@@ -1,0 +1,79 @@
+DROP DATABASE IF EXISTS conphas;
+
+CREATE DATABASE conphas;
+
+CREATE TABLE colors {
+    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    hex VARCHAR(6) NOT NULL
+}
+
+INSERT INTO colors (name, hex) VALUES ("Primary", "36B843"), ("Secondary", "D9D9D9");
+
+CREATE TABLE smalltexts {
+    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    description VARCHAR(100) NOT NULL,
+    text VARCHAR(25) NOT NULL
+}
+
+INSERT INTO smalltexts (text) VALUES ("ConPHAs");
+
+CREATE TABLE texts {
+    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    description VARCHAR(100) NOT NULL,
+    text VARCHAR(100) NOT NULL
+}
+
+INSERT INTO texts (text) VALUES ("Jouw springplank naar een groene carrière!");
+
+CREATE TABLE bigtexts {
+    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    description VARCHAR(100) NOT NULL,
+    text VARCHAR(500) NOT NULL
+}
+
+INSERT INTO bigtexts (text) VALUES ("Bij ConPHAs helpen we jonge studenten hun eerste stappen te zetten in de wereld van bioplastics.
+Of je nu op zoek bent naar een stage of meer wilt leren over duurzame innovaties, wij verbinden je met de juiste bedrijven en kansen.
+Samen bouwen we aan een groenere toekomst!");
+
+CREATE TABLE internships {
+    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    description VARCHAR(1000) NOT NULL,
+    minimum_level VARCHAR(25) NOT NULL,
+    location VARCHAR(100) NOT NULL,
+    weeks SMALLINT NOT NULL,
+    hours SMALLINT NOT NULL,
+    compensation SMALLINT NOT NULL DEFAULT 0,
+    start_date_and_time TIMESTAMP NOT NULL,
+    type VARCHAR(25) NOT NULL
+}
+
+INSERT INTO internships (title, desription, minimum_level, location, weeks, hours, compensation, startdate, type) VALUES
+("Bioolog", "Lorem ipsum dolor sit amet", "MBO 3", "Groningen, Muntinglaan 5", 50, 300, NULL, "2025-09-01 09:00:00", "Afstudeerstage")
+;
+
+CREATE TABLE trainees {
+    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(50) NOT NULL,
+    middlenames VARCHAR(100) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    birthdate DATE NOT NULL,
+    weeks SMALLINT NOT NULL DEFAULT 0,
+    hours SMALLINT NOT NULL DEFAULT 0,
+    done BOOLEAN DEFAULT false,
+    internship_id MEDIUMINT,
+    FOREIGN KEY internship_id REFERENCES internships(id)
+}
+
+INSERT INTO trainees (firstname, middlenames, lastname, birthdate, weeks, hours, done, intenrship_id) VALUES
+("Bob", "de", "Dok", "1999-10-18", 40, 200, NULL, 1);
+
+CREATE TABLE admins {
+    iD MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100),
+    password VARCHAR(300)
+}
+
+INSERT INTO admins (username, password) VALUES ("Jaron", "$2y$10$yeQwbDmmdz/UTbGmQIZ44OiRX5GbFiGJMRo..7DTIDwTM35jmQqei")
+-- bcrypt hash for 12346789
