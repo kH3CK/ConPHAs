@@ -2,5 +2,9 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.0.9",
     "tailwindcss": "^4.0.9"
+  },
+  "scripts": {
+    "build": "tailwindcss -i ./public/style.css -o ./src/css/output.css",
+    "watch": "tailwindcss -i ./public/style.css -o ./src/css/output.css --watch"
   }
 }
