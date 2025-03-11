@@ -18,7 +18,9 @@ CREATE TABLE texts (
     text VARCHAR(500) NOT NULL
 );
 
-INSERT INTO texts (text) VALUES ("ConPHAs"), ("Jouw springplank naar een groene carrière!"), ("Bij ConPHAs helpen we jonge studenten
+INSERT INTO texts (text) VALUES ("ConPHAs"), ("https://placehold.co/200x200.png"),
+("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"), ('"Space Mono", monospace'),
+("Jouw springplank naar een groene carrière!"), ("Bij ConPHAs helpen we jonge studenten
 hun eerste stappen te zetten in de wereld van bioplastics. Of je nu op zoek bent naar een stage of meer wilt leren over duurzame
 innovaties, wij verbinden je met de juiste bedrijven en kansen. Samen bouwen we aan een groenere toekomst!");
 
