@@ -3,10 +3,13 @@
 require_once("../template/components/head.php");
 
 ?>
-<div class="flex h-screen items-center justify-end bg-gradient-to-br from-green-300 to-green-400">   
-    <div class="bg-white shadow h-dvh p-50 w-170">
+
+<div class="flex h-screen items-center justify-end bg-gradient-to-br from-green-300 to-green-400">
+<div class="bg-white shadow h-dvh p-50 w-170">
         <div class="flex flex-col items-center mb-6">
-            
+<div class="mb-50">    
+        <img src="images/ConPHAs" alt="logo">
+</div>
             <h2 class="text-2xl font-bold text-gray-700">Docenten Login</h2>
         </div>
         <form class="space-y-4">
