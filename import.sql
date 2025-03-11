@@ -65,3 +65,12 @@ CREATE TABLE admins (
 
 INSERT INTO admins (username, password) VALUES ("Jaron", "$2y$10$yeQwbDmmdz/UTbGmQIZ44OiRX5GbFiGJMRo..7DTIDwTM35jmQqei");
 -- bcrypt hash for 12346789
+
+CREATE TABLE pages (
+    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    filename VARCHAR(100) NOT NULL,
+    navbar BOOLEAN NOT NULL DEFAULT true
+);
+
+INSERT INTO pages (name, filename) VALUES ("Hoofdpagina", ""), ("Over ons", "over");
