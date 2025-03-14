@@ -5,6 +5,9 @@ require_once("../template/components/head.php");
 ?>
 
 <div class="flex h-screen items-center justify-end bg-gradient-to-br from-green-300 to-green-400">
+    <div class="">
+
+    </div>
     <div class="bg-white shadow h-full p-50 w-170 flex items-center justify-center">
         <div class="flex flex-col justify-center items-center -translate-y-1/2">
             <img src="images/ConPHAs" alt="logo" class="h-16 w-auto mx-auto">
@@ -31,11 +34,6 @@ require_once("../template/components/head.php");
                     Inloggen
                 </button>
             </form>
-            <div class="text-center mt-4">
-                <a href="#" class="text-sm text-blue-600 hover:underline">
-                    Wachtwoord vergeten?
-                </a>
-            </div>
         </div>
     </div>
 </div>
