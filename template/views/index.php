@@ -1,14 +1,8 @@
 <?php
 
 require_once("../template/components/navbar.php");
-<<<<<<< HEAD
-
-?>
-<h1 class="text-primary-color"><?=getTextFromDatabase(1)?></h1>
-=======
 require_once("../src/imports/getTextFromDatabase.php");
 require_once("../template/components/head.php");
-
 ?>
 
 <html>
@@ -39,7 +33,7 @@ require_once("../template/components/head.php");
                             Vind een stageplek
                         </a>
                         <a
-                            href="/over"
+                            href="/over_ons"
                             class="border-2 border-[#36B843] text-[#36B843] hover:bg-[#36B843] hover:text-white px-8 py-3 rounded-md text-lg font-medium transition-colors inline-block text-center">
                             Meer over ons
                         </a>
@@ -57,7 +51,7 @@ require_once("../template/components/head.php");
             <div class="container mx-auto px-4">
                 <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center text-[#37852D]">Onze Partners</h2>
                 <p class="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
-                    We werken samen met toonaangevende bedrijven en instellingen in de bioplastics industrie om de beste kansen te bieden.
+                    We werken samen met toonaangevende scholen in de bioplastics industrie om de beste kansen te bieden.
                 </p>
                 <div id="logo-carousel" class="relative overflow-hidden">
                     <div class="logo-slider flex items-center transition-transform duration-500 ease-in-out">
@@ -85,11 +79,10 @@ require_once("../template/components/head.php");
             </div>
         </section>
 
-        <!-- Cards Section -->
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Card 1 -->
+                    
                     <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div class="absolute inset-0 bg-gradient-to-r from-[#36B843]/90 to-[#37852D]/90 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                         <img
@@ -120,24 +113,23 @@ require_once("../template/components/head.php");
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
                     <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div class="absolute inset-0 bg-gradient-to-r from-[#36B843]/90 to-[#37852D]/90 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                         <img
                             src="https://placehold.co/800x600"
-                            alt="Partners"
+                            alt="over ons"
                             class="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-105" />
                         <div class="absolute inset-0 p-8 flex flex-col justify-end z-20">
                             <h3 class="text-2xl font-bold text-white mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                                Onze partners en bedrijven
+                                Over ons
                             </h3>
                             <p class="text-white/90 mb-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-100">
-                                Leer meer over de bedrijven waarmee we samenwerken om innovatie te stimuleren.
+                                Leer meer over ons, PHA's en bioplastics.
                             </p>
                             <a
-                                href="/partners"
+                                href="/over_ons"
                                 class="inline-flex items-center text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-200">
-                                Bekijk partners
+                                Bekijk Over ons
                                 <svg xmlns="images/aap.jpg" class="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M5 12h14"></path>
                                     <path d="m12 5 7 7-7 7"></path>
@@ -146,7 +138,7 @@ require_once("../template/components/head.php");
                         </div>
                         <div class="absolute inset-0 p-8 flex flex-col justify-end group-hover:opacity-0 transition-opacity">
                             <h3 class="text-2xl font-bold text-[#37852D] mb-2 bg-white/80 p-2 inline-block">
-                                Partners
+                                Over ons
                             </h3>
                         </div>
                     </div>
@@ -154,7 +146,6 @@ require_once("../template/components/head.php");
             </div>
         </section>
 
-        <!-- Blog/Info Section -->
         <section class="py-16 bg-gray-50">
             <div class="container mx-auto px-4">
                 <div class="flex flex-col md:flex-row justify-between items-center mb-12">
@@ -173,7 +164,7 @@ require_once("../template/components/head.php");
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Blog Card 1 -->
+              
                     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                         <img
                             src="https://placehold.co/600x400"
@@ -195,7 +186,6 @@ require_once("../template/components/head.php");
                         </div>
                     </div>
 
-                    <!-- Blog Card 2 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                         <img
                             src="https://placehold.co/600x400"
@@ -217,7 +207,6 @@ require_once("../template/components/head.php");
                         </div>
                     </div>
 
-                    <!-- Blog Card 3 -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                         <img
                             src="https://placehold.co/600x400"
@@ -242,7 +231,6 @@ require_once("../template/components/head.php");
             </div>
         </section>
 
-        <!-- FAQ Section -->
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
                 <div class="max-w-3xl mx-auto">
@@ -251,17 +239,15 @@ require_once("../template/components/head.php");
                         Antwoorden op de meest gestelde vragen over ConPHAs en onze diensten
                     </p>
                     <div id="faq-accordion" class="space-y-4">
-                        <!-- FAQs will be inserted here by JavaScript -->
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Footer with Contact -->
         <footer class="bg-[#37852D] text-white py-12">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <!-- About -->
+                    
                     <div class="col-span-1">
                         <h3 class="text-xl font-bold mb-4">ConPHAs</h3>
                         <p class="mb-4 text-white/80">
@@ -291,7 +277,6 @@ require_once("../template/components/head.php");
                         </div>
                     </div>
 
-                    <!-- Quick Links -->
                     <div class="col-span-1">
                         <h3 class="text-xl font-bold mb-4">Snelle Links</h3>
                         <ul class="space-y-2">
@@ -316,7 +301,6 @@ require_once("../template/components/head.php");
                         </ul>
                     </div>
 
-                    <!-- Contact Us -->
                     <div class="col-span-2">
                         <h3 class="text-xl font-bold mb-4">Neem Contact Op</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
