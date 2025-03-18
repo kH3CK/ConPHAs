@@ -1,6 +1,12 @@
-<nav class="">
-    <div class="container mx-auto flex justify-between items-center">
-        <img src="images/swirl2.png" class="h-20 mb-2" alt="swirl">
+<?php
+
+require_once("../template/components/head.php");
+
+
+?>
+<nav>
+
+    <div class="container mx-auto flex justify-end items-center flex-start">
         <div class="hidden sm:block">
             <div class="flex space-x-4">
                 <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-primary-color">Over ons</a>
@@ -11,3 +17,17 @@
         </div>
     </div>
 </nav>
+
+
+
+
+
+
+
+
+
+<?php
+
+require_once("../template/components/footer.php");
+
+?>
