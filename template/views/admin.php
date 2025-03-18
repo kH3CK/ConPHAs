@@ -73,6 +73,9 @@ $logo = getTextFromDatabase(2);
 
             ?>
             </div>
+            <div class="sticky bottom-2 left-2 text-start m-2">
+                <a href="/logout"><img src="images/arrow-left.png" alt="<-" class="inline w-1/12 h-1/12"> uitloggen</a>
+            </div>
         </div>
         <div class="basis-1/2 border-b border-b-primary-color text-center">
             <p>Kleur palette</p>

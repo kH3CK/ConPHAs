@@ -12,7 +12,15 @@ require_once("../template/components/head.php");
         foreach ($pdo->query("SELECT * FROM internships") as $internship) {
             $id = $internship["id"];?>
         <div class="border border-primary-color m-5">
-            <h2><?=returnInputIfEditingPage($internship["title"], "title-" . $id)?></h2>
+            <img src="<?=$internship["image_link"]?>" alt="Afbeelding" class="inline">
+            <div class="inline-block align-top">
+                <input name="title" value="<?=$internship["title"]?>" class="border border-primary-color mb-5 inline-block">
+                <img src="images/stopwatch.svg" alt="🕑" class="inline">
+                <div class="inline-block">
+                    <label for="start-date-and-time-<?=$id?>">Start Datum</label>
+                    <input id="start-date-and-time-<?=$id?>" type="text" name="start-date-and-time-<?=$id?>" value="<?=$internship["start_date_and_time"]?>">
+                </div>
+            </div>
         </div>
         <?php }
 
@@ -33,4 +41,7 @@ require_once("../template/components/head.php");
         </div>
     </div>
 </form>
+<div class="sticky bottom-2 left-2 text-start m-2">
+    <a href="/admin"><img src="images/arrow-left.png" alt="<-" class="inline w-1/12 h-1/12"> terug</a>
+</div>
 <script src="js/abandonChanges.js"></script>
