@@ -2,9 +2,6 @@
 
 require_once("../template/components/head.php");
 require_once("../template/components/navbar.php");
-require_once("../src/imports/getTextFromDatabase.php");
-
-$editingPage = true;
 
 ?>
-<h1 class="text-primary-color"><?=getTextFromDatabase($pdo, 1)?></h1>
+<h1 class="text-primary-color"><?=getTextFromDatabase(1)?></h1>

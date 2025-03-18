@@ -11,7 +11,7 @@ CREATE TABLE colors (
 );
 
 INSERT INTO colors (name, hex) VALUES ("Primary Color", "36B843"), ("Secondary Color", "37852D"), ("Primary Background", "FFFFFF"),
-("Secondary Background", "D9D9D9");
+("Secondary Background", "D9D9D9"), ("Danger", "fb2c36");
 
 CREATE TABLE texts (
     id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -69,8 +69,9 @@ INSERT INTO admins (username, password) VALUES ("Jaron", "$2y$10$yeQwbDmmdz/UTbG
 CREATE TABLE pages (
     id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
+    title VARCHAR(100) NOT NULL,
     filename VARCHAR(100) NOT NULL,
     navbar BOOLEAN NOT NULL DEFAULT true
 );
 
-INSERT INTO pages (name, filename) VALUES ("Hoofdpagina", ""), ("Over ons", "over");
+INSERT INTO pages (name, title, filename) VALUES ("Hoofdpagina", "ConPHAs", ""), ("Over ons", "Over ConPHAs", "over_ons");
