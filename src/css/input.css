@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+:root {
+    --color-primary: #36B843;
+    --color-secondary: #37852D;
+}
+
+.bg-primary {
+    background-color: var(--color-primary);
+}
+
+.bg-secondary {
+    background-color: var(--color-secondary);
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-secondary {
+    color: var(--color-secondary);
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    50% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+.transition-height {
+    transition-property: height;
+}
+
+.transition-spacing {
+    transition-property: margin, padding;
+}
