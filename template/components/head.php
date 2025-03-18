@@ -1,8 +1,9 @@
 <?php
 
-require_once("../src/imports/connectToDatabase.php");
-require_once("../src/imports/getTextFromDatabase.php");
-
+if (!isset($GLOBALS["editingPage"])) {
+    require_once("../src/imports/connectToDatabase.php");
+    require_once("../src/imports/getTextFromDatabase.php");
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,10 +13,10 @@ require_once("../src/imports/getTextFromDatabase.php");
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="<?=getTextFromDatabase($pdo, 3)?>">
+    <link rel="stylesheet" href="<?=getTextFromDatabase(3)?>">
     <style>
         body {
-            font-family: <?=getTextFromDatabase($pdo, 4)?>;
+            font-family: <?=getTextFromDatabase(4)?>;
         }
         <?php
 
@@ -31,6 +32,20 @@ require_once("../src/imports/getTextFromDatabase.php");
 
         ?>
     </style>
-    <title>ConPHAs</title>
+    <title>
+        <?php
+
+        $statement = $pdo->prepare("SELECT title FROM pages WHERE filename = ?");
+        $statement->execute([substr($uri, 1)]);
+        $result = $statement->fetch();
+        echo $result ? $result["title"] : $pdo->query("SELECT text FROM texts WHERE id = 1")->fetch()["text"];
+
+        ?>
+    </title>
 </head>
 <body>
+<?php
+
+}
+
+?>
