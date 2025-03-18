@@ -48,7 +48,6 @@ require_once("../template/components/head.php");
       </div>
     </section>
 
-
     <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center text-[#37852D]">Onze Partners</h2>
