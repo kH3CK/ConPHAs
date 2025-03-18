@@ -1,7 +1,13 @@
+<?php
+
+require_once("../template/components/head.php");
+
+?>
+
 <html>
 <body>
   <div class="flex min-h-screen flex-col">
-    <!-- Hero Section -->
+
     <section class="relative bg-white overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-r from-white to-white/20 z-10"></div>
       <div class="absolute inset-0 opacity-10">
@@ -36,13 +42,13 @@
         </div>
       </div>
       <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#36B843]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg xmlns="images/aap.jpg" class="h-10 w-10 text-[#36B843]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M6 9l6 6 6-6"/>
         </svg>
       </div>
     </section>
 
-    <!-- Logo Carousel Section -->
+
     <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center text-[#37852D]">Onze Partners</h2>
@@ -51,14 +57,14 @@
         </p>
         <div id="logo-carousel" class="relative overflow-hidden">
           <div class="logo-slider flex items-center transition-transform duration-500 ease-in-out">
-            <!-- Logos will be inserted here by JavaScript -->
+
           </div>
           <div class="absolute top-1/2 -left-4 transform -translate-y-1/2 flex space-x-2 justify-center mt-4">
             <button 
               id="prev-btn"
               class="p-2 rounded-full bg-[#36B843] text-white shadow-md hover:bg-[#37852D] transition-colors"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="images/aap.jpg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M15 18l-6-6 6-6" />
               </svg>
             </button>
@@ -68,7 +74,7 @@
               id="next-btn"
               class="p-2 rounded-full bg-[#36B843] text-white shadow-md hover:bg-[#37852D] transition-colors"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="images/aap.jpg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 18l6-6-6-6" />
               </svg>
             </button>
@@ -101,7 +107,7 @@
                 class="inline-flex items-center text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-200"
               >
                 Bekijk stageplekken 
-                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="images/aap.jpg" class="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>
                 </svg>
@@ -134,7 +140,7 @@
                 class="inline-flex items-center text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-200"
               >
                 Bekijk partners 
-                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="images/aap.jpg" class="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>
                 </svg>
@@ -163,7 +169,7 @@
             class="mt-4 md:mt-0 inline-flex items-center text-[#36B843] font-medium hover:text-[#37852D] transition-colors"
           >
             Alle berichten bekijken 
-            <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="images/aap.jpg" class="ml-1 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </a>
@@ -186,7 +192,7 @@
                 class="text-[#36B843] font-medium hover:underline inline-flex items-center"
               >
                 Lees meer 
-                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="images/aap.jpg" class="ml-1 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>
                 </svg>
@@ -210,7 +216,7 @@
                 class="text-[#36B843] font-medium hover:underline inline-flex items-center"
               >
                 Lees meer 
-                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="images/aap.jpg" class="ml-1 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>
                 </svg>
@@ -234,7 +240,7 @@
                 class="text-[#36B843] font-medium hover:underline inline-flex items-center"
               >
                 Lees meer 
-                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="images/aap.jpg" class="ml-1 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>
                 </svg>
@@ -326,7 +332,7 @@
               <div>
                 <div class="flex items-start mb-4">
                   <div class="mr-3 mt-1 bg-white/10 p-2 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="images/aap.jpg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
                   </div>
@@ -337,7 +343,7 @@
                 </div>
                 <div class="flex items-start mb-4">
                   <div class="mr-3 mt-1 bg-white/10 p-2 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="images/aap.jpg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                     </svg>
@@ -351,7 +357,7 @@
               <div>
                 <div class="flex items-start mb-4">
                   <div class="mr-3 mt-1 bg-white/10 p-2 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="images/aap.jpg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
                       <circle cx="12" cy="10" r="3"></circle>
                     </svg>
@@ -363,7 +369,7 @@
                 </div>
                 <div class="flex items-start mb-4">
                   <div class="mr-3 mt-1 bg-white/10 p-2 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="images/aap.jpg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M12 8v4l3 3"></path>
                       <circle cx="12" cy="12" r="10"></circle>
                     </svg>
@@ -394,6 +400,6 @@
     </footer>
   </div>
 
-  <script src="script.js"></script>
+  <script src="home.js"></script>
 </body>
 </html>
