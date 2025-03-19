@@ -7,7 +7,129 @@ require_once("../template/components/head.php");
 
 <html>
 
+<head>
+    <style>
+        /* Logo Carousel Styles */
+        .logo-slider {
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        /* FAQ Styles */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Carousel Styles */
+        .partner-carousel {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .partner-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .partner-slide {
+            flex: 0 0 250px;
+            margin: 0 15px;
+            opacity: 0.7;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+
+        .partner-slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #36B843;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-button:hover {
+            background: #37852D;
+        }
+
+        .carousel-button.prev {
+            left: 10px;
+        }
+
+        .carousel-button.next {
+            right: 10px;
+        }
+
+        /* FAQ Styles */
+        .faq-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1rem;
+            text-align: left;
+            background: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #f9fafb;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #f9fafb;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
 <body>
+    
+<script src="home.js"></script>
     <div class="flex min-h-screen flex-col">
 
         <section class="relative bg-white overflow-hidden">
@@ -51,30 +173,42 @@ require_once("../template/components/head.php");
             <div class="container mx-auto px-4">
                 <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center text-[#37852D]">Onze Partners</h2>
                 <p class="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
-                    We werken samen met toonaangevende scholen in de bioplastics industrie om de beste kansen te bieden.
+                    We werken samen met toonaangevende scholen en bedrijven in de bioplastics industrie.
                 </p>
-                <div id="logo-carousel" class="relative overflow-hidden">
-                    <div class="logo-slider flex items-center transition-transform duration-500 ease-in-out">
-
+                
+                <div class="partner-carousel">
+                    <button class="carousel-button prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    
+                    <div class="partner-track">
+                        <div class="partner-slide">
+                            <img src="/images/aap.jpg" alt="Partner 1" class="w-full h-48 object-contain" onerror="this.src='https://placehold.co/400x300?text=Partner+1'">
+                        </div>
+                        <div class="partner-slide">
+                            <img src="/images/aap.jpg" alt="Partner 2" class="w-full h-48 object-contain" onerror="this.src='https://placehold.co/400x300?text=Partner+2'">
+                        </div>
+                        <div class="partner-slide">
+                            <img src="/images/aap.jpg" alt="Partner 3" class="w-full h-48 object-contain" onerror="this.src='https://placehold.co/400x300?text=Partner+3'">
+                        </div>
+                        <div class="partner-slide">
+                            <img src="/images/aap.jpg" alt="Partner 4" class="w-full h-48 object-contain" onerror="this.src='https://placehold.co/400x300?text=Partner+4'">
+                        </div>
+                        <div class="partner-slide">
+                            <img src="/images/aap.jpg" alt="Partner 5" class="w-full h-48 object-contain" onerror="this.src='https://placehold.co/400x300?text=Partner+5'">
+                        </div>
+                        <div class="partner-slide">
+                            <img src="/images/aap.jpg" alt="Partner 6" class="w-full h-48 object-contain" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
+                        </div>
                     </div>
-                    <div class="absolute top-1/2 -left-4 transform -translate-y-1/2 flex space-x-2 justify-center mt-4">
-                        <button
-                            id="prev-btn"
-                            class="p-2 rounded-full bg-[#36B843] text-white shadow-md hover:bg-[#37852D] transition-colors">
-                            <svg xmlns="images/aap.jpg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M15 18l-6-6 6-6" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="absolute top-1/2 -right-4 transform -translate-y-1/2 flex space-x-2 justify-center mt-4">
-                        <button
-                            id="next-btn"
-                            class="p-2 rounded-full bg-[#36B843] text-white shadow-md hover:bg-[#37852D] transition-colors">
-                            <svg xmlns="images/aap.jpg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M9 18l6-6-6-6" />
-                            </svg>
-                        </button>
-                    </div>
+                    
+                    <button class="carousel-button next">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>
@@ -238,7 +372,48 @@ require_once("../template/components/head.php");
                     <p class="text-gray-600 text-center mb-10">
                         Antwoorden op de meest gestelde vragen over ConPHAs en onze diensten
                     </p>
-                    <div id="faq-accordion" class="space-y-4">
+                    <div class="faq-container space-y-4">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="font-medium text-[#37852D]">Wat is ConPHAs?</span>
+                                <svg class="faq-icon w-5 h-5 text-[#36B843]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="p-4">
+                                    ConPHAs is een platform dat jonge studenten helpt hun eerste stappen te zetten in de wereld van bioplastics. We verbinden studenten met bedrijven voor stages en bieden kennis over duurzame innovatie.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="font-medium text-[#37852D]">Hoe kan ik een stageplek vinden via ConPHAs?</span>
+                                <svg class="faq-icon w-5 h-5 text-[#36B843]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="p-4">
+                                    Je kunt op onze website naar de pagina 'Stageplekken' gaan waar alle beschikbare stageplaatsen staan vermeld. Je kunt filteren op locatie, duur en type stage om de perfecte match te vinden.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="font-medium text-[#37852D]">Zijn jullie stages betaald?</span>
+                                <svg class="faq-icon w-5 h-5 text-[#36B843]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="p-4">
+                                    Dit verschilt per bedrijf en type stage. Bij elke stageplek staat duidelijk vermeld of er een vergoeding wordt geboden en wat de hoogte hiervan is.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -376,8 +551,89 @@ require_once("../template/components/head.php");
         </footer>
     </div>
 
-    <script src="home.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Partner Carousel
+        const track = document.querySelector('.partner-track');
+        const slides = document.querySelectorAll('.partner-slide');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+        
+        let currentIndex = 0;
+        const slideWidth = 280; // Breedte van slide + margin
+        const visibleSlides = 4;
+        const maxIndex = slides.length - visibleSlides;
+        
+        function updateSlidePositions() {
+            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            
+            // Update active states
+            slides.forEach((slide, index) => {
+                if (index >= currentIndex && index < currentIndex + visibleSlides) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+        
+        // Initialize first slides as active
+        updateSlidePositions();
+        
+        prevButton.addEventListener('click', () => {
+            currentIndex = Math.max(currentIndex - 1, 0);
+            updateSlidePositions();
+        });
+        
+        nextButton.addEventListener('click', () => {
+            currentIndex = Math.min(currentIndex + 1, maxIndex);
+            updateSlidePositions();
+        });
+        
+        // Auto-scroll
+        let autoScrollInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % (maxIndex + 1);
+            updateSlidePositions();
+        }, 3000);
+        
+        // Pause auto-scroll on hover
+        track.addEventListener('mouseenter', () => {
+            clearInterval(autoScrollInterval);
+        });
+        
+        track.addEventListener('mouseleave', () => {
+            autoScrollInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % (maxIndex + 1);
+                updateSlidePositions();
+            }, 3000);
+        });
+        
+        // FAQ Functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('active');
+                
+                // Sluit alle FAQ items
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+                
+                // Open het huidige item als het gesloten was
+                if (!isOpen) {
+                    item.classList.add('active');
+                }
+            });
+        });
+        
+        // Open eerste FAQ standaard
+        faqItems[0].classList.add('active');
+    });
+    </script>
+
 </body>
 
 </html>
->>>>>>> koen
