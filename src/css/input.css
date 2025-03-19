@@ -1,4 +1,5 @@
 @import "tailwindcss";
+<<<<<<< HEAD
 .process-line {
     background: linear-gradient(60deg, #4ecdc4, #00a0b0);
     --mask:
@@ -7,3 +8,35 @@
     -webkit-mask: var(--mask);
             mask: var(--mask);
   }
+=======
+@layer utilities {
+    .scale-x-0 {
+        --tw-scale-x: 0;
+        transform: var(--tw-transform);
+    }
+    .scale-x-100 {
+        --tw-scale-x: 1;
+        transform: var(--tw-transform);
+    }
+    .scale-y-0 {
+        --tw-scale-y: 0;
+        transform: var(--tw-transform);
+    }
+    .scale-y-100 {
+        --tw-scale-y: 1;
+        transform: var(--tw-transform);
+    }
+    .origin-left {
+        --tw-transform-origin: left;
+        transform-origin: var(--tw-transform-origin);
+    }
+    .origin-right {
+        --tw-transform-origin: right;
+        transform-origin: var(--tw-transform-origin);
+    }
+    .origin-bottom {
+        --tw-transform-origin: bottom;
+        transform-origin: var(--tw-transform-origin);
+    }
+}
+>>>>>>> koen
