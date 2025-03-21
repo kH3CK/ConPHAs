@@ -1,7 +1,7 @@
 <?php
 
 require_once("../template/components/navbar.php");
-require_once("../src/imports/getTextFromDatabase.php"); 
+require_once("../src/imports/getTextFromDatabase.php");
 require_once("../template/components/head.php");
 ?>
 
@@ -42,11 +42,11 @@ require_once("../template/components/head.php");
         .partner-slide {
             @apply flex-none opacity-70 scale-90 transition-all duration-300;
             flex: 0 0 auto;
-            width: 300px; 
+            width: 300px;
         }
 
         .partner-slide img {
-            width: 150px; 
+            width: 150px;
             height: 150px;
             object-fit: contain;
             margin: 0 auto;
@@ -99,7 +99,8 @@ require_once("../template/components/head.php");
             transform: rotate(180deg);
         }
 
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
             width: 100%;
             position: relative;
@@ -128,16 +129,16 @@ require_once("../template/components/head.php");
         <section class="relative bg-white overflow-hidden hero-section">
             <div class="absolute inset-0 bg-gradient-to-r from-white to-white/20 z-10"></div>
             <div class="absolute inset-0 opacity-10">
-                <img
-                    src="https://placehold.co/1920x1080"
-                    alt="Background pattern"
-                    class="object-cover w-full h-full" />
+                <div class="absolute inset-0 bg-gradient-to-r from-green-200 to-white"></div>
             </div>
             <div class="container mx-auto px-4 py-2020py-20 relative z-20">
                 <div class="max-w-4xl">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                        Jouw springplank naar een <span class="text-[#36B843]">groene carrière</span>
+                    <h1 class="text-[#36B843] text-3xl md:text-6xl font-bold mb-6">
+                        ConPHAs
                     </h1>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                        Jouw springplank naar een <span class="text-[#36B843]">groene carrière</span>
+                    </h2>
                     <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl">
                         Bij ConPHAs helpen we jonge studenten hun eerste stappen te zetten in de wereld van bioplastics.
                     </p>
@@ -175,40 +176,16 @@ require_once("../template/components/head.php");
                             <img src="/images/Logo-Noorderpoort.png" alt="Partner 1" onerror="this.src='https://placehold.co/400x300?text=Partner+1'">
                         </div>
                         <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 2" onerror="this.src='https://placehold.co/400x300?text=Partner+2'">
+                            <img src="/images/Hanze.webp" alt="Partner 2" onerror="this.src='https://placehold.co/400x300?text=Partner+2'">
                         </div>
                         <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 3" onerror="this.src='https://placehold.co/400x300?text=Partner+3'">
+                            <img src="/images/Drenthecollege.png" alt="Partner 3" onerror="this.src='https://placehold.co/400x300?text=Partner+3'">
                         </div>
                         <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 4" onerror="this.src='https://placehold.co/400x300?text=Partner+4'">
+                            <img src="/images/uni-gro.png" alt="Partner 4" onerror="this.src='https://placehold.co/400x300?text=Partner+4'">
                         </div>
                         <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 5" onerror="this.src='https://placehold.co/400x300?text=Partner+5'">
-                        </div>
-                        <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
-                        </div>
-                        <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
-                        </div>
-                        <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
-                        </div>
-                        <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
-                        </div>
-                        <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
-                        </div>
-                        <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
-                        </div>
-                        <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
-                        </div>
-                        <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
+                            <img src="/images/NHL-stenden.png" alt="Partner 5" onerror="this.src='https://placehold.co/400x300?text=Partner+5'">
                         </div>
                     </div>
                 </div>
@@ -221,10 +198,7 @@ require_once("../template/components/head.php");
 
                     <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div class="absolute inset-0 bg-gradient-to-r from-[#36B843]/90 to-[#37852D]/90 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                        <img
-                            src="https://placehold.co/800x600"
-                            alt="Stages"
-                            class="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-105" />
+                        <img src="images/stage.jpg" alt="Stage" class="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-105" />
                         <div class="absolute inset-0 p-8 flex flex-col justify-end z-20">
                             <h3 class="text-2xl font-bold text-white mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                                 Vind jouw perfecte stageplek
@@ -252,7 +226,7 @@ require_once("../template/components/head.php");
                     <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div class="absolute inset-0 bg-gradient-to-r from-[#36B843]/90 to-[#37852D]/90 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                         <img
-                            src="https://placehold.co/800x600"
+                            src="images/overons.jpg"
                             alt="over ons"
                             class="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-105" />
                         <div class="absolute inset-0 p-8 flex flex-col justify-end z-20">
@@ -303,7 +277,7 @@ require_once("../template/components/head.php");
 
                     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                         <img
-                            src="https://placehold.co/600x400"
+                            src="images/project.webp"
                             alt="Nieuw project gelanceerd"
                             class="w-full h-48 object-cover" />
                         <div class="p-6">
@@ -324,7 +298,7 @@ require_once("../template/components/head.php");
 
                     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                         <img
-                            src="https://placehold.co/600x400"
+                            src="images/team.jpg"
                             alt="Uitbreiding van ons team"
                             class="w-full h-48 object-cover" />
                         <div class="p-6">
@@ -345,7 +319,7 @@ require_once("../template/components/head.php");
 
                     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                         <img
-                            src="https://placehold.co/600x400"
+                            src="images/award.jpg"
                             alt="Innovatie award gewonnen"
                             class="w-full h-48 object-cover" />
                         <div class="p-6">
@@ -514,10 +488,6 @@ require_once("../template/components/head.php");
                                             <circle cx="12" cy="10" r="3"></circle>
                                         </svg>
                                     </div>
-                                    <div>
-                                        <p class="font-medium">Adres</p>
-                                        <p class="text-white/80">Hoofdstraat 123, 1234 AB Amsterdam</p>
-                                    </div>
                                 </div>
                                 <div class="flex items-start mb-4">
                                     <div class="mr-3 mt-1 bg-white/10 p-2 rounded-full">
@@ -525,10 +495,6 @@ require_once("../template/components/head.php");
                                             <path d="M12 8v4l3 3"></path>
                                             <circle cx="12" cy="12" r="10"></circle>
                                         </svg>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium">Openingstijden</p>
-                                        <p class="text-white/80">Ma-Vr: 9:00 - 17:00</p>
                                     </div>
                                 </div>
                             </div>
@@ -557,7 +523,7 @@ require_once("../template/components/head.php");
         document.addEventListener('DOMContentLoaded', function() {
             const track = document.querySelector('.partner-track');
             const slides = document.querySelectorAll('.partner-slide');
-            
+
             slides.forEach(slide => {
                 const clone = slide.cloneNode(true);
                 track.appendChild(clone);
@@ -569,11 +535,11 @@ require_once("../template/components/head.php");
 
             function updateSlides() {
                 position -= speed;
-                
+
                 if (position <= -slideWidth * slides.length) {
                     position = 0;
                 }
-                
+
                 track.style.transform = `translateX(${position}px)`;
 
                 const visibleIndex = Math.abs(Math.floor(position / slideWidth));
@@ -585,7 +551,7 @@ require_once("../template/components/head.php");
                         clonedSlide.classList.toggle('active', isVisible);
                     }
                 });
-                
+
                 requestAnimationFrame(updateSlides);
             }
 
