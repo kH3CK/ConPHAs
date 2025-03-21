@@ -1,7 +1,7 @@
 <?php
 
 require_once("../template/components/navbar.php");
-require_once("../src/imports/getTextFromDatabase.php");
+require_once("../src/imports/getTextFromDatabase.php"); 
 require_once("../template/components/head.php");
 ?>
 
@@ -9,79 +9,53 @@ require_once("../template/components/head.php");
 
 <head>
     <style>
-        /* Logo Carousel Styles */
         .logo-slider {
             transition: transform 0.5s ease-in-out;
         }
-        
-        /* FAQ Styles */
+
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
         }
-        
+
         .faq-item.active .faq-answer {
             max-height: 200px;
         }
-        
+
         .faq-item.active .faq-icon {
             transform: rotate(180deg);
         }
 
-        /* Carousel Styles */
         .partner-carousel {
-            position: relative;
-            overflow: hidden;
-            padding: 20px 0;
+            @apply relative overflow-hidden py-8;
+            max-width: 100vw;
         }
 
         .partner-track {
+            @apply flex transition-transform duration-500 ease-in-out;
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            gap: 0.5rem;
+            width: max-content;
         }
 
         .partner-slide {
-            flex: 0 0 250px;
-            margin: 0 15px;
-            opacity: 0.7;
-            transform: scale(0.9);
-            transition: all 0.3s ease;
+            @apply flex-none opacity-70 scale-90 transition-all duration-300;
+            flex: 0 0 auto;
+            width: 300px; 
+        }
+
+        .partner-slide img {
+            width: 150px; 
+            height: 150px;
+            object-fit: contain;
+            margin: 0 auto;
         }
 
         .partner-slide.active {
-            opacity: 1;
-            transform: scale(1);
+            @apply opacity-100 scale-100;
         }
 
-        .carousel-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: #36B843;
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            z-index: 10;
-        }
-
-        .carousel-button:hover {
-            background: #37852D;
-        }
-
-        .carousel-button.prev {
-            left: 10px;
-        }
-
-        .carousel-button.next {
-            right: 10px;
-        }
-
-        /* FAQ Styles */
         .faq-item {
             border: 1px solid #e5e7eb;
             border-radius: 8px;
@@ -124,15 +98,34 @@ require_once("../template/components/head.php");
         .faq-item.active .faq-icon {
             transform: rotate(180deg);
         }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .content-wrapper {
+            @apply pt-32;
+        }
+
+        body {
+            margin-top: 60;
+            padding-top: 60;
+        }
+
+        .hero-section {
+            @apply pt-20;
+        }
     </style>
 </head>
 
 <body>
-    
-<script src="home.js"></script>
-    <div class="flex min-h-screen flex-col">
 
-        <section class="relative bg-white overflow-hidden">
+    <script src="home.js"></script>
+    <div class="flex min-h-screen flex-col content-wrapper">
+
+        <section class="relative bg-white overflow-hidden hero-section">
             <div class="absolute inset-0 bg-gradient-to-r from-white to-white/20 z-10"></div>
             <div class="absolute inset-0 opacity-10">
                 <img
@@ -140,7 +133,7 @@ require_once("../template/components/head.php");
                     alt="Background pattern"
                     class="object-cover w-full h-full" />
             </div>
-            <div class="container mx-auto px-4 py-20 md:py-32 relative z-20">
+            <div class="container mx-auto px-4 py-2020py-20 relative z-20">
                 <div class="max-w-4xl">
                     <h1 class="text-4xl md:text-6xl font-bold mb-6">
                         Jouw springplank naar een <span class="text-[#36B843]">groene carrière</span>
@@ -175,40 +168,49 @@ require_once("../template/components/head.php");
                 <p class="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
                     We werken samen met toonaangevende scholen en bedrijven in de bioplastics industrie.
                 </p>
-                
+
                 <div class="partner-carousel">
-                    <button class="carousel-button prev">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
-                    
                     <div class="partner-track">
                         <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 1" class="w-full h-48 object-contain" onerror="this.src='https://placehold.co/400x300?text=Partner+1'">
+                            <img src="/images/Logo-Noorderpoort.jpg" alt="Partner 1" onerror="this.src='https://placehold.co/400x300?text=Partner+1'">
                         </div>
                         <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 2" class="w-full h-48 object-contain" onerror="this.src='https://placehold.co/400x300?text=Partner+2'">
+                            <img src="/images/aap.jpg" alt="Partner 2" onerror="this.src='https://placehold.co/400x300?text=Partner+2'">
                         </div>
                         <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 3" class="w-full h-48 object-contain" onerror="this.src='https://placehold.co/400x300?text=Partner+3'">
+                            <img src="/images/aap.jpg" alt="Partner 3" onerror="this.src='https://placehold.co/400x300?text=Partner+3'">
                         </div>
                         <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 4" class="w-full h-48 object-contain" onerror="this.src='https://placehold.co/400x300?text=Partner+4'">
+                            <img src="/images/aap.jpg" alt="Partner 4" onerror="this.src='https://placehold.co/400x300?text=Partner+4'">
                         </div>
                         <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 5" class="w-full h-48 object-contain" onerror="this.src='https://placehold.co/400x300?text=Partner+5'">
+                            <img src="/images/aap.jpg" alt="Partner 5" onerror="this.src='https://placehold.co/400x300?text=Partner+5'">
                         </div>
                         <div class="partner-slide">
-                            <img src="/images/aap.jpg" alt="Partner 6" class="w-full h-48 object-contain" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
+                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
+                        </div>
+                        <div class="partner-slide">
+                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
+                        </div>
+                        <div class="partner-slide">
+                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
+                        </div>
+                        <div class="partner-slide">
+                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
+                        </div>
+                        <div class="partner-slide">
+                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
+                        </div>
+                        <div class="partner-slide">
+                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
+                        </div>
+                        <div class="partner-slide">
+                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
+                        </div>
+                        <div class="partner-slide">
+                            <img src="/images/aap.jpg" alt="Partner 6" onerror="this.src='https://placehold.co/400x300?text=Partner+6'">
                         </div>
                     </div>
-                    
-                    <button class="carousel-button next">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
                 </div>
             </div>
         </section>
@@ -216,7 +218,7 @@ require_once("../template/components/head.php");
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    
+
                     <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div class="absolute inset-0 bg-gradient-to-r from-[#36B843]/90 to-[#37852D]/90 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                         <img
@@ -298,7 +300,7 @@ require_once("../template/components/head.php");
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              
+
                     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                         <img
                             src="https://placehold.co/600x400"
@@ -422,7 +424,7 @@ require_once("../template/components/head.php");
         <footer class="bg-[#37852D] text-white py-12">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    
+
                     <div class="col-span-1">
                         <h3 class="text-xl font-bold mb-4">ConPHAs</h3>
                         <p class="mb-4 text-white/80">
@@ -446,7 +448,7 @@ require_once("../template/components/head.php");
                             </a>
                             <a href="#" class="text-white hover:text-white/80 transition-colors">
                                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z" clip-rule="evenodd" />
+                                    <path fill-rule="evenodd" d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.820-2.20 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z" clip-rule="evenodd" />
                                 </svg>
                             </a>
                         </div>
@@ -536,7 +538,7 @@ require_once("../template/components/head.php");
                                 type="email"
                                 placeholder="Uw e-mailadres"
                                 class="px-4 py-2 w-full bg-white/10 text-white rounded-l-md focus:outline-none focus:bg-white/20 transition-colors" />
-                            <button class="bg-[#36B843] hover:bg-[#32a83e] text-white px-4 py-2 rounded-r-md transition-colors">
+                            <button class="bg-[#36B843] hove20-[#20a83e] text-white px-4 py-2 rounded-r-md transition-colors">
                                 Aanmelden
                             </button>
                         </form>
@@ -552,86 +554,63 @@ require_once("../template/components/head.php");
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Partner Carousel
-        const track = document.querySelector('.partner-track');
-        const slides = document.querySelectorAll('.partner-slide');
-        const prevButton = document.querySelector('.carousel-button.prev');
-        const nextButton = document.querySelector('.carousel-button.next');
-        
-        let currentIndex = 0;
-        const slideWidth = 280; // Breedte van slide + margin
-        const visibleSlides = 4;
-        const maxIndex = slides.length - visibleSlides;
-        
-        function updateSlidePositions() {
-            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.partner-track');
+            const slides = document.querySelectorAll('.partner-slide');
             
-            // Update active states
-            slides.forEach((slide, index) => {
-                if (index >= currentIndex && index < currentIndex + visibleSlides) {
-                    slide.classList.add('active');
-                } else {
-                    slide.classList.remove('active');
-                }
+            slides.forEach(slide => {
+                const clone = slide.cloneNode(true);
+                track.appendChild(clone);
             });
-        }
-        
-        // Initialize first slides as active
-        updateSlidePositions();
-        
-        prevButton.addEventListener('click', () => {
-            currentIndex = Math.max(currentIndex - 1, 0);
-            updateSlidePositions();
-        });
-        
-        nextButton.addEventListener('click', () => {
-            currentIndex = Math.min(currentIndex + 1, maxIndex);
-            updateSlidePositions();
-        });
-        
-        // Auto-scroll
-        let autoScrollInterval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % (maxIndex + 1);
-            updateSlidePositions();
-        }, 3000);
-        
-        // Pause auto-scroll on hover
-        track.addEventListener('mouseenter', () => {
-            clearInterval(autoScrollInterval);
-        });
-        
-        track.addEventListener('mouseleave', () => {
-            autoScrollInterval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % (maxIndex + 1);
-                updateSlidePositions();
-            }, 3000);
-        });
-        
-        // FAQ Functionality
-        const faqItems = document.querySelectorAll('.faq-item');
-        
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            
-            question.addEventListener('click', () => {
-                const isOpen = item.classList.contains('active');
+
+            let position = 0;
+            const slideWidth = 280;
+            const speed = 0.5;
+
+            function updateSlides() {
+                position -= speed;
                 
-                // Sluit alle FAQ items
-                faqItems.forEach(otherItem => {
-                    otherItem.classList.remove('active');
+                if (position <= -slideWidth * slides.length) {
+                    position = 0;
+                }
+                
+                track.style.transform = `translateX(${position}px)`;
+
+                const visibleIndex = Math.abs(Math.floor(position / slideWidth));
+                slides.forEach((slide, index) => {
+                    const isVisible = index >= visibleIndex && index < visibleIndex + 4;
+                    slide.classList.toggle('active', isVisible);
+                    const clonedSlide = track.children[index + slides.length];
+                    if (clonedSlide) {
+                        clonedSlide.classList.toggle('active', isVisible);
+                    }
                 });
                 
-                // Open het huidige item als het gesloten was
-                if (!isOpen) {
-                    item.classList.add('active');
-                }
+                requestAnimationFrame(updateSlides);
+            }
+
+            requestAnimationFrame(updateSlides);
+
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('active');
+
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                    });
+
+                    if (!isOpen) {
+                        item.classList.add('active');
+                    }
+                });
             });
+
+            faqItems[0].classList.add('active');
         });
-        
-        // Open eerste FAQ standaard
-        faqItems[0].classList.add('active');
-    });
     </script>
 
 </body>
