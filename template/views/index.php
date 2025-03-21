@@ -172,7 +172,7 @@ require_once("../template/components/head.php");
                 <div class="partner-carousel">
                     <div class="partner-track">
                         <div class="partner-slide">
-                            <img src="/images/Logo-Noorderpoort.jpg" alt="Partner 1" onerror="this.src='https://placehold.co/400x300?text=Partner+1'">
+                            <img src="/images/Logo-Noorderpoort.png" alt="Partner 1" onerror="this.src='https://placehold.co/400x300?text=Partner+1'">
                         </div>
                         <div class="partner-slide">
                             <img src="/images/aap.jpg" alt="Partner 2" onerror="this.src='https://placehold.co/400x300?text=Partner+2'">
