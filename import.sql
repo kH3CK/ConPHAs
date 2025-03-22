@@ -33,6 +33,7 @@ CREATE TABLE internships (
     weeks SMALLINT NOT NULL,
     hours SMALLINT NOT NULL,
     compensation SMALLINT NOT NULL DEFAULT 0,
+    compensation_frequency VARCHAR(10),
     start_date_and_time TIMESTAMP NOT NULL,
     type VARCHAR(25) NOT NULL,
     image_link VARCHAR(300) NOT NULL
@@ -40,8 +41,7 @@ CREATE TABLE internships (
 
 INSERT INTO internships (title, description, minimum_level, location, weeks, hours, start_date_and_time, type, image_link) VALUES
 ("Bioolog", "Lorem ipsum dolor sit amet", "MBO 3", "Groningen, Muntinglaan 5", 50, 300, "2025-09-01 09:00:00", "Afstudeerstage",
-"https://picsum.photos/200/200")
-;
+"https://picsum.photos/200/200");
 
 CREATE TABLE trainees (
     id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
