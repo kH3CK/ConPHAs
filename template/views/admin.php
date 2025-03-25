@@ -84,7 +84,7 @@ $logo = getTextFromDatabase(2);
 
             ?>
             </div>
-            <div class="sticky bottom-2 left-2 text-start m-2 max-w-30">
+            <div class="sticky bottom-2 left-2 text-start m-2 max-w-52">
                 <a href="/logout"><img src="images/arrow-left.png" alt="<-" class="inline w-1/2 h-1/2"> uitloggen</a>
             </div>
         </div>
