@@ -25,8 +25,8 @@ require_once("../template/views/" . ($_GET["path"] == "" ? "index" : $_GET["path
                 <li>2. Klik op <img src="images/mobile-preview-button.png" class="inline"></li>
             </ul>
         </div>
-        <div class="sticky bottom-2 left-2 text-start m-2">
-            <a href="/admin"><img src="images/arrow-left.png" alt="<-" class="inline w-1/12 h-1/12"> terug</a>
+        <div class="sticky bottom-2 left-2 text-start m-2 max-w-30">
+            <a href="/admin"><img src="images/arrow-left.png" alt="<-" class="inline w-1/2 h-1/2"> terug</a>
         </div>
     </div>
 </form>

@@ -38,20 +38,31 @@ $logo = getTextFromDatabase(2);
                     <button class="bg-primary-color border border-primary-color p-2 text-primary-background">Opslaan</button>
                     <button class="bg-danger border border-primary-color p-2 text-primary-background" id="wijzigingen-annuleren">Wijzigingen annuleren</button>
                 </div>
-                <p class="mb-1">Font Link</p>
-                <input name="font-link" type="text" value="<?=getTextFromDatabase(3)?>" class="border border-primary-color w-xs mb-5">
-                <p class="mb-1">Font Code</p>
-                <input name="font-code" type="text" value='<?=getTextFromDatabase(4)?>' class="border border-primary-color w-3xs mb-5">
-                <p class="mb-1">Hoe vul jij dat in?</p>
-                <ol class="list-decimal text-start ml-10">
-                    <li>Ga naar <a class="text-primary-color" href="https://fonts.google.com">https://fonts.google.com</a></li>
-                    <li>Selecteer een font</li>
-                    <li>Klik op "Get font"</li>
-                    <li>Klik op "Get embed code"</li>
-                    <li>Copier de link die begint met<br>
-                        <strong>https://fonts.googleapis.com/css2?family</strong> (link)</li>
-                    <li>Dan copier het ding tussen <strong>font-family: </strong> en <strong>;</strong> op dezelfde regel (code)</li>
-                </ol>
+                <div class="text-start">
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="mb-1">Font Link</p>
+                            <input name="font-link" type="text" value="<?=getTextFromDatabase(3)?>" class="border border-primary-color w-xs mb-5">
+                        </div>
+                        <div>
+                            <div class="mt-4">
+                                <a href="/edit_internships" class="btn bg-primary-color border border-primary-color p-2 text-primary-background">Stageplekken bewerken</a>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mb-1">Font Code</p>
+                    <input name="font-code" type="text" value='<?=getTextFromDatabase(4)?>' class="border border-primary-color w-3xs mb-5">
+                    <p class="mb-1">Hoe vul jij dat in?</p>
+                    <ol class="list-decimal ml-10">
+                        <li>Ga naar <a class="text-primary-color" href="https://fonts.google.com">https://fonts.google.com</a></li>
+                        <li>Selecteer een font</li>
+                        <li>Klik op "Get font"</li>
+                        <li>Klik op "Get embed code"</li>
+                        <li>Copier de link die begint met<br>
+                            <strong>https://fonts.googleapis.com/css2?family</strong> (link)</li>
+                        <li>Dan copier het ding tussen <strong>font-family: </strong> en <strong>;</strong> op dezelfde regel (code)</li>
+                    </ol>
+                </div>
             </div>
         </div>
     </div>
@@ -73,8 +84,8 @@ $logo = getTextFromDatabase(2);
 
             ?>
             </div>
-            <div class="sticky bottom-2 left-2 text-start m-2">
-                <a href="/logout"><img src="images/arrow-left.png" alt="<-" class="inline w-1/12 h-1/12"> uitloggen</a>
+            <div class="sticky bottom-2 left-2 text-start m-2 max-w-52">
+                <a href="/logout"><img src="images/arrow-left.png" alt="<-" class="inline w-1/2 h-1/2"> uitloggen</a>
             </div>
         </div>
         <div class="basis-1/2 border-b border-b-primary-color text-center">
