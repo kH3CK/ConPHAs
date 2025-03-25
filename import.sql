@@ -33,7 +33,6 @@ CREATE TABLE internships (
     weeks SMALLINT NOT NULL,
     hours SMALLINT NOT NULL,
     compensation SMALLINT NOT NULL DEFAULT 0,
-    compensation_frequency VARCHAR(10),
     start_date_and_time TIMESTAMP NOT NULL,
     type VARCHAR(25) NOT NULL,
     image_link VARCHAR(300) NOT NULL
