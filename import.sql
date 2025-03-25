@@ -40,8 +40,7 @@ CREATE TABLE internships (
 
 INSERT INTO internships (title, description, minimum_level, location, weeks, hours, start_date_and_time, type, image_link) VALUES
 ("Bioolog", "Lorem ipsum dolor sit amet", "MBO 3", "Groningen, Muntinglaan 5", 50, 300, "2025-09-01 09:00:00", "Afstudeerstage",
-"https://picsum.photos/200/200")
-;
+"https://picsum.photos/200/200");
 
 CREATE TABLE trainees (
     id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
