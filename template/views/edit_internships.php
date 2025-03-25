@@ -31,11 +31,16 @@ require_once("../template/components/editableInternship.php");
                 $levelstring = substr($levelstring, 0, -4);
             }
             $weeksmin = @$_GET["weeks-min"];
+            $weeksminnotempty = !empty($weeksmin);
             $weeksmax = @$_GET["weeks-max"];
+            $weeksmaxnotempty = !empty($weeksmax);
             $hoursmin = @$_GET["hours-min"];
+            $hoursminnotempty = !empty($hoursmin);
             $hoursmax = @$_GET["hours-max"];
+            $hoursmaxnotempty = !empty($hoursmax);
             $compensationmin = @$_GET["compensation-min"];
-            $checkminormax = isset($weeksmin) || isset($weeksmax) || isset($hoursmin) || isset($hoursmax) || isset($compensationmin);
+            $compensationminnotempty = !empty($compensationmin);
+            $checkminormax = $weeksminnotempty || $weeksmaxnotempty || $hoursminnotempty || $hoursmaxnotempty || $compensationminnotempty;
             $monthstring = substr($monthstring, 0, -4);
             $checktitle = !empty($_GET["search-term"]);
             $checkstagetype = isset($_GET["afstudeerstage"]) != isset($_GET["meewerkstage"]);
@@ -55,23 +60,23 @@ require_once("../template/components/editableInternship.php");
                 if ($checkstagetype) {
                     $checks[] = "type = " . isset($_GET["afstudeerstage"]) ? "afstudeerstage" : "meewerkstage";
                 }
-                if ($weeksmin) {
+                if ($weeksminnotempty) {
                     $checks[] = "weeks >= :weeks_min";
                     $executearray["weeks_min"] = $weeksmin;
                 }
-                if ($weeksmax) {
+                if ($weeksmaxnotempty) {
                     $checks[] = "weeks <= :weeks_max";
                     $executearray["weeks_max"] = $weeksmax;
                 }
-                if ($hoursmin) {
+                if ($hoursminnotempty) {
                     $checks[] = "hours >= :hours_min";
                     $executearray["hours_min"] = $hoursmin;
                 }
-                if ($hoursmax) {
+                if ($hoursmaxnotempty) {
                     $checks[] = "hours <= :hours_max";
                     $executearray["hours_max"] = $hoursmax;
                 }
-                if ($compensationmin) {
+                if ($compensationminnotempty) {
                     $checks[] = "compensation >= :compensation_min";
                     $executearray["compensation_min"] = $compensationmin;
                 }
