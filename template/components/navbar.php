@@ -30,6 +30,11 @@
             <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#36B843] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             <span class="absolute inset-0 rounded-md bg-[#36B843]/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></span>
           </a>
+          <a href="/blog" class="relative px-5 py-2.5 font-medium text-gray-800 group">
+            <span class="relative z-10">blog</span>
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#36B843] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span class="absolute inset-0 rounded-md bg-[#36B843]/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></span>
+          </a>
           <div class="ml-6">
             <button class="relative overflow-hidden bg-[#36B843] text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-[#36B843]/30 group">
               <span class="relative z-10">Contact</span>
