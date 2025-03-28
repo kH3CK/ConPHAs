@@ -157,7 +157,5 @@ require_once("../template/components/editableInternship.php");
         </form>
     </div>
 </div>
-<div class="sticky bottom-2 left-2 text-start m-2 max-w-30">
-    <a href="/admin"><img src="images/arrow-left.png" alt="<-" class="inline w-1/2 h-1/2"> terug</a>
-</div>
+<?php require_once("../template/components/backButton.php");?>
 <script src="js/abandonChanges.js"></script>
