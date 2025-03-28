@@ -21,13 +21,10 @@ if (!isset($GLOBALS["editingPage"])) {
         <?php
 
         foreach ($pdo->query("SELECT * FROM colors") as $color) {
-            foreach (["text"=>"color", "bg"=>"background-color", "border"=>"border-color", "border-t"=>"border-top-color",
-            "border-r"=>"border-right-color", "border-l"=>"border-left-color", "border-b"=>"border-bottom-color"] as $name => $code)
-            {?>
-                .<?=$name?>-<?=str_replace(" ", "-", strtolower($color["name"]))?> {
-                    <?=$code?>: #<?=$color["hex"]?>;
-                }
-            <?php }
+            foreach (["text" => "color", "bg" => "background-color", "border" => "border-color", "border-t" => "border-top-color",
+            "border-r" => "border-right-color", "border-l" => "border-left-color", "border-b" => "border-bottom-color"] as $name => $code) {
+                echo "." . $name . "-" . str_replace(" ", "-", strtolower($color["name"])) . " { " . $code . ": #" . $color["hex"] . "; }\n";
+            }
         }
 
         ?>
