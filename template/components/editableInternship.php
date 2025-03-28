@@ -58,7 +58,7 @@ function makeEditableInternship($internship = []) {
         <img src="images/stopwatch.svg" alt="🕑" class="inline">
         <div class="inline-block">
             <label for="description-<?=$id?>" class="block mb-1">Beschrijving</label>
-            <textarea id="description-<?=$id?>" type="text" name="description-<?=$id?>" value="<?=@$internship["description"]?>" class="border border-primary-color w-114" placeholder="Lorem ipsum"></textarea>
+            <textarea id="description-<?=$id?>" type="text" name="description-<?=$id?>" class="border border-primary-color w-114" placeholder="Lorem ipsum"><?=@$internship["description"]?></textarea>
         </div>
     </div>
 </div>
