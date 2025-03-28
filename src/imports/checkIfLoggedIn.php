@@ -1,6 +1,6 @@
 <?php
 
-$isloginpage = $_SERVER["REQUEST_URI"] == "/admin_login";
+$isloginpage = $_SERVER["REQUEST_URI"] == "/login";
 
 $usepost = $isloginpage && array_key_exists("username", $_POST);
 
