@@ -76,3 +76,5 @@ CREATE TABLE pages (
 );
 
 INSERT INTO pages (name, title, filename) VALUES ("Hoofdpagina", "ConPHAs", ""), ("Over ons", "Over ConPHAs", "over_ons");
+
+
