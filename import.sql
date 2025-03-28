@@ -75,4 +75,4 @@ CREATE TABLE pages (
     navbar BOOLEAN NOT NULL DEFAULT true
 );
 
-INSERT INTO pages (name, title, filename) VALUES ("Hoofdpagina", "ConPHAs", ""), ("Over ons", "Over ConPHAs", "over_ons"), ("Stageplekken", "Stageplekken bij ConPHAs", "stageplekken"), ("Blog", "ConPHAs Blog", "blog");
+INSERT INTO pages (name, title, filename) VALUES ("Hoofdpagina", "ConPHAs", ""), ("Over ons", "Over ConPHAs", "over_ons"), ("Stageplekken", "Stageplekken bij ConPHAs", "stageplekken"), ("Blog", "Blog van ConPHAs", "blog");
