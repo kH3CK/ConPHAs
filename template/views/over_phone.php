@@ -30,3 +30,4 @@ require_once("../template/components/navbar.php");
     </section>
 </div>
 
+
