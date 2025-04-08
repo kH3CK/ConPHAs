@@ -67,7 +67,7 @@ $logo = getTextFromDatabase(2);
         </div>
     </div>
     <div class="flex flex-row">
-        <div class="basis-1/2 border-r border-r-primary-color border-b border-b-primary-color text-center">
+        <div class="basis-1/2 border-r border-r-primary-color text-center">
             <p>Pagina's bewerken</p>
             <div class="grid grid-cols-3">
             <?php
@@ -84,11 +84,8 @@ $logo = getTextFromDatabase(2);
 
             ?>
             </div>
-            <div class="sticky bottom-2 left-2 text-start m-2 max-w-52">
-                <a href="/logout"><img src="images/arrow-left.png" alt="<-" class="inline w-1/2 h-1/2"> uitloggen</a>
-            </div>
         </div>
-        <div class="basis-1/2 border-b border-b-primary-color text-center">
+        <div class="basis-1/2 text-center">
             <p>Kleur palette</p>
             <?php
 
@@ -105,5 +102,9 @@ $logo = getTextFromDatabase(2);
         </div>
     </div>
 </form>
+<div class="absolute w-1/2 border-r border-r-primary-color h-19"></div>
+<div class="sticky bottom-2 left-2 text-start m-2 max-w-60">
+    <a href="/logout"><img src="images/arrow-left.png" alt="<-" class="inline w-1/4 h-1/4"> uitloggen</a>
+</div>
 <script src="js/previewLogo.js"></script>
 <script src="js/abandonChanges.js"></script>
