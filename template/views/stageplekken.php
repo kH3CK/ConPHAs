@@ -148,24 +148,18 @@ require_once("../template/components/navbar.php");
             <input type="text" placeholder="Trefwoord" class="w-full p-2 mt-2 border rounded">
             <select class="w-full p-2 mt-2 border rounded">
                 <option>opleidings niveau</option>
-                <option>opleidings niveau</option>
             </select>
             <select class="w-full p-2 mt-2 border rounded">
-                <option>locatie</option>
                 <option>locatie</option>
             </select>
             <h2>stage soort</h2>
             <label class="relative inline-flex items-center cursor-pointer">
                 <input type="checkbox" class="sr-only peer">
                 <div class="w-11 h-6 bg-gray-300 peer-focus:ring-4 peer-focus:ring-green-300 
-                <input type="checkbox" class="sr-only peer">
-                <div class="w-11 h-6 bg-gray-300 peer-focus:ring-4 peer-focus:ring-green-300 
                 rounded-full peer peer-checked:bg-green-500 
                 transition duration-300"></div>
                 <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow 
-                <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow 
                 peer-checked:translate-x-5 transition duration-300"></div>
-                <span class="ml-2">afstudeerstage</span>
                 <span class="ml-2">afstudeerstage</span>
             </label>
             <div class="div">
@@ -174,7 +168,6 @@ require_once("../template/components/navbar.php");
                     <div class="w-11 h-6 mt bg-gray-300 peer-focus:ring-4 peer-focus:ring-green-300 
                 rounded-full peer peer-checked:bg-green-500 
                 transition duration-300"></div>
-                    <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow 
                     <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow 
                 peer-checked:translate-x-5 transition duration-300"></div>
                     <span class="ml-2">meewerkstage</span>
