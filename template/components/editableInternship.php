@@ -9,7 +9,7 @@ function makeEditableInternship($internship = []) {
         <input id="image_link-<?=$id?>" type="text" name="image_link-<?=$id?>" value="<?=@$internship["image_link"]?>" class="border border-primary-color w-48" placeholder="https://picsum.photos/200/200">
     </div>
 </div>
-<div class="inline-block align-top">
+ <div class="inline-block align-top">
     <input name="title-<?=$id?>" value="<?=@$internship["title"]?>" class="border border-primary-color mb-5 mt-2<?=$id == "new" ? " w-52" : ""?>" placeholder="<?=$id == "new" ? "Nieuwe " : ""?>Stageplek Naam">
     <div>
         <img src="images/stopwatch.svg" alt="🕑" class="inline">
