@@ -1,23 +1,11 @@
 <?php
 
 require_once("../template/components/head.php");
-
+require_once("../template/components/navbar.php");
 
 ?>
-<nav>
 
-    <div class="container mx-auto flex justify-end items-center flex-start">
-        <div class="hidden sm:block">
-            <div class="flex space-x-4">
-                <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-primary-color">Over ons</a>
-                <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-primary-color">Stage</a>
-                <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-primary-color">Partners</a>
-                <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-primary-color">Contact</a>
-            </div>
-        </div>
-    </div>
-</nav>
-<div class="container mx-auto p-4 mt-16">
+<div class="container mx-auto p-4 mt-30 ">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         <div class="flex justify-center md:justify-end">
             <img src="images/onderzoek.png" alt="" class="md:w-3/5 h-auto">
