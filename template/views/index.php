@@ -126,12 +126,11 @@ require_once("../template/components/head.php");
     <script src="home.js"></script>
     <div class="flex min-h-screen flex-col content-wrapper">
 
-        <section class="relative bg-white overflow-hidden hero-section">
-            <div class="absolute inset-0 bg-gradient-to-r from-white to-white/20 z-10"></div>
+        <section class="py-16 relative bg-white overflow-hidden hero-section">
             <div class="absolute inset-0 opacity-10">
                 <div class="absolute inset-0 bg-gradient-to-r from-green-200 to-white"></div>
             </div>
-            <div class="container mx-auto px-4 py-2020py-20 relative z-20">
+            <div class="max-w-7xl mx-auto z-20 mb-12">
                 <div class="max-w-4xl">
                     <h1 class="text-[#36B843] text-3xl md:text-6xl font-bold mb-6">
                         ConPHAs
@@ -164,7 +163,7 @@ require_once("../template/components/head.php");
         </section>
 
         <section class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center text-[#37852D]">Onze Partners</h2>
                 <p class="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
                     We werken samen met toonaangevende scholen en bedrijven in de bioplastics industrie.
@@ -193,7 +192,7 @@ require_once("../template/components/head.php");
         </section>
 
         <section class="py-16 bg-white">
-            <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                     <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
@@ -257,7 +256,7 @@ require_once("../template/components/head.php");
         </section>
 
         <section class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto px-4">
                 <div class="flex flex-col md:flex-row justify-between items-center mb-12">
                     <div>
                         <h2 class="text-2xl md:text-4xl font-bold text-[#37852D]">Laatste Nieuws</h2>
@@ -342,7 +341,7 @@ require_once("../template/components/head.php");
         </section>
 
         <section class="py-16 bg-white">
-            <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto px-4">
                 <div class="max-w-3xl mx-auto">
                     <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center text-[#37852D]">Veelgestelde Vragen</h2>
                     <p class="text-gray-600 text-center mb-10">
@@ -396,7 +395,7 @@ require_once("../template/components/head.php");
         </section>
 
         <footer class="bg-[#37852D] text-white py-12">
-            <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
 
                     <div class="col-span-1">
