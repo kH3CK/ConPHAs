@@ -13,10 +13,40 @@ require_once("../template/components/navbar.php");
                     <img src="images/onderzoek.png" alt="Stage" class="w-20 h-20 rounded-md object-cover">
                     <div class="ml-4">
                         <h3 class="font-bold">[stagePlekNaam]</h3>
-                        <p class="text-sm">📅 [startDatum] [aantalWeken] | [urenT/Week]</p>
-                        <p class="text-sm">📍 [provincie] | [stad]</p>
-                        <p class="text-sm">✅ [minimumNodigNiveau]</p>
-                        <p class="text-sm">🎓 [typeStage]</p>
+                        <div class="flex flex-col text-sm">
+                            <div class="flex flex-row gap-4">
+                                <div class="flex flex-col">
+                                    <span>📅 Start Datum = 3 | </span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span>Aantal Weken = 3 |</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span>Uren T/Week = 3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-sm">
+                            <div class="flex flex-row gap-4">
+                                <div class="flex flex-col">
+                                    <span>📍 Locatie = Groningen</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-sm">
+                            <div class="flex flex-row gap-4">
+                                <div class="flex flex-col">
+                                    <span>✅ Minimum Niveau = Niveau 3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col text-sm">
+                            <div class="flex flex-row gap-4">
+                                <div class="flex flex-col">
+                                    <span>🎓 type Stage = Afstudeerstage</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="flex items-center bg-green-50 p-4 rounded-lg shadow-md" repeat="10">
@@ -133,16 +163,16 @@ require_once("../template/components/navbar.php");
                 <span class="ml-2">afstudeerstage</span>
             </label>
             <div class="div">
-                <label class="relative inline-flex items-center cursor-pointer">
+                <label class="relative inline-flex items-center cursor-pointer mt-2">
                     <input type="checkbox" class="sr-only peer">
-                    <div class="w-11 h-6 bg-gray-300 peer-focus:ring-4 peer-focus:ring-green-300 
+                    <div class="w-11 h-6 mt bg-gray-300 peer-focus:ring-4 peer-focus:ring-green-300 
                 rounded-full peer peer-checked:bg-green-500 
                 transition duration-300"></div>
                     <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow 
                 peer-checked:translate-x-5 transition duration-300"></div>
                     <span class="ml-2">meewerkstage</span>
                 </label>
-            </div>
+                </div>
             <div class="">
                 <div class="max-w-sm mx-auto">
                     <select id="monthSelect" class="w-full border border-black text-green-700 rounded px-4  py-2 mb-" value="abc">
@@ -172,4 +202,4 @@ require_once("../template/components/navbar.php");
     </div>
 </div>
 
-<script src="js/maand.js"></script>
+<script src="js/maand.js"></script> 
