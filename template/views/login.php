@@ -1,7 +1,7 @@
 <?php
 
+require_once("../src/imports/checkIfLoggedIn.php");
 require_once("../template/components/head.php");
-
 ?>
 
 <div class="flex h-screen items-center justify-end bg-gradient-to-br from-green-300 to-green-400">
@@ -10,17 +10,19 @@ require_once("../template/components/head.php");
             <img src="images/ConPHAs" alt="logo" class="h-16 w-auto mx-auto">
 
             <h2 class="text-2xl font-bold text-gray-700 text-center">Docenten Login</h2>
-            <form class="space-y-4 mt-4">
+            <form class="space-y-4 mt-4" method="post">
                 <div>
-                    <label class="block text-gray-600 text-sm mb-1">E-mailadres</label>
+                    <label class="block text-gray-600 text-sm mb-1">username</label>
                     <input
-                        type="email"
+                        name="username"
+                        type="text"
                         class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                        placeholder="jouw@email.com">
+                        placeholder="username">
                 </div>
                 <div>
                     <label class="block text-gray-600 text-sm mb-1">Wachtwoord</label>
                     <input
+                        name="password"
                         type="password"
                         class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
                         placeholder="••••••••">
