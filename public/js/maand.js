@@ -3,7 +3,7 @@ function selectMonth() {
     const output = document.getElementById("selectedMonth");
     const selectedValue = select.value;
 
-    if (selectedValue && !document.getElementById(`month-${selectedValue}`)) {
+    if (selectedValue && selectedValue != "start" && !document.getElementById(`month-${selectedValue}`)) {
       const chip = document.createElement("div");
       chip.id = `month-${selectedValue}`;
       chip.className = "inline-flex items-center bg-white border  text-green-700 text-sm rounded px-2 py-1 m-1";
