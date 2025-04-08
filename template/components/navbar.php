@@ -36,12 +36,10 @@
             <span class="absolute inset-0 rounded-md bg-[#36B843]/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></span>
           </a>
           <div class="ml-6">
-            <button class="relative overflow-hidden bg-[#36B843] text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-[#36B843]/30 group">
-              <span class="relative z-10">Contact</span>
-              <span class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-              <span class="absolute inset-0 bg-[#36B843] transform group-hover:scale-x-0 transition-transform origin-right duration-300"></span>
-              <span class="absolute inset-0 border-2 border-[#36B843] rounded-full"></span>
-              <span class="absolute text-[#36B843] font-medium z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Contact</span>
+            <button class="relative overflow-hidden bg-[#36B843] text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-[#36B843] hover:shadow-lg hover:shadow-[#36B843]/30 group">
+              <span class="relative z-10 group-hover:text-[#36B843]">Contact</span>
+              <span class="absolute inset-0 w-full h-full bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              <span class="absolute inset-0 rounded-md bg-[#36B843]/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></span>
             </button>
           </div>
         </div>
