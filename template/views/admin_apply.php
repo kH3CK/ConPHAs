@@ -1,7 +1,6 @@
 <?php
 
-// require_once("../src/imports/checkIfLoggedIn.php");
-require_once("../src/imports/connectToDatabase.php");
+require_once("../src/imports/checkIfLoggedIn.php");
 foreach ([$_POST["title"], $_POST["logo"], $_POST["font-link"], $_POST["font-code"]] as $key => $value) {
     $pdo->prepare("UPDATE texts SET text = ? WHERE id = ?")->execute([$value, ++$key]);
 }

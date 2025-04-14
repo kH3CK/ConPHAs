@@ -1,7 +1,6 @@
 <?php
 
-// require_once("../src/imports/checkIfLoggedIn.php");
-require_once("../src/imports/connectToDatabase.php");
+require_once("../src/imports/checkIfLoggedIn.php");
 require_once("../template/components/head.php");
 require_once("../template/components/editableInternship.php");
 

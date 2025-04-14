@@ -1,7 +1,6 @@
 <?php
 
-// require_once("../src/imports/checkIfLoggedIn.php");
-require_once("../src/imports/connectToDatabase.php");
+require_once("../src/imports/checkIfLoggedIn.php");
 $stufftoadd = [];
 $propertiesstring = "";
 $valuesplaceholdersstrings = "";
