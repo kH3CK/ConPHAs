@@ -38,7 +38,6 @@ Om te starten, clone de repository:
 git clone git@github.com:kH3CK/ConPHAs.git
 ```
 
-<!-- Je kan de app openen op je computer door deze te hosten of door gebruik te maken van de **VSCode Extension Live Server**. helemaal niet waar, alleen maar live server is niet genoeg-->
 Daarna:
 1. Installeer **XAMPP** met **Apache**, **PHP** en **MySQL**
 2. Voeg dit toe aan **XAMPP installatie folder\apache\conf\extra\httpd-vhosts.conf**:
