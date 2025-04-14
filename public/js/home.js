@@ -115,4 +115,60 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
   
-  
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.querySelector('.partner-track');
+  const slides = document.querySelectorAll('.partner-slide');
+
+  slides.forEach(slide => {
+      const clone = slide.cloneNode(true);
+      track.appendChild(clone);
+  });
+
+  let position = 0;
+  const slideWidth = 280;
+  const speed = 0.5;
+
+  function updateSlides() {
+      position -= speed;
+
+      if (position <= -slideWidth * slides.length) {
+          position = 0;
+      }
+
+      track.style.transform = `translateX(${position}px)`;
+
+      const visibleIndex = Math.abs(Math.floor(position / slideWidth));
+      slides.forEach((slide, index) => {
+          const isVisible = index >= visibleIndex && index < visibleIndex + 4;
+          slide.classList.toggle('active', isVisible);
+          const clonedSlide = track.children[index + slides.length];
+          if (clonedSlide) {
+              clonedSlide.classList.toggle('active', isVisible);
+          }
+      });
+
+      requestAnimationFrame(updateSlides);
+  }
+
+  requestAnimationFrame(updateSlides);
+
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+
+      question.addEventListener('click', () => {
+          const isOpen = item.classList.contains('active');
+
+          faqItems.forEach(otherItem => {
+              otherItem.classList.remove('active');
+          });
+
+          if (!isOpen) {
+              item.classList.add('active');
+          }
+      });
+  });
+
+  faqItems[0].classList.add('active');
+});

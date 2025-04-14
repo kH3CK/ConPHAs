@@ -59,8 +59,10 @@ Daarna:
 7. Kopieer alles van uit **import.sql** in deze project
 8. Plak het in het groote text area op de pagina
 9. Klik op **Go**
-10. Ga naar http://scrum.conphas
-11. Ga naar http://scrum.conphas/admin als je wil om naar de admin pagina te gaan. Om in te loggen, gebruik gebruikersnaam Jaron en wachtwoord 12346789 <!--gecopypasted van uit mijn backend eindproject met kleine aanpassingen, misschien kan herschereven worden om meer passend te zijn en zou moeten ook double checken als ik geen grammatica/taalfouten hier heb-->
+10. Installeer Node.js
+11. Open command line/git bash/terminal in project folder en voer `npm run build` uit
+12. Ga naar http://scrum.conphas
+13. Ga naar http://scrum.conphas/admin als je wil om naar de admin pagina te gaan. Om in te loggen, gebruik gebruikersnaam Jaron en wachtwoord 12346789 <!--gecopypasted van uit mijn backend eindproject met kleine aanpassingen, misschien kan herschereven worden om meer passend te zijn en zou moeten ook double checken als ik geen grammatica/taalfouten hier heb-->
 
 ## ✍️ Authors
 
