@@ -2,6 +2,7 @@
 
 require_once("../template/components/head.php");
 require_once("../template/components/navbar.php");
+require_once("../template/components/internship.php");
 
 ?>
 
@@ -9,138 +10,13 @@ require_once("../template/components/navbar.php");
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-6 p-6">
         <div class="w-full md:w-3/4">
             <div class="space-y-4">
-                <div class="flex items-center bg-green-50 p-4 rounded-lg shadow-md" repeat="10">
-                    <img src="images/onderzoek.png" alt="Stage" class="w-20 h-20 rounded-md object-cover">
-                    <div class="ml-4">
-                        <h3 class="font-bold">[stagePlekNaam]</h3>
-                        <div class="flex flex-col text-sm">
-                            <div class="flex flex-row gap-4">
-                                <div class="flex flex-col">
-                                    <span>📅 Start Datum = 3 | </span>
-                                </div>
-                                <div class="flex flex-col">
-                                    <span>Aantal Weken = 3 |</span>
-                                </div>
-                                <div class="flex flex-col">
-                                    <span>Uren T/Week = 3</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col text-sm">
-                            <div class="flex flex-row gap-4">
-                                <div class="flex flex-col">
-                                    <span>📍 Locatie = Groningen</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col text-sm">
-                            <div class="flex flex-row gap-4">
-                                <div class="flex flex-col">
-                                    <span>✅ Minimum Niveau = Niveau 3</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col text-sm">
-                            <div class="flex flex-row gap-4">
-                                <div class="flex flex-col">
-                                    <span>🎓 type Stage = Afstudeerstage</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex items-center bg-green-50 p-4 rounded-lg shadow-md" repeat="10">
-                    <img src="images/onderzoek.png" alt="Stage" class="w-20 h-20 rounded-md object-cover">
-                    <div class="ml-4">
-                        <h3 class="font-bold">[stagePlekNaam]</h3>
-                        <p class="text-sm">📅 [startDatum] [aantalWeken] | [urenT/Week]</p>
-                        <p class="text-sm">📍 [provincie] | [stad]</p>
-                        <p class="text-sm">✅ [minimumNodigNiveau]</p>
-                        <p class="text-sm">🎓 [typeStage]</p>
-                    </div>
-                </div>
-                <div class="flex items-center bg-green-50 p-4 rounded-lg shadow-md" repeat="10">
-                    <img src="images/onderzoek.png" alt="Stage" class="w-20 h-20 rounded-md object-cover">
-                    <div class="ml-4">
-                        <h3 class="font-bold">[stagePlekNaam]</h3>
-                        <p class="text-sm">📅 [startDatum] [aantalWeken] | [urenT/Week]</p>
-                        <p class="text-sm">📍 [provincie] | [stad]</p>
-                        <p class="text-sm">✅ [minimumNodigNiveau]</p>
-                        <p class="text-sm">🎓 [typeStage]</p>
-                    </div>
-                </div>
-                <div class="flex items-center bg-green-50 p-4 rounded-lg shadow-md" repeat="10">
-                    <img src="images/onderzoek.png" alt="Stage" class="w-20 h-20 rounded-md object-cover">
-                    <div class="ml-4">
-                        <h3 class="font-bold">[stagePlekNaam]</h3>
-                        <p class="text-sm">📅 [startDatum] [aantalWeken] | [urenT/Week]</p>
-                        <p class="text-sm">📍 [provincie] | [stad]</p>
-                        <p class="text-sm">✅ [minimumNodigNiveau]</p>
-                        <p class="text-sm">🎓 [typeStage]</p>
-                    </div>
-                </div>
-                <div class="flex items-center bg-green-50 p-4 rounded-lg shadow-md" repeat="10">
-                    <img src="images/onderzoek.png" alt="Stage" class="w-20 h-20 rounded-md object-cover">
-                    <div class="ml-4">
-                        <h3 class="font-bold">[stagePlekNaam]</h3>
-                        <p class="text-sm">📅 [startDatum] [aantalWeken] | [urenT/Week]</p>
-                        <p class="text-sm">📍 [provincie] | [stad]</p>
-                        <p class="text-sm">✅ [minimumNodigNiveau]</p>
-                        <p class="text-sm">🎓 [typeStage]</p>
-                    </div>
-                </div>
-                <div class="flex items-center bg-green-50 p-4 rounded-lg shadow-md" repeat="10">
-                    <img src="images/onderzoek.png" alt="Stage" class="w-20 h-20 rounded-md object-cover">
-                    <div class="ml-4">
-                        <h3 class="font-bold">[stagePlekNaam]</h3>
-                        <p class="text-sm">📅 [startDatum] [aantalWeken] | [urenT/Week]</p>
-                        <p class="text-sm">📍 [provincie] | [stad]</p>
-                        <p class="text-sm">✅ [minimumNodigNiveau]</p>
-                        <p class="text-sm">🎓 [typeStage]</p>
-                    </div>
-                </div>
-                <div class="flex items-center bg-green-50 p-4 rounded-lg shadow-md" repeat="10">
-                    <img src="images/onderzoek.png" alt="Stage" class="w-20 h-20 rounded-md object-cover">
-                    <div class="ml-4">
-                        <h3 class="font-bold">[stagePlekNaam]</h3>
-                        <p class="text-sm">📅 [startDatum] [aantalWeken] | [urenT/Week]</p>
-                        <p class="text-sm">📍 [provincie] | [stad]</p>
-                        <p class="text-sm">✅ [minimumNodigNiveau]</p>
-                        <p class="text-sm">🎓 [typeStage]</p>
-                    </div>
-                </div>
-                <div class="flex items-center bg-green-50 p-4 rounded-lg shadow-md" repeat="10">
-                    <img src="images/onderzoek.png" alt="Stage" class="w-20 h-20 rounded-md object-cover">
-                    <div class="ml-4">
-                        <h3 class="font-bold">[stagePlekNaam]</h3>
-                        <p class="text-sm">📅 [startDatum] [aantalWeken] | [urenT/Week]</p>
-                        <p class="text-sm">📍 [provincie] | [stad]</p>
-                        <p class="text-sm">✅ [minimumNodigNiveau]</p>
-                        <p class="text-sm">🎓 [typeStage]</p>
-                    </div>
-                </div>
-                <div class="flex items-center bg-green-50 p-4 rounded-lg shadow-md" repeat="10">
-                    <img src="images/onderzoek.png" alt="Stage" class="w-20 h-20 rounded-md object-cover">
-                    <div class="ml-4">
-                        <h3 class="font-bold">[stagePlekNaam]
-                        </h3>
+                <?php
 
-                        <p class="text-sm">📅 [startDatum] [aantalWeken] | [urenT/Week]</p>
-                        <p class="text-sm">📍 [provincie] | [stad]</p>
-                        <p class="text-sm">✅ [minimumNodigNiveau]</p>
-                        <p class="text-sm">🎓 [typeStage]</p>
-                    </div>
-                </div>
-                <div class="flex items-center bg-green-50 p-4 rounded-lg shadow-md" repeat="10">
-                    <img src="images/onderzoek.png" alt="Stage" class="w-20 h-20 rounded-md object-cover">
-                    <div class="ml-4">
-                        <h3 class="font-bold">[stagePlekNaam]</h3>
-                        <p class="text-sm">📅 [startDatum] [aantalWeken] | [urenT/Week]</p>
-                        <p class="text-sm">📍 [provincie] | [stad]</p>
-                        <p class="text-sm">✅ [minimumNodigNiveau]</p>
-                        <p class="text-sm">🎓 [typeStage]</p>
-                    </div>
-                </div>
+                foreach ($pdo->query("SELECT * FROM internships") as $internship) {
+                    makeInternship($internship);
+                }
+
+                ?>
             </div>
         </div>
         <div class="md:w-1/4 bg-green-100 p-4 rounded-lg md:order-none order-first flex flex-col h-full">
