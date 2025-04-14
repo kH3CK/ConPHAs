@@ -3,6 +3,7 @@
 require_once("../template/components/navbar.php");
 require_once("../src/imports/getTextFromDatabase.php");
 require_once("../template/components/head.php");
+require_once("../template/components/editCompatibleForm.php");
 
 ?>
 <style> /* dit bijna allees kan gewoon naar tailwind herschreven worden, dus TODO: dit */
@@ -490,8 +491,7 @@ require_once("../template/components/head.php");
                             </div>
                         </div>
                     </div>
-                    <form class="mt-4 flex"> <!-- deze form is waarom deze pagina niet compatible is met de edit_page ding, dus hoe
-                        gaan wij dit oplossen? -->
+                    <<?=form()?> class="mt-4 flex">
                         <input
                             type="email"
                             placeholder="Uw e-mailadres"
@@ -499,7 +499,7 @@ require_once("../template/components/head.php");
                         <button class="bg-primary-color hove20-[#20a83e] text-white px-4 py-2 rounded-r-md transition-colors">
                             Aanmelden
                         </button>
-                    </form>
+                    </<?=form()?>>
                 </div>
             </div>
             <div class="border-t border-white/20 mt-8 pt-8 text-center">
