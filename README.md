@@ -30,7 +30,7 @@ Wij werken met de volgende technologieën:
 
 Dit is een **scrumproject** dat wij uitvoeren voor **Noorderpoort**. Hierbij leren wij hoe je goed samenwerkt in teamverband en projectmatig werkt. 
 
-## 📥 Usage/Examples
+## 📥 Usage/Examples <!--waarom zijn sommige headings in het nederlands en sommige in het engels? welke taal zouden wij moeten gebruiken voor deze?-->
 
 Om te starten, clone de repository:
 

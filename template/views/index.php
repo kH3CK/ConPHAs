@@ -119,9 +119,9 @@ require_once("../template/components/head.php");
 <div class="flex min-h-screen flex-col content-wrapper">
 
     <section class="py-16 relative bg-white overflow-hidden hero-section">
-        <div class="absolute inset-0 opacity-10">
+        <!-- <div class="absolute inset-0 opacity-10"> doet deze iets???
             <div class="absolute inset-0 bg-gradient-to-r from-green-200 to-white"></div>
-        </div>
+        </div> -->
         <div class="max-w-7xl mx-auto z-20 mb-12">
             <div class="max-w-4xl">
                 <h1 class="text-primary-color text-3xl md:text-6xl font-bold mb-6">
@@ -490,7 +490,8 @@ require_once("../template/components/head.php");
                             </div>
                         </div>
                     </div>
-                    <form class="mt-4 flex">
+                    <form class="mt-4 flex"> <!-- deze form is waarom deze pagina niet compatible is met de edit_page ding, dus hoe
+                        gaan wij dit oplossen? -->
                         <input
                             type="email"
                             placeholder="Uw e-mailadres"
