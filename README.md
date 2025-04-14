@@ -17,7 +17,7 @@ ConPHAs (Connecting PHAs) verbindt talentvolle studenten met bedrijven in de bio
 
 Wij werken met de volgende technologieën:
 
-- JavaScript, HTML, TailwindCSS, SQL, PHP, React 
+- JavaScript, HTML, TailwindCSS, SQL, PHP 
 
 ## 🔍 Waarom Kiezen Voor ConPHAs?
 
@@ -38,7 +38,29 @@ Om te starten, clone de repository:
 git clone git@github.com:kH3CK/ConPHAs.git
 ```
 
-Je kan de app openen op je computer door deze te hosten of door gebruik te maken van de **VSCode Extension Live Server**. 
+<!-- Je kan de app openen op je computer door deze te hosten of door gebruik te maken van de **VSCode Extension Live Server**. helemaal niet waar, alleen maar live server is niet genoeg-->
+Daarna:
+1. Installeer **XAMPP** met **Apache**, **PHP** en **MySQL**
+2. Voeg dit toe aan **XAMPP installatie folder\apache\conf\extra\httpd-vhosts.conf**:
+    `<VirtualHost *:80>
+    ServerName scrum.conphas
+    DocumentRoot "de pad naar de project folder"
+    <Directory "de pad naar de project folder">
+        Options +Indexes +Includes +FollowSymLinks +MultiViews
+        AllowOverride All
+        Require local
+    </Directory>
+    </VirtualHost>`
+3. Voeg dit toe aan **C:\Windows\System32\drivers\etc\hosts**:
+    `127.0.0.1 scrum.conphas`
+4. Start **Apache** en **MySQL**
+5. Klik op **Admin** in de **MySQL** rij
+6. Klik op **SQL** op de pagina die je was gestuurd naar
+7. Kopieer alles van uit **import.sql** in deze project
+8. Plak het in het groote text area op de pagina
+9. Klik op **Go**
+10. Ga naar http://scrum.conphas
+11. Ga naar http://scrum.conphas/admin als je wil om naar de admin pagina te gaan. Om in te loggen, gebruik gebruikersnaam Jaron en wachtwoord 12346789 <!--gecopypasted van uit mijn backend eindproject met kleine aanpassingen, misschien kan herschereven worden om meer passend te zijn en zou moeten ook double checken als ik geen grammatica/taalfouten hier heb-->
 
 ## ✍️ Authors
 
