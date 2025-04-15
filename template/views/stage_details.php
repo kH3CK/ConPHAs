@@ -14,7 +14,7 @@ $internship = $statement->fetch();
         </div>
         <div class="p-4">
             <h1 class="text-xl font-bold"><?=$internship["title"]?></h1>
-            <p class="text-sm mt-2">
+            <p class="text-sm mb-[-10px]">
 
             <div class="flex items-center space-x-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-primary-color">
