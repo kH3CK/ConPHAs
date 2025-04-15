@@ -137,7 +137,7 @@ require_once("../template/components/editCompatibleForm.php");
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a
                         href="/stageplekken"
-                        class="bg-primary-color hover:bg-[#37852D] text-white px-8 py-3 rounded-md text-lg font-medium transition-colors inline-block text-center">
+                        class="bg-primary-color hover:bg-secondary-color text-white px-8 py-3 rounded-md text-lg font-medium transition-colors inline-block text-center">
                         Vind een stageplek
                     </a>
                     <a
@@ -157,7 +157,7 @@ require_once("../template/components/editCompatibleForm.php");
 
     <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center text-[#37852D]">Onze Partners</h2>
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center text-secondary-color">Onze Partners</h2>
             <p class="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
                 We werken samen met toonaangevende scholen en bedrijven in de bioplastics industrie.
             </p>
@@ -189,7 +189,7 @@ require_once("../template/components/editCompatibleForm.php");
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                 <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div class="absolute inset-0 bg-gradient-to-r from-primary-color/90 to-[#37852D]/90 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-color/90 to-secondary-color/90 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                     <img src="images/stage.jpg" alt="Stage" class="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div class="absolute inset-0 p-8 flex flex-col justify-end z-20">
                         <h3 class="text-2xl font-bold text-white mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -209,14 +209,14 @@ require_once("../template/components/editCompatibleForm.php");
                         </a>
                     </div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end group-hover:opacity-0 transition-opacity">
-                        <h3 class="text-2xl font-bold text-[#37852D] mb-2 bg-white/80 p-2 inline-block">
+                        <h3 class="text-2xl font-bold text-secondary-color mb-2 bg-white/80 p-2 inline-block">
                             Stageplekken
                         </h3>
                     </div>
                 </div>
 
                 <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div class="absolute inset-0 bg-gradient-to-r from-primary-color/90 to-[#37852D]/90 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-color/90 to-secondary-color/90 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                     <img
                         src="images/overons.jpg"
                         alt="over ons"
@@ -239,7 +239,7 @@ require_once("../template/components/editCompatibleForm.php");
                         </a>
                     </div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end group-hover:opacity-0 transition-opacity">
-                        <h3 class="text-2xl font-bold text-[#37852D] mb-2 bg-white/80 p-2 inline-block">
+                        <h3 class="text-2xl font-bold text-secondary-color mb-2 bg-white/80 p-2 inline-block">
                             Over ons
                         </h3>
                     </div>
@@ -252,12 +252,12 @@ require_once("../template/components/editCompatibleForm.php");
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center mb-12">
                 <div>
-                    <h2 class="text-2xl md:text-4xl font-bold text-[#37852D]">Laatste Nieuws</h2>
+                    <h2 class="text-2xl md:text-4xl font-bold text-secondary-color">Laatste Nieuws</h2>
                     <p class="text-gray-600 mt-2">Blijf op de hoogte van de laatste ontwikkelingen</p>
                 </div>
                 <a
                     href="/blog"
-                    class="mt-4 md:mt-0 inline-flex items-center text-primary-color font-medium hover:text-[#37852D] transition-colors">
+                    class="mt-4 md:mt-0 inline-flex items-center text-primary-color font-medium hover:text-secondary-color transition-colors">
                     Alle berichten bekijken
                     <svg xmlns="images/aap.jpg" class="ml-1 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M9 18l6-6-6-6" />
@@ -274,7 +274,7 @@ require_once("../template/components/editCompatibleForm.php");
                         class="w-full h-48 object-cover" />
                     <div class="p-6">
                         <p class="text-sm text-gray-500 mb-2">15 maart 2025</p>
-                        <h3 class="text-xl font-bold mb-2 text-[#37852D]">Nieuw project gelanceerd</h3>
+                        <h3 class="text-xl font-bold mb-2 text-secondary-color">Nieuw project gelanceerd</h3>
                         <p class="text-gray-700 mb-4">We hebben onlangs een nieuw project gelanceerd dat veel aandacht heeft gekregen...</p>
                         <a
                             href="/blog/nieuw-project"
@@ -295,7 +295,7 @@ require_once("../template/components/editCompatibleForm.php");
                         class="w-full h-48 object-cover" />
                     <div class="p-6">
                         <p class="text-sm text-gray-500 mb-2">28 februari 2025</p>
-                        <h3 class="text-xl font-bold mb-2 text-[#37852D]">Uitbreiding van ons team</h3>
+                        <h3 class="text-xl font-bold mb-2 text-secondary-color">Uitbreiding van ons team</h3>
                         <p class="text-gray-700 mb-4">ConPHAs verwelkomt drie nieuwe experts in ons groeiende team van professionals...</p>
                         <a
                             href="/blog/team-uitbreiding"
@@ -316,7 +316,7 @@ require_once("../template/components/editCompatibleForm.php");
                         class="w-full h-48 object-cover" />
                     <div class="p-6">
                         <p class="text-sm text-gray-500 mb-2">10 februari 2025</p>
-                        <h3 class="text-xl font-bold mb-2 text-[#37852D]">Innovatie award gewonnen</h3>
+                        <h3 class="text-xl font-bold mb-2 text-secondary-color">Innovatie award gewonnen</h3>
                         <p class="text-gray-700 mb-4">We zijn trots om aan te kondigen dat ConPHAs de prestigieuze innovatie award heeft gewonnen...</p>
                         <a
                             href="/blog/innovatie-award"
@@ -336,14 +336,14 @@ require_once("../template/components/editCompatibleForm.php");
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="max-w-3xl mx-auto">
-                <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center text-[#37852D]">Veelgestelde Vragen</h2>
+                <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center text-secondary-color">Veelgestelde Vragen</h2>
                 <p class="text-gray-600 text-center mb-10">
                     Antwoorden op de meest gestelde vragen over ConPHAs en onze diensten
                 </p>
                 <div class="faq-container space-y-4">
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span class="font-medium text-[#37852D]">Wat is ConPHAs?</span>
+                            <span class="font-medium text-secondary-color">Wat is ConPHAs?</span>
                             <svg class="faq-icon w-5 h-5 text-primary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
@@ -357,7 +357,7 @@ require_once("../template/components/editCompatibleForm.php");
 
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span class="font-medium text-[#37852D]">Hoe kan ik een stageplek vinden via ConPHAs?</span>
+                            <span class="font-medium text-secondary-color">Hoe kan ik een stageplek vinden via ConPHAs?</span>
                             <svg class="faq-icon w-5 h-5 text-primary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
@@ -371,7 +371,7 @@ require_once("../template/components/editCompatibleForm.php");
 
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span class="font-medium text-[#37852D]">Zijn jullie stages betaald?</span>
+                            <span class="font-medium text-secondary-color">Zijn jullie stages betaald?</span>
                             <svg class="faq-icon w-5 h-5 text-primary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
@@ -387,7 +387,7 @@ require_once("../template/components/editCompatibleForm.php");
         </div>
     </section>
 
-    <footer class="bg-[#37852D] text-white py-12">
+    <footer class="bg-secondary-color text-white py-12">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
 
