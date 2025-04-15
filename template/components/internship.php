@@ -4,7 +4,7 @@
 function makeInternship($internship) {?>
 <!-- slechte HTML maar niet ik heb het geschreven en wij hebben niet veel tijd meer dus ik ga het niet aanraken behalve
 database data inserten en typos corrigeren -->
-<div class="flex items-center bg-green-50 p-4 rounded-lg shadow-md" repeat="10">
+<div class="flex items-center bg-green-50 p-4 rounded-lg shadow-md relative">
     <img src="<?=$internship["image_link"]?>" alt="Stage" class="w-20 h-20 rounded-md object-cover">
     <div class="ml-4">
         <h3 class="font-bold"><?=$internship["title"]?></h3>
@@ -42,8 +42,12 @@ database data inserten en typos corrigeren -->
                 </div>
             </div>
         </div>
+        <a href="/stage_details?id=<?=$internship["id"]?>" class="absolute right-4 bottom-2">
+            <button class="bg-primary-color text-primary-background rounded p-1 m-1 cursor-pointer">Bekijk Stage</button>
+        </a>
     </div>
 </div>
+
 <?php }
 
 ?>
