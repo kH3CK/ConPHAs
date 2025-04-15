@@ -2,6 +2,9 @@
 
 require_once("../template/components/head.php");
 require_once("../template/components/navbar.php");
+$statement = $pdo->prepare("SELECT * FROM internships WHERE id = :id");
+$statement->execute($_GET);
+$internship = $statement->fetch();
 
 ?>
 <div class="container mx-auto p-4 mt-32">
@@ -10,7 +13,7 @@ require_once("../template/components/navbar.php");
             <img src="images/onderzoek.png" alt="" class="md:w-[550px] h-auto">
         </div>
         <div class="p-4">
-            <h1 class="text-xl font-bold">[stage naam]</h1>
+            <h1 class="text-xl font-bold"><?=$internship["title"]?></h1>
             <p class="text-sm mt-2">
 
             <div class="flex items-center space-x-2">
@@ -19,15 +22,15 @@ require_once("../template/components/navbar.php");
                 </svg>
                 <div class="flex flex-col">
                     <span>Start Datum |</span>
-                    <span>3</span>
+                    <span><?=$internship["start_date_and_time"]?></span>
                 </div>
                 <div class="flex flex-col">
                     <span>Aantal Weken |</span>
-                    <span>3</span>
+                    <span><?=$internship["weeks"]?></span>
                 </div>
                 <div class="flex flex-col">
-                    <span>Uren T/Week</span>
-                    <span>3</span>
+                    <span>Aantal Uren</span>
+                    <span><?=$internship["hours"]?></span>
                 </div>
             </div>
             <div class="flex items-center space-x-2">
@@ -37,7 +40,7 @@ require_once("../template/components/navbar.php");
                 </svg>
                 <div class="flex flex-col">
                     <span>Locatie</span>
-                    <span>Groningen</span>
+                    <span><?=$internship["location"]?></span>
                 </div>
             </div>
             <div class="flex items-center space-x-2">
@@ -45,8 +48,8 @@ require_once("../template/components/navbar.php");
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
                 </svg>
                 <div class="flex flex-col">
-                    <span>Minium niveau</span>
-                    <span>Niveau 3</span>
+                    <span>Minium Niveau</span>
+                    <span><?=$internship["minimum_level"]?></span>
                 </div>
             </div>
             <div class="flex items-center space-x-2">
@@ -54,13 +57,13 @@ require_once("../template/components/navbar.php");
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
                 </svg>
                 <div class="flex flex-col">
-                    <span>type Stage</span>
-                    <span>Afstudeerstage</span>
+                    <span>Type Stage</span>
+                    <span><?=$internship["type"]?></span>
                 </div>
             </div>
             <div class="mt-4 p-4 bg-green-100 rounded-lg max-w-sm">
                 <div class="text-sm text-green-900">
-                    Lorem ipsum dolor sit amet consectetur. Vitae non libero etiam suscipit vel pulvinar varius morbi faucibus..
+                    <?=$internship["description"]?>
                 </div>
                 <div class="mt-4">
                     <h2 class="font-bold">Contact gegevens stage bedrijf</h2>
