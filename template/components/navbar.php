@@ -17,26 +17,26 @@
         <div class="hidden md:flex items-center space-x-1">
           <a href="/" class="relative px-5 py-2.5 font-medium text-gray-800 group">
             <span class="relative z-10">Home</span>
-            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#36B843] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-color transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             <span class="absolute inset-0 rounded-md bg-[#36B843]/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></span>
           </a>
           <a href="/stageplekken" class="relative px-5 py-2.5 font-medium text-gray-800 group">
             <span class="relative z-10">Stage</span>
-            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#36B843] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-color transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             <span class="absolute inset-0 rounded-md bg-[#36B843]/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></span>
           </a>
           <a href="/over_ons" class="relative px-5 py-2.5 font-medium text-gray-800 group">
             <span class="relative z-10">Over Ons</span>
-            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#36B843] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-color transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             <span class="absolute inset-0 rounded-md bg-[#36B843]/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></span>
           </a>
           <a href="/blog" class="relative px-5 py-2.5 font-medium text-gray-800 group">
-            <span class="relative z-10">blog</span>
-            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#36B843] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span class="relative z-10">Blog</span>
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-color transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             <span class="absolute inset-0 rounded-md bg-[#36B843]/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></span>
           </a>
           <div class="ml-6">
-            <button class="relative overflow-hidden bg-[#36B843] text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-[#36B843] hover:shadow-lg hover:shadow-[#36B843]/30 group">
+            <button class="relative overflow-hidden bg-primary-color text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-primary-color hover:shadow-lg hover:shadow-[#36B843]/30 group">
               <span class="relative z-10 group-hover:text-[#36B843]">Contact</span>
               <span class="absolute inset-0 w-full h-full bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               <span class="absolute inset-0 rounded-md bg-[#36B843]/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></span>
@@ -47,7 +47,7 @@
         <div class="md:hidden flex items-center">
           <button
             id="menuButton"
-            class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-[#36B843] hover:bg-gray-100 transition-colors duration-200 focus:outline-none"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary-color hover:bg-gray-100 transition-colors duration-200 focus:outline-none"
           >
             <span class="sr-only">Open hoofdmenu</span>
             <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -63,17 +63,17 @@
     
     <div id="mobileMenu" class="md:hidden absolute w-full bg-white shadow-lg transition-all duration-300 ease-in-out transform opacity-0 -translate-y-10 pointer-events-none">
       <div class="px-4 pt-2 pb-3 space-y-1">
-        <a href="/" class="block px-4 py-3 rounded-md text-base font-medium text-gray-800 hover:text-[#36B843] hover:bg-gray-50 transition-colors duration-200">
+        <a href="/" class="block px-4 py-3 rounded-md text-base font-medium text-gray-800 hover:text-primary-color hover:bg-gray-50 transition-colors duration-200">
           Home
         </a>
-        <a href="/stage" class="block px-4 py-3 rounded-md text-base font-medium text-gray-800 hover:text-[#36B843] hover:bg-gray-50 transition-colors duration-200">
+        <a href="/stage" class="block px-4 py-3 rounded-md text-base font-medium text-gray-800 hover:text-primary-color hover:bg-gray-50 transition-colors duration-200">
           Stage
         </a>
-        <a href="/over-ons" class="block px-4 py-3 rounded-md text-base font-medium text-gray-800 hover:text-[#36B843] hover:bg-gray-50 transition-colors duration-200">
+        <a href="/over-ons" class="block px-4 py-3 rounded-md text-base font-medium text-gray-800 hover:text-primary-color hover:bg-gray-50 transition-colors duration-200">
           Over Ons
         </a>
         <div class="pt-2 pb-3">
-          <button class="w-full bg-[#36B843] text-white px-4 py-3 rounded-md font-medium hover:bg-[#2da539] transition-colors duration-200">
+          <button class="w-full bg-primary-color text-white px-4 py-3 rounded-md font-medium hover:bg-[#2da539] transition-colors duration-200">
             Contact
           </button>
         </div>
