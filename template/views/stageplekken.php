@@ -23,7 +23,7 @@ require_once("../template/components/internship.php");
             <h2 class="font-bold">Filters</h2>
             <input type="text" placeholder="Trefwoord" class="w-full p-2 mt-2 border rounded">
             <select id="mbo" class="w-full p-2 mt-2 border rounded">
-                <option>opleidings niveau</option>
+                <option>Opleidings niveau</option>
                 <option value="mbo1">mbo 1</option>
                 <option value="mbo2">mbo 2</option>
                 <option value="mbo3">mbo 3</option>
@@ -31,9 +31,6 @@ require_once("../template/components/internship.php");
                 <option value="hbo">hbo</option>
             </select>
             <div id="iets" class="flex flex-wrap"></div>
-            <select class="w-full p-2 mt-2 border rounded">
-                <option>locatie</option>
-            </select>
             <h2>stage soort</h2>
             <label class="relative inline-flex items-center cursor-pointer">
                 <input type="checkbox" class="sr-only peer">
