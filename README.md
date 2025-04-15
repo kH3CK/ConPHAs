@@ -56,7 +56,7 @@ Daarna:
 5. Klik op **Admin** in de **MySQL** rij
 6. Klik op **SQL** op de pagina die je was gestuurd naar
 7. Kopieer alles van uit **import.sql** in deze project
-8. Plak het in het groote text area op de pagina
+8. Plak het gene wat je hebt gekopieert in het lege vlak
 9. Klik op **Go**
 10. Installeer Node.js
 11. Open command line/git bash/terminal in project folder en voer `npm install` en `npm run build` uit.
