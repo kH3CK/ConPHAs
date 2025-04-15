@@ -22,7 +22,7 @@ $internship = $statement->fetch();
                 </svg>
                 <div class="flex flex-col">
                     <span>Start Datum |</span>
-                    <span><?=$internship["start_date_and_time"]?></span>
+                    <span><?=str_replace(" ", "<br>", $internship["start_date_and_time"])?></span>
                 </div>
                 <div class="flex flex-col">
                     <span>Aantal Weken |</span>
