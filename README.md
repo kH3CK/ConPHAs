@@ -39,9 +39,10 @@ git clone git@github.com:kH3CK/ConPHAs.git
 ```
 
 Daarna:
-1. Installeer **XAMPP** met **Apache**, **PHP** en **MySQL**
-2. Voeg dit toe aan **XAMPP installatie folder\apache\conf\extra\httpd-vhosts.conf**:
-    `<VirtualHost *:80>
+1. Installeer **XAMPP** met **Apache**, **PHP** en **MySQL**.
+2. Voeg dit toe aan **XAMPP installatie folder\apache\conf\extra\httpd-vhosts.conf**:  
+```
+    <VirtualHost *:80>
     ServerName scrum.conphas
     DocumentRoot "de pad naar de project folder"
     <Directory "de pad naar de project folder">
@@ -50,18 +51,19 @@ Daarna:
         Require local
     </Directory>
     </VirtualHost>`
-3. Voeg dit toe aan **C:\Windows\System32\drivers\etc\hosts**:
+```
+3. Voeg dit toe aan **C:\Windows\System32\drivers\etc\hosts**:  
     `127.0.0.1 scrum.conphas`
-4. Start **Apache** en **MySQL**
-5. Klik op **Admin** in de **MySQL** rij
-6. Klik op **SQL** op de pagina die je was gestuurd naar
-7. Kopieer alles van uit **import.sql** in deze project
-8. Plak het gene wat je hebt gekopieert in het lege vlak
-9. Klik op **Go**
-10. Installeer Node.js
-11. Open command line/git bash/terminal in project folder en voer `npm install` en `npm run build` uit.
-12. Ga naar http://scrum.conphas
-13. Ga naar http://scrum.conphas/admin als je naar de admin pagina wil. Om in te loggen, gebruik gebruikersnaam Jaron en wachtwoord 12346789 <!--gecopypasted van uit mijn backend eindproject met kleine aanpassingen, misschien kan herschereven worden om meer passend te zijn en zou moeten ook double checken als ik geen grammatica/taalfouten hier heb-->
+4. Start **Apache** en **MySQL**.
+5. Klik op **Admin** in de **MySQL** rij.
+6. Klik op **SQL** op de pagina die jij was gestuurd naar.
+7. Kopieer alles van uit **import.sql** in deze project.
+8. Plak het gene wat je hebt gekopieert in het lege vlak.
+9. Klik op **Go**.
+10. Installeer **Node.js**.
+11. Open **Command Line**/**Git Bash**/**Terminal** in project folder en voer `npm install` en `npm run build` uit.
+12. Ga naar http://scrum.conphas.
+13. Ga naar http://scrum.conphas/admin als je naar de admin pagina wil. Om in te loggen, gebruik gebruikersnaam Jaron en wachtwoord 12346789. <!--gecopypasted van uit mijn backend eindproject met kleine aanpassingen, misschien kan herschereven worden om meer passend te zijn en zou moeten ook double checken als ik geen grammatica/taalfouten hier heb-->
 
 ## ✍️ Authors
 
