@@ -6,7 +6,7 @@ require_once("../template/components/head.php");
 require_once("../template/components/editCompatibleForm.php");
 
 ?>
-<style> /* dit bijna allees kan gewoon naar tailwind herschreven worden, dus TODO: dit */
+<style>
     .logo-slider {
         transition: transform 0.5s ease-in-out;
     }
@@ -129,7 +129,7 @@ require_once("../template/components/editCompatibleForm.php");
                     Jouw springplank naar een <span class="text-primary-color">groene carrière</span>
                 </h2>
                 <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl">
-                    Bij ConPHAs helpen we jonge studenten hun eerste stappen te zetten in de wereld van bioplastics.
+                    <?=getTextFromDatabase(5)?>
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a
@@ -507,4 +507,4 @@ require_once("../template/components/editCompatibleForm.php");
         </div>
     </footer>
 </div>
-<script src="home.js"></script>
+<script src="js/home.js"></script>

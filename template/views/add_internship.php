@@ -15,5 +15,3 @@ $valuesplaceholdersstrings = substr($valuesplaceholdersstrings, 0, -2);
 echo "INSERT INTO internships (" . $propertiesstring . ") VALUES (" . $valuesplaceholdersstrings . ")";
 $pdo->prepare("INSERT INTO internships (" . $propertiesstring . ") VALUES (" . $valuesplaceholdersstrings . ")")->execute($stufftoadd);
 header("Location: edit_internships");
-
-?>
