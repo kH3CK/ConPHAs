@@ -88,9 +88,9 @@ require_once("../template/components/editableInternship.php");
                 $statement = $pdo->query("SELECT * FROM internships" . ($searchstring ?? ""));
             }
             foreach ($statement->fetchAll() as $internship) {
-                $id = $internship["id"]; ?>
+                $id = $internship["id"];?>
                 <div class="border border-primary-color m-6 relative">
-                    <a href="/remove_internship?id=<?= $id ?>" class="absolute w-10 h-10 bg-danger border border-primary-color -top-5 -right-5 flex justify-center items-center text-center">
+                    <a href="/remove_internship?id=<?=$id?>" class="absolute w-10 h-10 bg-danger border border-primary-color -top-5 -right-5 flex justify-center items-center text-center">
                         <p class="text-primary-background text-xl">X</p>
                     </a>
                     <?= makeEditableInternship($internship) ?>

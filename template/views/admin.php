@@ -67,10 +67,10 @@ $logo = getTextFromDatabase(2);
         </div>
     </div>
     <div class="flex flex-row">
-        <div class="basis-1/2 border-r border-r-primary-color text-center relative">
+        <div class="basis-1/2 border-r border-r-primary-color text-center">
             <p>Blogs bewerken</p>
             <div class="flex justify-center">
-                <div class="border border-black m-4.5 p-2">
+                <div class="border border-black m-4.5 p-2 relative">
                     <img alt="Afbeelding" previewId="new-blog">
                     <input class="border border-primary-color block mt-2" type="text" placeholder="Titel" name="blog-title-new">
                     <input class="border border-primary-color block mt-2" type="text" placeholder="Auteur" name="blog-author-new">
@@ -94,7 +94,10 @@ $logo = getTextFromDatabase(2);
                         $categories .= $category["name"] . ",,, ";
                     }
                     $categories = substr($categories, 0, -4);?>
-                <div class="border border-black m-4.5 p-2">
+                <div class="border border-black m-4.5 p-2 relative">
+                    <a href="/remove_blog?id=<?=$id?>" class="absolute w-10 h-10 bg-danger border border-primary-color -top-5 -right-5 flex justify-center items-center text-center">
+                        <p class="text-primary-background text-xl">X</p>
+                    </a>
                     <div class="flex justify-center">
                         <img alt="Afbeelding" previewId="<?=$id?>" src="<?=$image_link?>">
                     </div>
