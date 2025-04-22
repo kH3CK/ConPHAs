@@ -1,19 +1,18 @@
 <body>
-  
+
   <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white py-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        
+
         <div class="flex-shrink-0 flex items-center">
           <a href="/">
-            <img 
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ConPHAs-NQY4PeiYlO4Qvtxqaox8UBqm86H33v.png" 
-              alt="ConPHAs Logo" 
-              class="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
-            >
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ConPHAs-NQY4PeiYlO4Qvtxqaox8UBqm86H33v.png"
+              alt="ConPHAs Logo"
+              class="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105">
           </a>
         </div>
-        
+
         <div class="hidden md:flex items-center space-x-1">
           <a href="/" class="relative px-5 py-2.5 font-medium text-gray-800 group">
             <span class="relative z-10">Home</span>
@@ -47,8 +46,7 @@
         <div class="md:hidden flex items-center">
           <button
             id="menuButton"
-            class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary-color hover:bg-gray-100 transition-colors duration-200 focus:outline-none"
-          >
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary-color hover:bg-gray-100 transition-colors duration-200 focus:outline-none">
             <span class="sr-only">Open hoofdmenu</span>
             <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -60,7 +58,7 @@
         </div>
       </div>
     </div>
-    
+
     <div id="mobileMenu" class="md:hidden absolute w-full bg-white shadow-lg transition-all duration-300 ease-in-out transform opacity-0 -translate-y-10 pointer-events-none">
       <div class="px-4 pt-2 pb-3 space-y-1">
         <a href="/" class="block px-4 py-3 rounded-md text-base font-medium text-gray-800 hover:text-primary-color hover:bg-gray-50 transition-colors duration-200">
@@ -81,20 +79,19 @@
     </div>
   </nav>
   <script>
-   
     document.addEventListener('DOMContentLoaded', function() {
-    
+
       const navbar = document.getElementById('navbar');
       const menuButton = document.getElementById('menuButton');
       const mobileMenu = document.getElementById('mobileMenu');
       const menuIcon = document.getElementById('menuIcon');
       const closeIcon = document.getElementById('closeIcon');
-      
+
       let isMenuOpen = false;
 
       function toggleMenu() {
         isMenuOpen = !isMenuOpen;
-        
+
         if (isMenuOpen) {
           mobileMenu.classList.remove('opacity-0', '-translate-y-10', 'pointer-events-none');
           mobileMenu.classList.add('opacity-100', 'translate-y-0');

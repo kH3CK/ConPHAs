@@ -76,7 +76,7 @@ require_once("../template/components/internship.php");
                     ?>
                 </div>
                 <div id="iets" class="flex flex-wrap"></div>
-                
+
                 <h2>stage soort</h2>
                 <label class="relative inline-flex items-center cursor-pointer">
                     <input type="checkbox" class="sr-only peer">
@@ -97,7 +97,7 @@ require_once("../template/components/internship.php");
                     peer-checked:translate-x-5 transition duration-300"></div>
                         <span class="ml-2">meewerkstage</span>
                     </label>
-                    </div>
+                </div>
                 <div class="">
                     <div class="max-w-sm mx-auto">
                         <select id="monthSelect" class="w-full border border-black text-green-700 rounded px-4  py-2 mb-" value="abc">
@@ -128,5 +128,5 @@ require_once("../template/components/internship.php");
     </div>
 </div>
 
-<script src="js/maand.js"></script> 
+<script src="js/maand.js"></script>
 <script src="js/mbo.js"></script>

@@ -16,7 +16,7 @@ require_once("../template/components/editableInternship.php");
 
             $monthstring = "";
             $levelstring = "";
-            for ($i=1; $i < 12; $i++) { 
+            for ($i = 1; $i < 12; $i++) {
                 if (isset($_GET["month-" . $i])) {
                     $monthstring = $monthstring . "MONTH(start_date_and_time) = " . $i . " OR ";
                 }
@@ -88,13 +88,13 @@ require_once("../template/components/editableInternship.php");
                 $statement = $pdo->query("SELECT * FROM internships" . ($searchstring ?? ""));
             }
             foreach ($statement->fetchAll() as $internship) {
-                $id = $internship["id"];?>
-            <div class="border border-primary-color m-6 relative">
-                <a href="/remove_internship?id=<?=$id?>" class="absolute w-10 h-10 bg-danger border border-primary-color -top-5 -right-5 flex justify-center items-center text-center">
-                    <p class="text-primary-background text-xl">X</p>
-                </a>
-                <?=makeEditableInternship($internship)?>
-            </div>
+                $id = $internship["id"]; ?>
+                <div class="border border-primary-color m-6 relative">
+                    <a href="/remove_internship?id=<?= $id ?>" class="absolute w-10 h-10 bg-danger border border-primary-color -top-5 -right-5 flex justify-center items-center text-center">
+                        <p class="text-primary-background text-xl">X</p>
+                    </a>
+                    <?= makeEditableInternship($internship) ?>
+                </div>
             <?php }
 
             ?>
@@ -148,7 +148,7 @@ require_once("../template/components/editableInternship.php");
         </div>
         <form action="/add_internship" method="post">
             <div class="border border-primary-color m-6 relative">
-                <?=makeEditableInternship()?>
+                <?= makeEditableInternship() ?>
             </div>
             <div class="text-center">
                 <button class="bg-primary-color border border-primary-color p-2 text-primary-background m-2">Toevoegen</button>
@@ -156,5 +156,5 @@ require_once("../template/components/editableInternship.php");
         </form>
     </div>
 </div>
-<?php require_once("../template/components/backButton.php");?>
+<?php require_once("../template/components/backButton.php"); ?>
 <script src="js/abandonChanges.js"></script>
