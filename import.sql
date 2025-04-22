@@ -110,4 +110,4 @@ INSERT INTO blogs (title, preview_text, text, author, publication_date, image_li
 "Duurzame landbouw is essentieel voor het behoud van onze ecosystemen. In deze blog verkennen we innovatieve landbouwmethoden die de impact op het milieu verminderen en tegelijkertijd de voedselproductie verbeteren.",
 "lorem ipsum", "Sophie Bakker", "2023-02-10 11:05:15", "https://media1.thrillophilia.com/filestore/uwpz857lua13qmvub6um2v93dlrm_IMG%20Worlds%20%20of%20Adventure.jpg");
 
-INSERT INTO categories (blog_id, name) VALUES (1, "Duurzamheid"), (1, "Innovatie"), (2, "Groene chemie"), (2, "Circulaire economie"), (3, "Duurzaamheid")
+INSERT INTO categories (blog_id, name) VALUES (1, "Duurzaamheid"), (1, "Innovatie"), (2, "Groene chemie"), (2, "Circulaire economie"), (3, "Duurzaamheid");
