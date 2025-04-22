@@ -1,39 +1,13 @@
 <?php
 
-$months = [
-    null, // geen "0" maand
-    "januari",
-    "februari",
-    "maart",
-    "april",
-    "mei",
-    "juni",
-    "juli",
-    "augustus",
-    "september",
-    "oktober",
-    "november",
-    "december"
-];
+require_once("../src/imports/convertDateToText.php");
 
-function makeBlog(array $blog, $preview = true) {
-    $dateandtime = $blog["publication_date"];
-    $splitdateandtime = explode(" ", $dateandtime);
-    $splittime = explode(":", $splitdateandtime[1]);
-    $splitdate = explode("-", $splitdateandtime[0]);
-    $currenttime = time();
-    $year = $splitdate[0];
-    $datestring = date("y-m-d", $currenttime) == substr($splitdateandtime[0], 2) ?
-    "Vandaag, " . $splittime[0] . ":" . $splittime[1] :
-    $splitdate[2] . " " . $GLOBALS["months"][(int)$splitdate[1]] .
-    (date("y", $currenttime) == substr($year, 2) ?
-    "" :
-    " $year");?>
+function makeBlog(array $blog, bool $preview = true) {?>
 <article class="bg-white shadow-md rounded-lg overflow-hidden mb-10">
     <img src="<?=$blog["image_link"]?>" alt="Afbeelding" class="w-full h-64 object-cover">
     <div class="p-6">
         <div class="flex items-center text-sm text-gray-500 mb-2">
-            <span><?=$datestring?></span>
+            <span><?=convertDateToText($blog["publication_date"])?></span>
             <span class="mx-2">•</span>
             <span>Door: <?=$blog["author"]?></span>
         </div>
@@ -41,7 +15,7 @@ function makeBlog(array $blog, $preview = true) {
         <p class="text-gray-600 mb-4">
             <?=$blog[($preview ? "preview_": "") . "text"]?>
         </p>
-        <?php
+<?php
 
 if ($preview) {?>
         <a href="/blog_details?id=<?=$blog["id"]?>" class="inline-flex items-center text-conphas-green hover:text-green-700">
@@ -52,7 +26,7 @@ if ($preview) {?>
         </a>
 <?php }
 
-        ?>
+?>
     </div>
 </article>
 <?php }

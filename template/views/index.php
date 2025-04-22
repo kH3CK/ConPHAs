@@ -3,6 +3,7 @@
 require_once("../template/components/navbar.php");
 require_once("../src/imports/getTextFromDatabase.php");
 require_once("../template/components/head.php");
+require_once("../src/imports/convertDateToText.php");
 
 ?>
 <style> /* dit bijna alles kan gewoon naar tailwind herschreven worden, dus TODO: dit */
@@ -262,69 +263,32 @@ require_once("../template/components/head.php");
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <?php 
 
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img
-                        src="images/project.webp"
-                        alt="Nieuw project gelanceerd"
-                        class="w-full h-48 object-cover" />
-                    <div class="p-6">
-                        <p class="text-sm text-gray-500 mb-2">15 maart 2025</p>
-                        <h3 class="text-xl font-bold mb-2 text-secondary-color">Nieuw project gelanceerd</h3>
-                        <p class="text-gray-700 mb-4">We hebben onlangs een nieuw project gelanceerd dat veel aandacht heeft gekregen...</p>
-                        <a
-                            href="/blog/nieuw-project"
-                            class="text-primary-color font-medium hover:underline inline-flex items-center">
-                            Lees meer
-                            <svg xmlns="images/aap.jpg" class="ml-1 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14"></path>
-                                <path d="m12 5 7 7-7 7"></path>
-                            </svg>
-                        </a>
+                foreach ($pdo->query("SELECT * FROM blogs LIMIT 3") as $blog) {?>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <img
+                            src="<?=$blog["image_link"]?>"
+                            alt="Afbeelding"
+                            class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2"><?=convertDateToText($blog["publication_date"])?></p>
+                            <h3 class="text-xl font-bold mb-2 text-secondary-color"><?=$blog["title"]?></h3>
+                            <p class="text-gray-700 mb-4"><?=$blog["preview_text"]?></p>
+                            <a
+                                href="/blog_details?id=<?=$blog["id"]?>"
+                                class="text-primary-color font-medium hover:underline inline-flex items-center">
+                                Lees meer
+                                <svg xmlns="images/aap.jpg" class="ml-1 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                <?php }
 
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img
-                        src="images/team.jpg"
-                        alt="Uitbreiding van ons team"
-                        class="w-full h-48 object-cover" />
-                    <div class="p-6">
-                        <p class="text-sm text-gray-500 mb-2">28 februari 2025</p>
-                        <h3 class="text-xl font-bold mb-2 text-secondary-color">Uitbreiding van ons team</h3>
-                        <p class="text-gray-700 mb-4">ConPHAs verwelkomt drie nieuwe experts in ons groeiende team van professionals...</p>
-                        <a
-                            href="/blog/team-uitbreiding"
-                            class="text-primary-color font-medium hover:underline inline-flex items-center">
-                            Lees meer
-                            <svg xmlns="images/aap.jpg" class="ml-1 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14"></path>
-                                <path d="m12 5 7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img
-                        src="images/award.jpg"
-                        alt="Innovatie award gewonnen"
-                        class="w-full h-48 object-cover" />
-                    <div class="p-6">
-                        <p class="text-sm text-gray-500 mb-2">10 februari 2025</p>
-                        <h3 class="text-xl font-bold mb-2 text-secondary-color">Innovatie award gewonnen</h3>
-                        <p class="text-gray-700 mb-4">We zijn trots om aan te kondigen dat ConPHAs de prestigieuze innovatie award heeft gewonnen...</p>
-                        <a
-                            href="/blog/innovatie-award"
-                            class="text-primary-color font-medium hover:underline inline-flex items-center">
-                            Lees meer
-                            <svg xmlns="images/aap.jpg" class="ml-1 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14"></path>
-                                <path d="m12 5 7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+                ?>
             </div>
         </div>
     </section>
