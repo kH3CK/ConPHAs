@@ -160,4 +160,5 @@ require_once("../template/components/internship.php");
 </div>
 
 <script src="js/maand.js"></script>
+<script src="js/maand.js"></script>
 <script src="js/mbo.js"></script>

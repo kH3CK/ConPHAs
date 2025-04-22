@@ -3,10 +3,9 @@
 require_once("../template/components/navbar.php");
 require_once("../src/imports/getTextFromDatabase.php");
 require_once("../template/components/head.php");
-require_once("../template/components/editCompatibleForm.php");
 
 ?>
-<style> /* dit bijna allees kan gewoon naar tailwind herschreven worden, dus TODO: dit */
+<style> /* dit bijna alles kan gewoon naar tailwind herschreven worden, dus TODO: dit */
     .logo-slider {
         transition: transform 0.5s ease-in-out;
     }
@@ -129,7 +128,7 @@ require_once("../template/components/editCompatibleForm.php");
                     Jouw springplank naar een <span class="text-primary-color">groene carrière</span>
                 </h2>
                 <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl">
-                    Bij ConPHAs helpen we jonge studenten hun eerste stappen te zetten in de wereld van bioplastics.
+                    <?=getTextFromDatabase(5)?>
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a
@@ -488,7 +487,7 @@ require_once("../template/components/editCompatibleForm.php");
                             </div>
                         </div>
                     </div>
-                    <<?=form()?> class="mt-4 flex">
+                    <form class="mt-4 flex">
                         <input
                             type="email"
                             placeholder="Uw e-mailadres"
@@ -496,7 +495,7 @@ require_once("../template/components/editCompatibleForm.php");
                         <button class="bg-primary-color hove20-[#20a83e] text-white px-4 py-2 rounded-r-md transition-colors">
                             Aanmelden
                         </button>
-                    </<?=form()?>>
+                    </form>
                 </div>
             </div>
             <div class="border-t border-white/20 mt-8 pt-8 text-center">
@@ -507,4 +506,4 @@ require_once("../template/components/editCompatibleForm.php");
         </div>
     </footer>
 </div>
-<script src="home.js"></script>
+<script src="js/home.js"></script>
