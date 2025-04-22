@@ -18,6 +18,8 @@ foreach ($stufftochange as $id => $properties) {
     }
     $setstring = substr($setstring, 0, -2);
     $properties["id"] = $id;
+    // ik weet dat direct data inserten in een prepated statement gaat tegen het doel van een prepared statement, maar dit is
+    // onbelangrijk in deze situatie want alleen een admin kan naar deze pagina gaan
     $pdo->prepare("UPDATE internships SET " . $setstring . " WHERE id = :id")->execute($properties);
 }
 header("Location: edit_internships");

@@ -13,10 +13,10 @@ $logo = getTextFromDatabase(2);
             <div class="flex flex-row items-center mt-5">
                 <div class="basis-1/2">
                     <div class="flex items-center justify-center mb-5">
-                        <img id="logo-img" src="<?= $logo ?>" alt="Logo" class="border border-primary-color">
+                        <img src="<?=$logo?>" alt="Logo" class="border border-primary-color preview-img" previewId="logo">
                     </div>
                     <div class="flex items-center justify-center">
-                        <input name="logo" id="logo-input" type="text" value="<?= $logo ?>" class="border border-primary-color w-xs">
+                        <input name="logo" type="text" value="<?=$logo?>" class="border border-primary-color w-xs preview-input" previewId="logo">
                     </div>
                 </div>
                 <div class="basis-1/2 flex items-center justify-center">
@@ -58,9 +58,8 @@ $logo = getTextFromDatabase(2);
                         <li>Selecteer een font</li>
                         <li>Klik op "Get font"</li>
                         <li>Klik op "Get embed code"</li>
-                        <li>Copier de link die begint met<br>
-                            <strong>https://fonts.googleapis.com/css2?family</strong> (link)
-                        </li>
+                        <li>Kopieer de link die begint met<br>
+                            <strong>https://fonts.googleapis.com/css2?family</strong> (link)</li>
                         <li>Dan copier het ding tussen <strong>font-family: </strong> en <strong>;</strong> op dezelfde regel (code)</li>
                     </ol>
                 </div>
@@ -68,19 +67,46 @@ $logo = getTextFromDatabase(2);
         </div>
     </div>
     <div class="flex flex-row">
-        <div class="basis-1/2 border-r border-r-primary-color text-center">
-            <p>Pagina's bewerken</p>
-            <div class="grid grid-cols-3">
+        <div class="basis-1/2 border-r border-r-primary-color text-center relative">
+            <p>Blogs bewerken</p>
+            <div class="flex justify-center">
+                <div class="border border-black m-4.5 p-2">
+                    <img alt="Afbeelding" previewId="new-blog">
+                    <input class="border border-primary-color block mt-2" type="text" placeholder="Titel" name="blog-title-new">
+                    <input class="border border-primary-color block mt-2" type="text" placeholder="Auteur" name="blog-author-new">
+                    <input class="border border-primary-color block mt-2" type="text" placeholder="Afbeelding URL" name="blog-image_link-new" previewId="new-blog">
+                    <p>Gebruik ",,, " om meerdere categories te scheiden</p>
+                    <input class="border border-primary-color block mt-2" type="text" placeholder="Categorie,,, Categorie" name="blog-categories-new">
+                    <input class="border border-primary-color block mt-2" type="text" placeholder="2025-12-25 14:44:59" name="blog-publication_date-new">
+                    <textarea class="border border-primary-color block mt-2" name="blog-preview_text-new" id="blog-preview_text-new" placeholder="Preview Tekst"></textarea>
+                    <textarea class="border border-primary-color block mt-2" name="blog-text-new" id="blog-text-new" placeholder="Tekst"></textarea>
+                    <button class="bg-primary-color border border-primary-color p-2 text-primary-background mt-2">Toevoegen</button>
+                </div>
+            </div>
+            <div class="grid grid-cols-2">
                 <?php
 
-                foreach ($pdo->query("SELECT * FROM pages") as $page) {
-                    $filename = $page["filename"]; ?>
-                    <div class="border border-black m-4.5 p-2">
-                        <p><?= $page["name"] ?></p>
-                        <p>Path: /<?= $filename ?></p>
-                        <input type="text" name="page-<?= $page["id"] ?>" value="<?= $page["title"] ?>" class="border border-primary-color">
-                        <a href="/edit_page?path=<?= $filename ?>" class="text-primary-color block">Bewerken</a>
+                foreach ($pdo->query("SELECT * FROM blogs") as $blog) {
+                    $id = $blog["id"];
+                    $image_link = $blog["image_link"];
+                    $categories = "";
+                    foreach ($pdo->query("SELECT name FROM categories WHERE blog_id = " . $id) as $category) {
+                        $categories .= $category["name"] . ",,, ";
+                    }
+                    $categories = substr($categories, 0, -4);?>
+                <div class="border border-black m-4.5 p-2">
+                    <div class="flex justify-center">
+                        <img alt="Afbeelding" previewId="<?=$id?>" src="<?=$image_link?>">
                     </div>
+                    <input class="border border-primary-color mt-2 w-80" type="text" placeholder="Titel" name="blog-title-<?=$id?>" value="<?=$blog["title"]?>">
+                    <input class="border border-primary-color mt-2 w-80" type="text" placeholder="Auteur" name="blog-author-<?=$id?>" value="<?=$blog["author"]?>">
+                    <input class="border border-primary-color mt-2 w-80" type="text" placeholder="Afbeelding URL" name="blog-image_link-<?=$id?>" previewId="<?=$id?>" value="<?=$image_link?>">
+                    <p>Gebruik ",,, " om meerdere categories te scheiden</p>
+                    <input class="border border-primary-color mt-2 w-80" type="text" placeholder="Categorie,,, Categorie" name="blog-categories-<?=$id?>" value="<?=$categories?>">
+                    <input class="border border-primary-color mt-2 w-80" type="text" placeholder="2025-12-25 14:44:59" name="blog-publication_date-<?=$id?>" value="<?=$blog["publication_date"]?>">
+                    <textarea class="border border-primary-color mt-2 w-80" name="preview_text" id="blog-preview_text-<?=$id?>" placeholder="Preview Tekst"><?=$blog["preview_text"]?></textarea>
+                    <textarea class="border border-primary-color mt-2 w-80" name="text" id="blog-text-<?=$id?>" placeholder="Tekst"><?=$blog["text"]?></textarea>
+                </div>
                 <?php }
 
                 ?>
@@ -107,5 +133,5 @@ $logo = getTextFromDatabase(2);
 <div class="sticky bottom-2 left-2 text-start m-2 max-w-60">
     <a href="/logout"><img src="images/arrow-left.png" alt="<-" class="inline w-1/4 h-1/4"> uitloggen</a>
 </div>
-<script src="js/previewLogo.js"></script>
+<script src="js/previewImage.js"></script>
 <script src="js/abandonChanges.js"></script>
