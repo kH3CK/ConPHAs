@@ -18,7 +18,9 @@ $months = [
     "oktober",
     "november",
     "december"
-]
+];
+
+$filter = isset($_GET["filter"]) ? $_GET["filter"] : false;
 
 ?>
 <div class="bg-gray-50 min-h-screen flex flex-col">
@@ -49,7 +51,13 @@ $months = [
                     <h2 class="text-2xl font-bold text-gray-900 mb-8">Recente artikelen</h2>
                     <?php
                     
-                    foreach ($pdo->query("SELECT * FROM blogs") as $blog) {
+                    if ($filter) {
+                        $statement = $pdo->prepare("SELECT blogs.* FROM categories INNER JOIN blogs ON blogs.id = categories.blog_id WHERE categories.name = ?");
+                        $statement->execute([$filter]);
+                    } else {
+                        $statement = $pdo->query("SELECT * FROM blogs");
+                    }
+                    foreach ($statement as $blog) {
                         $dateandtime = $blog["publication_date"];
                         $splitdateandtime = explode(" ", $dateandtime);
                         $splittime = explode(":", $splitdateandtime[1]);
@@ -111,21 +119,28 @@ $months = [
                     <div class="bg-white shadow-md rounded-lg p-6 mb-8">
                         <h3 class="text-lg font-bold text-gray-900 mb-4">Categorieën</h3>
                         <ul class="space-y-3">
+                            <?php
+                            
+                            $categories = [];
+
+                            foreach ($pdo->query("SELECT * FROM categories") as $category) {
+                                $name = $category["name"];
+                                if (isset($categories[$name])) {
+                                    $categories[$name]++;
+                                } else {
+                                    $categories[$name] = 1;
+                                }
+                            }
+                            
+                            foreach ($categories as $name => $count) {?>
                             <li>
-                                <a href="#" class="text-conphas-green hover:text-green-700">Duurzaamheid (8)</a>
+                                <a href="/blog?filter=<?=$name?>"
+                                class="<?=$filter == $name ? "hover:text-green-700" : "text-gray-600"?>">
+                                <?=$name . " " . $count?></a>
                             </li>
-                            <li>
-                                <a href="#" class="text-gray-600 hover:text-conphas-green">Innovatie (12)</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-gray-600 hover:text-conphas-green">Groene chemie (5)</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-gray-600 hover:text-conphas-green">Circulaire economie (7)</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-gray-600 hover:text-conphas-green">Onderzoek (4)</a>
-                            </li>
+                            <?php }
+                            
+                            ?>
                         </ul>
                     </div>
 
