@@ -44,7 +44,7 @@ require_once("../template/components/head.php");
                             <p class="text-gray-600 mb-4">
                                 In deze blog bespreken we de nieuwste innovaties op het gebied van duurzaamheid en hoe deze bijdragen aan een groenere toekomst. We onderzoeken verschillende technologieën die een positieve impact hebben op het milieu.
                             </p>
-                            <a href="#" class="inline-flex items-center text-conphas-green hover:text-green-700">
+                            <a href="blog_detail" class="inline-flex items-center text-conphas-green hover:text-green-700">
                                 Lees meer
                                 <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -65,7 +65,7 @@ require_once("../template/components/head.php");
                             <p class="text-gray-600 mb-4">
                                 Groene chemie speelt een cruciale rol in de transitie naar een circulaire economie. In dit artikel bespreken we hoe duurzame chemische processen bijdragen aan het verminderen van afval en het hergebruik van grondstoffen.
                             </p>
-                            <a href="#" class="inline-flex items-center text-conphas-green hover:text-green-700">
+                            <a href="blog_detail" class="inline-flex items-center text-conphas-green hover:text-green-700">
                                 Lees meer
                                 <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -86,7 +86,7 @@ require_once("../template/components/head.php");
                             <p class="text-gray-600 mb-4">
                                 Duurzame landbouw is essentieel voor het behoud van onze ecosystemen. In deze blog verkennen we innovatieve landbouwmethoden die de impact op het milieu verminderen en tegelijkertijd de voedselproductie verbeteren.
                             </p>
-                            <a href="#" class="inline-flex items-center text-conphas-green hover:text-green-700">
+                            <a href="blog_detail" class="inline-flex items-center text-conphas-green hover:text-green-700">
                                 Lees meer
                                 <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>

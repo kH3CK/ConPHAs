@@ -1,17 +1,17 @@
 <?php
 
 require_once("../template/components/head.php");
-require_once("../template/components/navbar.php"); 
+require_once("../template/components/navbar.php");
 ?>
 <div class="bg-gray-100 text-gray-900">
     <header class="bg-blue-600 text-white p-5 text-center text-xl font-bold">
         Over Ons
     </header>
-    
+
     <section class="p-6 text-center">
         <h2 class="text-2xl font-semibold mb-4 mt-5">Over ons</h2>
     </section>
-    
+
     <section class="p-6 bg-white shadow-md rounded-lg mx-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-green-50 p-4 rounded-lg shadow">
@@ -29,5 +29,3 @@ require_once("../template/components/navbar.php");
         </div>
     </section>
 </div>
-
-

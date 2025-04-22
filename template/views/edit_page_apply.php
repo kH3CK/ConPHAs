@@ -7,5 +7,3 @@ foreach ($_POST as $key => $value) {
     }
 }
 header("Location: edit_page?path=" . $_POST["path"]);
-
-?>

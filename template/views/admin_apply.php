@@ -13,5 +13,3 @@ foreach ($_POST as $key => $value) {
     }
 }
 header("Location: admin");
-
-?>

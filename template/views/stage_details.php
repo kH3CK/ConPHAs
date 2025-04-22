@@ -13,7 +13,7 @@ $internship = $statement->fetch();
             <img src="images/onderzoek.png" alt="" class="md:w-[550px] h-auto">
         </div>
         <div class="p-4">
-            <h1 class="text-xl font-bold"><?=$internship["title"]?></h1>
+            <h1 class="text-xl font-bold"><?= $internship["title"] ?></h1>
             <p class="text-sm mb-[-10px]">
 
             <div class="flex items-center space-x-2">
@@ -22,15 +22,15 @@ $internship = $statement->fetch();
                 </svg>
                 <div class="flex flex-col mt-6">
                     <span>Start Datum |</span>
-                    <span><?=str_replace(" ", "<br>", $internship["start_date_and_time"])?></span>
+                    <span><?= str_replace(" ", "<br>", $internship["start_date_and_time"]) ?></span>
                 </div>
                 <div class="flex flex-col">
                     <span>Aantal Weken |</span>
-                    <span><?=$internship["weeks"]?></span>
+                    <span><?= $internship["weeks"] ?></span>
                 </div>
                 <div class="flex flex-col">
                     <span>Aantal Uren</span>
-                    <span><?=$internship["hours"]?></span>
+                    <span><?= $internship["hours"] ?></span>
                 </div>
             </div>
             <div class="flex items-center space-x-2">
@@ -40,7 +40,7 @@ $internship = $statement->fetch();
                 </svg>
                 <div class="flex flex-col">
                     <span>Locatie</span>
-                    <span><?=$internship["location"]?></span>
+                    <span><?= $internship["location"] ?></span>
                 </div>
             </div>
             <div class="flex items-center space-x-2">
@@ -49,7 +49,7 @@ $internship = $statement->fetch();
                 </svg>
                 <div class="flex flex-col">
                     <span>Minium Niveau</span>
-                    <span><?=$internship["minimum_level"]?></span>
+                    <span><?= $internship["minimum_level"] ?></span>
                 </div>
             </div>
             <div class="flex items-center space-x-2">
@@ -58,12 +58,12 @@ $internship = $statement->fetch();
                 </svg>
                 <div class="flex flex-col">
                     <span>Type Stage</span>
-                    <span><?=$internship["type"]?></span>
+                    <span><?= $internship["type"] ?></span>
                 </div>
             </div>
             <div class="mt-4 p-4 bg-green-100 rounded-lg max-w-sm">
                 <div class="text-sm text-green-900">
-                    <?=$internship["description"]?>
+                    <?= $internship["description"] ?>
                 </div>
                 <div class="mt-4">
                     <h2 class="font-bold">Contact gegevens stage bedrijf</h2>

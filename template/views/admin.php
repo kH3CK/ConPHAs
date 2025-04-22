@@ -13,10 +13,10 @@ $logo = getTextFromDatabase(2);
             <div class="flex flex-row items-center mt-5">
                 <div class="basis-1/2">
                     <div class="flex items-center justify-center mb-5">
-                        <img id="logo-img" src="<?=$logo?>" alt="Logo" class="border border-primary-color">
+                        <img id="logo-img" src="<?= $logo ?>" alt="Logo" class="border border-primary-color">
                     </div>
                     <div class="flex items-center justify-center">
-                        <input name="logo" id="logo-input" type="text" value="<?=$logo?>" class="border border-primary-color w-xs">
+                        <input name="logo" id="logo-input" type="text" value="<?= $logo ?>" class="border border-primary-color w-xs">
                     </div>
                 </div>
                 <div class="basis-1/2 flex items-center justify-center">
@@ -25,7 +25,7 @@ $logo = getTextFromDatabase(2);
             </div>
             <div class="flex flex-row items-center my-5">
                 <div class="basis-1/2 flex items-center justify-center my-5">
-                    <input name="title" type="text" value="<?=getTextFromDatabase(1)?>" class="border border-primary-color w-xs">
+                    <input name="title" type="text" value="<?= getTextFromDatabase(1) ?>" class="border border-primary-color w-xs">
                 </div>
                 <div class="basis-1/2 flex items-center justify-center">
                     <p>Titel bewerken</p>
@@ -42,7 +42,7 @@ $logo = getTextFromDatabase(2);
                     <div class="flex justify-between">
                         <div>
                             <p class="mb-1">Font Link</p>
-                            <input name="font-link" type="text" value="<?=getTextFromDatabase(3)?>" class="border border-primary-color w-xs mb-5">
+                            <input name="font-link" type="text" value="<?= getTextFromDatabase(3) ?>" class="border border-primary-color w-xs mb-5">
                         </div>
                         <div>
                             <div class="mt-4">
@@ -51,7 +51,7 @@ $logo = getTextFromDatabase(2);
                         </div>
                     </div>
                     <p class="mb-1">Font Code</p>
-                    <input name="font-code" type="text" value='<?=getTextFromDatabase(4)?>' class="border border-primary-color w-3xs mb-5">
+                    <input name="font-code" type="text" value='<?= getTextFromDatabase(4) ?>' class="border border-primary-color w-3xs mb-5">
                     <p class="mb-1">Hoe vul jij dat in?</p>
                     <ol class="list-decimal ml-10">
                         <li>Ga naar <a class="text-primary-color" href="https://fonts.google.com">https://fonts.google.com</a></li>
@@ -59,7 +59,8 @@ $logo = getTextFromDatabase(2);
                         <li>Klik op "Get font"</li>
                         <li>Klik op "Get embed code"</li>
                         <li>Copier de link die begint met<br>
-                            <strong>https://fonts.googleapis.com/css2?family</strong> (link)</li>
+                            <strong>https://fonts.googleapis.com/css2?family</strong> (link)
+                        </li>
                         <li>Dan copier het ding tussen <strong>font-family: </strong> en <strong>;</strong> op dezelfde regel (code)</li>
                     </ol>
                 </div>
@@ -70,30 +71,30 @@ $logo = getTextFromDatabase(2);
         <div class="basis-1/2 border-r border-r-primary-color text-center">
             <p>Pagina's bewerken</p>
             <div class="grid grid-cols-3">
-            <?php
+                <?php
 
-            foreach ($pdo->query("SELECT * FROM pages") as $page) {
-                $filename = $page["filename"];?>
-                <div class="border border-black m-4.5 p-2">
-                    <p><?=$page["name"]?></p>
-                    <p>Path: /<?=$filename?></p>
-                    <input type="text" name="page-<?=$page["id"]?>" value="<?=$page["title"]?>" class="border border-primary-color">
-                    <a href="/edit_page?path=<?=$filename?>" class="text-primary-color block">Bewerken</a>
-                </div>
-            <?php }
+                foreach ($pdo->query("SELECT * FROM pages") as $page) {
+                    $filename = $page["filename"]; ?>
+                    <div class="border border-black m-4.5 p-2">
+                        <p><?= $page["name"] ?></p>
+                        <p>Path: /<?= $filename ?></p>
+                        <input type="text" name="page-<?= $page["id"] ?>" value="<?= $page["title"] ?>" class="border border-primary-color">
+                        <a href="/edit_page?path=<?= $filename ?>" class="text-primary-color block">Bewerken</a>
+                    </div>
+                <?php }
 
-            ?>
+                ?>
             </div>
         </div>
         <div class="basis-1/2 text-center">
             <p>Kleur palette</p>
             <?php
 
-            foreach ($pdo->query("SELECT * FROM colors") as $color) {?>
+            foreach ($pdo->query("SELECT * FROM colors") as $color) { ?>
                 <div class="border border-black text-start m-4.5">
                     <div class="flex">
-                        <input name="color-<?=$color["id"]?>" type="color" value="#<?=$color["hex"]?>" class="border-none m-2" style="width: 100px; height: 100px;">
-                        <p class="mt-4.5"><?=$color["name"]?></p>
+                        <input name="color-<?= $color["id"] ?>" type="color" value="#<?= $color["hex"] ?>" class="border-none m-2" style="width: 100px; height: 100px;">
+                        <p class="mt-4.5"><?= $color["name"] ?></p>
                     </div>
                 </div>
             <?php }

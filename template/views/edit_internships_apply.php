@@ -21,5 +21,3 @@ foreach ($stufftochange as $id => $properties) {
     $pdo->prepare("UPDATE internships SET " . $setstring . " WHERE id = :id")->execute($properties);
 }
 header("Location: edit_internships");
-
-?>
