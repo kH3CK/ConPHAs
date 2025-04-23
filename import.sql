@@ -40,7 +40,7 @@ INSERT INTO internships (title, description, minimum_level, location, weeks, hou
 "images/biotechnoloog.jpg"), ("Laborant", "Lorem ipsum dolor sit amet", "MBO 4", "Groningen, Jan Steenstraat 12", 40, 400, "2025-11-20 11:00:00", "Afstudeerstage",
 "images/shutterstock_685086673"), ("Milieudeskundige", "Lorem ipsum dolor sit amet", "MBO 3", "Groningen, Friesestraatweg 5", 54, 350, "2026-02-01 08:30:00", "Meewerkstage",
 "images/headerm25-3"), ("Wetenschapsvoorlichter", "Lorem ipsum dolor sit amet", "MBO 4", "Groningen, Johan Willem Frisostraat 26", 20, 100, "2025-05-23 08:00:00", "Meewerkstage",
-"images/presentatievaardigheden-toolshero"), ("Natuurbehoud", "Lorem ipsum dolor sit amet", "MBO 4", "Groningen, friesestraatweg", 54, 500, "2026-02-01 08:30:00", "Meewerkstage",
+"images/presentatievaardigheden-toolshero"), ("Natuurbehoud", "Lorem ipsum dolor sit amet", "MBO 4", "Groningen, Friesestraatweg", 54, 500, "2026-02-01 08:30:00", "Meewerkstage",
 "images/natuur.jpg"), ("Schoonmaker", "Lorem ipsum dolor sit amet", "MBO 1", "Assen, Weiersstraat", 10, 90, "2025-06-15 10:00:00", "Meewerkstage",
 "images/schoonmaker.jpg"), ("Laborant", "Lorem ipsum dolor sit amet", "MBO 3", "Assen, Thorbeckelaan", 35, 330, "2025-08-01 09:30:00", "afstudeerstage",
 "images/lab.jpg"), ("Bioloog", "Lorem ipsum dolor sit amet", "HBO", "Leeuwarden, Groeneweg", 30, 250, "2026-03-01 08:30:00", "afstudeerstage",
