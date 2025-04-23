@@ -129,7 +129,7 @@ require_once("../src/imports/convertDateToText.php");
                     Jouw springplank naar een <span class="text-primary-color">groene carrière</span>
                 </h2>
                 <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl">
-                    <?=getTextFromDatabase(5)?>
+                    Bij ConPHAs helpen we jonge studenten hun eerste stappen te zetten in de wereld van bioplastics.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a
@@ -265,7 +265,7 @@ require_once("../src/imports/convertDateToText.php");
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <?php 
 
-                foreach ($pdo->query("SELECT * FROM blogs LIMIT 3") as $blog) {?>
+                foreach ($pdo->query("SELECT * FROM blogs ORDER BY publication_date DESC LIMIT 3") as $blog) {?>
                     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                         <img
                             src="<?=$blog["image_link"]?>"
