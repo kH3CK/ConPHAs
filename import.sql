@@ -165,4 +165,4 @@ Deze award is een mooie erkenning voor het harde werk van ons team én voor de r
 
 Bedankt aan iedereen die hieraan heeft bijgedragen – dit is pas het begin!", "Thomas de Vries", "2025-03-01 12:00:00", "images/award.jpg");
 
-INSERT INTO categories (blog_id, name) VALUES (1, "Duurzaamheid"), (1, "Innovatie"), (2, "Groene chemie"), (2, "Circulaire economie"), (3, "Duurzaamheid");
+INSERT INTO categories (blog_id, name) VALUES (1, "Duurzaamheid"), (1, "Innovatie"), (1, "Innovatie"), (2, "Groene chemie"), (2, "Circulaire economie"), (3, "Duurzaamheid"), (4, "Projecten"), (5, "Team");
