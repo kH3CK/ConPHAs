@@ -56,31 +56,17 @@ require_once("../template/components/navbar.php");
     </div>
   </div>
 
-  <style>
-    @media (max-width: 768px) {
-      .flex.justify-center.h-screen.items-center {
-        flex-direction: column;
-      }
-
-      .relative.h-1.w-3 {
-        width: 100%;
-        height: auto;
-      }
-
-      svg {
-        transform: rotate(90deg);
-        width: 130%;
-        padding-top: 100px;
-        margin-top: 70px;
-        height: auto;
-      }
-
-      .w-48 {
-        position: static;
-        font-size: 0.8rem;
-      }
+<script>
+  function checkScreenSize() {
+    if (window.innerWidth < 800) { 
+      window.location.href = "over_phone"; 
     }
-  </style>
+  }
+
+  window.onload = checkScreenSize;
+
+  window.onresize = checkScreenSize;
+</script>
 
 
   <script src="js/menu.js"></script>
