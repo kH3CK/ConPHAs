@@ -25,7 +25,6 @@ require_once("../template/components/internship.php");
                     $params[':search3'] = $searchParam;
                 }
 
-                // MBO niveau(s)
                 if (isset($_GET['mbo']) && !empty($_GET['mbo'])) {
                     $mboLevels = is_array($_GET['mbo']) ? $_GET['mbo'] : [$_GET['mbo']];
                     $placeholders = [];
@@ -50,9 +49,15 @@ require_once("../template/components/internship.php");
                 }
 
                 // Startmaand
-                if (isset($_GET['month']) && !empty($_GET['month']) && $_GET['month'] !== "start") {
-                    $conditions[] = "MONTH(start_date_and_time) = :month";
-                    $params[':month'] = $_GET['month'];
+                if (isset($_GET['month']) && !empty($_GET['month'])) {
+                    $months = is_array($_GET['month']) ? $_GET['month'] : [$_GET['month']];
+                    $placeholders = [];
+                    foreach ($months as $index => $month) {
+                        $paramName = ":month" . $index;
+                        $placeholders[] = $paramName;
+                        $params[$paramName] = $month;
+                    }
+                    $conditions[] = "MONTH(start_date_and_time) IN (" . implode(", ", $placeholders) . ")";
                 }
 
                 // Stage weken
@@ -95,18 +100,42 @@ require_once("../template/components/internship.php");
             <form method="GET">
                 <h2 class="font-bold">Filters</h2>
 
-                <input type="text" name="search" placeholder="Trefwoord" class="w-full p-2 mt-2 border rounded" value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
+                <input type="text" name="search" placeholder="Trefwoord" class="w-full p-2 mt-2 border border-primary-color rounded" value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
 
                 <!-- MBO-niveau -->
-                <select name="mbo[]" multiple class="w-full p-2 mt-2 border rounded" size="5">
-                    <option disabled>opleidings niveau</option>
-                    <option value="MBO 1" <?= in_array('MBO 1', $_GET['mbo'] ?? []) ? 'selected' : '' ?>>mbo 1</option>
-                    <option value="MBO 2" <?= in_array('MBO 2', $_GET['mbo'] ?? []) ? 'selected' : '' ?>>mbo 2</option>
-                    <option value="MBO 3" <?= in_array('MBO 3', $_GET['mbo'] ?? []) ? 'selected' : '' ?>>mbo 3</option>
-                    <option value="MBO 4" <?= in_array('MBO 4', $_GET['mbo'] ?? []) ? 'selected' : '' ?>>mbo 4</option>
-                    <option value="HBO" <?= in_array('HBO', $_GET['mbo'] ?? []) ? 'selected' : '' ?>>hbo</option>
-                </select>
-                <p class="text-sm text-gray-500 mt-1">Houd Ctrl (Windows) of Command (Mac) ingedrukt om meerdere opties te selecteren</p>
+                <div class="relative">
+                    <button type="button" id="mboDropdownButton" class="w-full p-2 mt-2 border border-primary-color rounded text-left flex justify-between items-center bg-green-100">
+                        <span>Selecteer opleidingsniveau</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="mboDropdown" class="hidden absolute z-10 w-full bg-green-100 border border-primary-color rounded shadow-lg">
+                        <div class="p-2">
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="mbo[]" value="MBO 1" class="mr-2" <?php echo (isset($_GET['mbo']) && in_array('MBO 1', $_GET['mbo'])) ? 'checked' : ''; ?>>
+                                MBO 1
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="mbo[]" value="MBO 2" class="mr-2" <?php echo (isset($_GET['mbo']) && in_array('MBO 2', $_GET['mbo'])) ? 'checked' : ''; ?>>
+                                MBO 2
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="mbo[]" value="MBO 3" class="mr-2" <?php echo (isset($_GET['mbo']) && in_array('MBO 3', $_GET['mbo'])) ? 'checked' : ''; ?>>
+                                MBO 3
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="mbo[]" value="MBO 4" class="mr-2" <?php echo (isset($_GET['mbo']) && in_array('MBO 4', $_GET['mbo'])) ? 'checked' : ''; ?>>
+                                MBO 4
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                            <label class="flex items-center p-2 hover:bg-gray-100 rounded cursor-pointer">
+                                <input type="checkbox" name="mbo[]" value="HBO" class="mr-2" <?php echo (isset($_GET['mbo']) && in_array('HBO', $_GET['mbo'])) ? 'checked' : ''; ?>>
+                                HBO
+                            </label>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Stage soorten -->
                 <h2 class="mt-4">Stage soort</h2>
@@ -129,29 +158,108 @@ require_once("../template/components/internship.php");
                 </label>
 
                 <!-- Startmaand -->
-                <select name="month" class="w-full border border-black text-green-700 rounded px-4 py-2 mt-4">
-                    <option value="start">start maand</option>
-                    <option value="1" <?= ($_GET['month'] ?? '') == '1' ? 'selected' : '' ?>>januari</option>
-                    <option value="2" <?= ($_GET['month'] ?? '') == '2' ? 'selected' : '' ?>>februari</option>
-                    <option value="3" <?= ($_GET['month'] ?? '') == '3' ? 'selected' : '' ?>>maart</option>
-                    <option value="4" <?= ($_GET['month'] ?? '') == '4' ? 'selected' : '' ?>>april</option>
-                    <option value="5" <?= ($_GET['month'] ?? '') == '5' ? 'selected' : '' ?>>mei</option>
-                    <option value="6" <?= ($_GET['month'] ?? '') == '6' ? 'selected' : '' ?>>juni</option>
-                    <option value="7" <?= ($_GET['month'] ?? '') == '7' ? 'selected' : '' ?>>juli</option>
-                    <option value="8" <?= ($_GET['month'] ?? '') == '8' ? 'selected' : '' ?>>augustus</option>
-                    <option value="9" <?= ($_GET['month'] ?? '') == '9' ? 'selected' : '' ?>>september</option>
-                    <option value="10" <?= ($_GET['month'] ?? '') == '10' ? 'selected' : '' ?>>oktober</option>
-                    <option value="11" <?= ($_GET['month'] ?? '') == '11' ? 'selected' : '' ?>>november</option>
-                    <option value="12" <?= ($_GET['month'] ?? '') == '12' ? 'selected' : '' ?>>december</option>
-                </select>
+                <div class="relative">
+                    <button type="button" id="monthDropdownButton" class="w-full p-2 mt-2 border border-primary-color rounded text-left flex justify-between items-center bg-green-100">
+                        <span>Selecteer startmaand</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="monthDropdown" class="hidden absolute z-10 w-full bg-green-100 border border-primary-color rounded shadow-lg">
+                        <div class="p-2">
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="month[]" value="1" class="mr-2" <?php echo (isset($_GET['month']) && in_array('1', $_GET['month'])) ? 'checked' : ''; ?>>
+                                Januari
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="month[]" value="2" class="mr-2" <?php echo (isset($_GET['month']) && in_array('2', $_GET['month'])) ? 'checked' : ''; ?>>
+                                Februari
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="month[]" value="3" class="mr-2" <?php echo (isset($_GET['month']) && in_array('3', $_GET['month'])) ? 'checked' : ''; ?>>
+                                Maart
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="month[]" value="4" class="mr-2" <?php echo (isset($_GET['month']) && in_array('4', $_GET['month'])) ? 'checked' : ''; ?>>
+                                April
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="month[]" value="5" class="mr-2" <?php echo (isset($_GET['month']) && in_array('5', $_GET['month'])) ? 'checked' : ''; ?>>
+                                Mei
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="month[]" value="6" class="mr-2" <?php echo (isset($_GET['month']) && in_array('6', $_GET['month'])) ? 'checked' : ''; ?>>
+                                Juni
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="month[]" value="7" class="mr-2" <?php echo (isset($_GET['month']) && in_array('7', $_GET['month'])) ? 'checked' : ''; ?>>
+                                Juli
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="month[]" value="8" class="mr-2" <?php echo (isset($_GET['month']) && in_array('8', $_GET['month'])) ? 'checked' : ''; ?>>
+                                Augustus
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="month[]" value="9" class="mr-2" <?php echo (isset($_GET['month']) && in_array('9', $_GET['month'])) ? 'checked' : ''; ?>>
+                                September
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="month[]" value="10" class="mr-2" <?php echo (isset($_GET['month']) && in_array('10', $_GET['month'])) ? 'checked' : ''; ?>>
+                                Oktober
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="month[]" value="11" class="mr-2" <?php echo (isset($_GET['month']) && in_array('11', $_GET['month'])) ? 'checked' : ''; ?>>
+                                November
+                            </label>
+                            <label class="flex items-center p-2 hover:bg-green-200 rounded cursor-pointer">
+                                <input type="checkbox" name="month[]" value="12" class="mr-2" <?php echo (isset($_GET['month']) && in_array('12', $_GET['month'])) ? 'checked' : ''; ?>>
+                                December
+                            </label>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Stage weken -->
                 <strong class="mt-4 block">Stage weken</strong>
-                <p class="mb-2">van <input class="border border-primary-color rounded w-18" type="number" name="weeks-min" placeholder="0" value="<?= htmlspecialchars($_GET['weeks-min'] ?? '') ?>"> tot <input class="border border-primary-color rounded w-18" type="number" name="weeks-max" placeholder="54" value="<?= htmlspecialchars($_GET['weeks-max'] ?? '') ?>"></p>
+                <div class="mb-2 flex flex-col gap-2">
+                    <div class="flex items-center gap-2">
+                        <label class="w-12">Van:</label>
+                        <input class="border border-primary-color rounded w-full p-1" type="number" min="0" max="54" name="weeks-min" placeholder="0" value="<?= isset($_GET['weeks-min']) ? htmlspecialchars($_GET['weeks-min']) : '' ?>">
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <label class="w-12">Tot:</label>
+                        <input class="border border-primary-color rounded w-full p-1" type="number" min="0" max="54" name="weeks-max" placeholder="54" value="<?= isset($_GET['weeks-max']) ? htmlspecialchars($_GET['weeks-max']) : '' ?>">
+                    </div>
+                </div>
 
                 <!-- Stage uren -->
-                <strong>Stage uren</strong>
-                <p class="mb-2">van <input class="border border-primary-color rounded w-18" type="number" name="hours-min" placeholder="0" value="<?= htmlspecialchars($_GET['hours-min'] ?? '') ?>"> tot <input class="border border-primary-color rounded w-18" type="number" name="hours-max" placeholder="500" value="<?= htmlspecialchars($_GET['hours-max'] ?? '') ?>"></p>
+                <strong class="mt-4 block">Stage uren</strong>
+                <div class="mb-2 flex flex-col gap-2">
+                    <div class="flex items-center gap-2">
+                        <label class="w-12">Van:</label>
+                        <input 
+                            class="border border-primary-color rounded w-full p-1" 
+                            type="number" 
+                            min="0" 
+                            max="500" 
+                            name="hours-min" 
+                            placeholder="0" 
+                            value="<?= isset($_GET['hours-min']) ? htmlspecialchars($_GET['hours-min']) : '' ?>"
+                        >
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <label class="w-12">Tot:</label>
+                        <input 
+                            class="border border-primary-color rounded w-full p-1" 
+                            type="number" 
+                            min="0" 
+                            max="500" 
+                            name="hours-max" 
+                            placeholder="500" 
+                            value="<?= isset($_GET['hours-max']) ? htmlspecialchars($_GET['hours-max']) : '' ?>"
+                        >
+                    </div>
+                </div>
 
                 <button type="submit" class="btn bg-primary-color text-primary-background p-2 rounded ms-2 mt-2">Zoeken</button>
             </form>
@@ -162,3 +270,91 @@ require_once("../template/components/internship.php");
 <script src="js/maand.js"></script>
 <script src="js/maand.js"></script>
 <script src="js/mbo.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownButton = document.getElementById('mboDropdownButton');
+    const dropdown = document.getElementById('mboDropdown');
+
+    // Toggle dropdown
+    dropdownButton.addEventListener('click', function() {
+        dropdown.classList.toggle('hidden');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!dropdownButton.contains(event.target) && !dropdown.contains(event.target)) {
+            dropdown.classList.add('hidden');
+        }
+    });
+
+    // Update button text when selections change
+    const checkboxes = dropdown.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const selectedOptions = Array.from(checkboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.nextElementSibling.textContent.trim());
+            
+            if (selectedOptions.length > 0) {
+                dropdownButton.querySelector('span').textContent = selectedOptions.join(', ');
+            } else {
+                dropdownButton.querySelector('span').textContent = 'Selecteer opleidingsniveau';
+            }
+        });
+    });
+
+    // Set initial button text
+    const selectedOptions = Array.from(checkboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.nextElementSibling.textContent.trim());
+    
+    if (selectedOptions.length > 0) {
+        dropdownButton.querySelector('span').textContent = selectedOptions.join(', ');
+    }
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const monthDropdownButton = document.getElementById('monthDropdownButton');
+    const monthDropdown = document.getElementById('monthDropdown');
+
+    // Toggle dropdown
+    monthDropdownButton.addEventListener('click', function() {
+        monthDropdown.classList.toggle('hidden');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!monthDropdownButton.contains(event.target) && !monthDropdown.contains(event.target)) {
+            monthDropdown.classList.add('hidden');
+        }
+    });
+
+    // Update button text when selections change
+    const monthCheckboxes = monthDropdown.querySelectorAll('input[type="checkbox"]');
+    monthCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const selectedMonths = Array.from(monthCheckboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.nextElementSibling.textContent.trim());
+            
+            if (selectedMonths.length > 0) {
+                monthDropdownButton.querySelector('span').textContent = selectedMonths.join(', ');
+            } else {
+                monthDropdownButton.querySelector('span').textContent = 'Selecteer startmaand';
+            }
+        });
+    });
+
+    // Set initial button text
+    const selectedMonths = Array.from(monthCheckboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.nextElementSibling.textContent.trim());
+    
+    if (selectedMonths.length > 0) {
+        monthDropdownButton.querySelector('span').textContent = selectedMonths.join(', ');
+    }
+});
+</script>
