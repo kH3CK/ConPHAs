@@ -99,7 +99,7 @@ $logo = getTextFromDatabase(2);
                         <p class="text-primary-background text-xl">X</p>
                     </a>
                     <div class="flex justify-center">
-                        <img alt="Afbeelding" previewId="<?=$id?>" src="<?=$image_link?>">
+                        <img alt="Afbeelding" previewId="<?=$id?>" src="<?=$image_link?>" class="w-full h-64 object-cover">
                     </div>
                     <input class="border border-primary-color mt-2 w-80" type="text" placeholder="Titel" name="blog-title-<?=$id?>" value="<?=$blog["title"]?>">
                     <input class="border border-primary-color mt-2 w-80" type="text" placeholder="Auteur" name="blog-author-<?=$id?>" value="<?=$blog["author"]?>">
