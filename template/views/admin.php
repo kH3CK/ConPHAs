@@ -71,7 +71,7 @@ $logo = getTextFromDatabase(2);
             <p>Blogs bewerken</p>
             <div class="flex justify-center">
                 <div class="border border-black m-4.5 p-2 relative">
-                    <img alt="Afbeelding" previewId="new-blog">
+                    <img alt="Afbeelding" previewId="new-blog" class="w-full h-64 object-cover">
                     <input class="border border-primary-color block mt-2" type="text" placeholder="Titel" name="blog-title-new">
                     <input class="border border-primary-color block mt-2" type="text" placeholder="Auteur" name="blog-author-new">
                     <input class="border border-primary-color block mt-2" type="text" placeholder="Afbeelding URL" name="blog-image_link-new" previewId="new-blog">
