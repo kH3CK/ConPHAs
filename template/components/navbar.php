@@ -34,24 +34,7 @@
             <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-color transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             <span class="absolute inset-0 rounded-md bg-[#36B843]/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></span>
           </a>
-            <div class="ml-6">
-            <button 
-              class="relative overflow-hidden bg-primary-color text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-primary-color hover:shadow-lg hover:shadow-[#36B843]/30 group"
-              onclick="scrollToBottom()">
-              <span class="relative z-10 group-hover:text-[#36B843]">Contact</span>
-              <span class="absolute inset-0 w-full h-full bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              <span class="absolute inset-0 rounded-md bg-[#36B843]/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></span>
-            </button>
-            </div>
-            <script>
-            function scrollToBottom() {
-              window.scrollTo({
-              top: document.body.scrollHeight,
-              behavior: 'smooth'
-              });
-            }
-            </script>
-        </div>
+        
 
         <div class="md:hidden flex items-center">
           <button
