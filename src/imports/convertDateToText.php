@@ -24,7 +24,7 @@ function convertDateToText($dateandtime) {
     $year = $splitdate[0];
     return date("y-m-d", $currenttime) == substr($splitdateandtime[0], 2) ?
     "Vandaag, " . $splittime[0] . ":" . $splittime[1] :
-    $splitdate[2] . " " . $GLOBALS["months"][(int)$splitdate[1]] .
+    (int)$splitdate[2] . " " . $GLOBALS["months"][(int)$splitdate[1]] .
     (date("y", $currenttime) == substr($year, 2) ?
     "" :
     " $year");

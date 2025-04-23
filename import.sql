@@ -19,9 +19,7 @@ CREATE TABLE texts (
 );
 
 INSERT INTO texts (text) VALUES ("ConPHAs"), ("https://placehold.co/200x200.png"),
-("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"), ('"Space Mono", monospace'),
-("Bij ConPHAs helpen we jonge studenten hun eerste stappen te zetten in de wereld van bioplastics."),
-("Jouw springplank naar een"), ("groene carrière");
+("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"), ('"Space Mono", monospace');
 
 CREATE TABLE internships (
     id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -48,21 +46,21 @@ INSERT INTO internships (title, description, minimum_level, location, weeks, hou
 "https://picsum.photos/200/200"), ("Bioloog", "Lorem ipsum dolor sit amet", "HBO", "Leeuwarden, Groeneweg", 30, 250, "2026-03-01 08:30:00", "afstudeerstage",
 "https://picsum.photos/200/200");
 
-CREATE TABLE trainees (
-    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    firstname VARCHAR(50) NOT NULL,
-    middlenames VARCHAR(100) NOT NULL,
-    lastname VARCHAR(50) NOT NULL,
-    birthdate DATE NOT NULL,
-    weeks SMALLINT NOT NULL DEFAULT 0,
-    hours SMALLINT NOT NULL DEFAULT 0,
-    done BOOLEAN DEFAULT false,
-    internship_id MEDIUMINT NOT NULL,
-    FOREIGN KEY (internship_id) REFERENCES internships(id)
-);
+-- CREATE TABLE trainees (
+--     id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+--     firstname VARCHAR(50) NOT NULL,
+--     middlenames VARCHAR(100) NOT NULL,
+--     lastname VARCHAR(50) NOT NULL,
+--     birthdate DATE NOT NULL,
+--     weeks SMALLINT NOT NULL DEFAULT 0,
+--     hours SMALLINT NOT NULL DEFAULT 0,
+--     done BOOLEAN DEFAULT false,
+--     internship_id MEDIUMINT NOT NULL,
+--     FOREIGN KEY (internship_id) REFERENCES internships(id)
+-- );
 
-INSERT INTO trainees (firstname, middlenames, lastname, birthdate, weeks, hours, done, internship_id) VALUES
-("Bob", "de", "Dok", "1999-10-18", 40, 200, NULL, 1);
+-- INSERT INTO trainees (firstname, middlenames, lastname, birthdate, weeks, hours, done, internship_id) VALUES
+-- ("Bob", "de", "Dok", "1999-10-18", 40, 200, NULL, 1);
 
 CREATE TABLE admins (
     iD MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -96,7 +94,7 @@ CREATE TABLE blogs (
 CREATE TABLE categories (
     blog_id MEDIUMINT NOT NULL,
     name VARCHAR(100) NOT NULL,
-    FOREIGN KEY (blog_id) REFERENCES blogs(id)
+    FOREIGN KEY (blog_id) REFERENCES blogs(id) ON DELETE CASCADE
 );
 
 INSERT INTO blogs (title, preview_text, text, author, publication_date, image_link) VALUES
