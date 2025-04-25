@@ -20,11 +20,22 @@ foreach ($_POST as $key => $value) {
                 $newblogvalues[$splitkey] = $value;
             }
         } elseif ($splitkey == "categories") {
-            $pdo->prepare("DELETE FROM categories WHERE blog_id = ?")->execute([$lastsplitvalue]);
-            foreach (explode(",,, ", $value) as $categoryName) {
-                $pdo->prepare("INSERT INTO categories (blog_id, name) VALUES (?, ?)")->execute([$lastsplitvalue, $categoryName]);
+            $newcategories = explode(",,, ", $value);
+            $oldcategories = explode(",,, ", $_POST["blog-categories_old-" . $lastsplitvalue]);
+            if ($newcategories != $oldcategories) {
+                foreach ($newcategories as $newcategory) {
+                    $index = array_search($newcategory, $oldcategories);
+                    if ($index) {
+                        unset($oldcategories[$index]);
+                    } else {
+                        $pdo->prepare("INSERT INTO categories (blog_id, name) VALUES (?, ?)")->execute([$lastsplitvalue, $newcategory]);
+                    }
+                }
+                foreach ($oldcategories as $oldcategory) {
+                    $pdo->prepare("DELETE FROM categories WHERE blog_id = ? AND name = ?")->execute([$lastsplitvalue, $oldcategory]);
+                }
             }
-        } else {
+        } elseif ($splitkey != "categories_old") {
             // ik weet dat direct data inserten in een prepated statement gaat tegen het doel van een prepared statement, maar dit is
             // onbelangrijk in deze situatie want alleen een admin kan naar deze pagina gaan
             $pdo->prepare("UPDATE blogs SET " . $splitkey . " = ? WHERE id = ?")->execute([$value, $lastsplitvalue]);
@@ -46,4 +57,5 @@ if ($newblogvalues) {
         $pdo->prepare("INSERT INTO categories (blog_id, name) VALUES (?, ?)")->execute([$id, $category]);
     }
 }
+exit;
 header("Location: admin");

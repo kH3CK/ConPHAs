@@ -106,6 +106,7 @@ $logo = getTextFromDatabase(2);
                     <input class="border border-primary-color mt-2 w-full" type="text" placeholder="Afbeelding URL" name="blog-image_link-<?=$id?>" previewId="<?=$id?>" value="<?=$image_link?>">
                     <p>Gebruik ",,, " om meerdere categories te scheiden</p>
                     <input class="border border-primary-color mt-2 w-full" type="text" placeholder="Categorie,,, Categorie" name="blog-categories-<?=$id?>" value="<?=$categories?>">
+                    <input class="hidden" type="text" name="blog-categories_old-<?=$id?>" value="<?=$categories?>">
                     <input class="border border-primary-color mt-2 w-full" type="text" placeholder="2025-12-25 14:44:59" name="blog-publication_date-<?=$id?>" value="<?=$blog["publication_date"]?>">
                     <textarea class="border border-primary-color mt-2 w-full" name="preview_text" id="blog-preview_text-<?=$id?>" placeholder="Preview Tekst"><?=$blog["preview_text"]?></textarea>
                     <textarea class="border border-primary-color mt-2 w-full" name="text" id="blog-text-<?=$id?>" placeholder="Tekst"><?=$blog["text"]?></textarea>
