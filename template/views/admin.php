@@ -72,15 +72,15 @@ $logo = getTextFromDatabase(2);
             <div class="flex justify-center">
                 <div class="border border-black m-4.5 p-2 relative">
                     <img alt="Afbeelding" previewId="new-blog" class="w-full h-64 object-cover">
-                    <input class="border border-primary-color block mt-2" type="text" placeholder="Titel" name="blog-title-new">
-                    <input class="border border-primary-color block mt-2" type="text" placeholder="Auteur" name="blog-author-new">
-                    <input class="border border-primary-color block mt-2" type="text" placeholder="Afbeelding URL" name="blog-image_link-new" previewId="new-blog">
+                    <input class="border border-primary-color block mt-2 w-full" type="text" placeholder="Titel" name="blog-title-new">
+                    <input class="border border-primary-color block mt-2 w-full" type="text" placeholder="Auteur" name="blog-author-new">
+                    <input class="border border-primary-color block mt-2 w-full" type="text" placeholder="Afbeelding URL" name="blog-image_link-new" previewId="new-blog">
                     <p>Gebruik ",,, " om meerdere categories te scheiden</p>
-                    <input class="border border-primary-color block mt-2" type="text" placeholder="Categorie,,, Categorie" name="blog-categories-new">
-                    <input class="border border-primary-color block mt-2" type="text" placeholder="2025-12-25 14:44:59" name="blog-publication_date-new">
-                    <textarea class="border border-primary-color block mt-2" name="blog-preview_text-new" id="blog-preview_text-new" placeholder="Preview Tekst"></textarea>
-                    <textarea class="border border-primary-color block mt-2" name="blog-text-new" id="blog-text-new" placeholder="Tekst"></textarea>
-                    <button class="bg-primary-color border border-primary-color p-2 text-primary-background mt-2">Toevoegen</button>
+                    <input class="border border-primary-color block mt-2 w-full" type="text" placeholder="Categorie,,, Categorie" name="blog-categories-new">
+                    <input class="border border-primary-color block mt-2 w-full" type="text" placeholder="2025-12-25 14:44:59" name="blog-publication_date-new">
+                    <textarea class="border border-primary-color block mt-2 w-full" name="blog-preview_text-new" id="blog-preview_text-new" placeholder="Preview Tekst"></textarea>
+                    <textarea class="border border-primary-color block mt-2 w-full" name="blog-text-new" id="blog-text-new" placeholder="Tekst"></textarea>
+                    <button class="bg-primary-color border border-primary-color p-2 text-primary-background mt-2 ">Toevoegen</button>
                 </div>
             </div>
             <div class="grid grid-cols-2">
@@ -101,14 +101,14 @@ $logo = getTextFromDatabase(2);
                     <div class="flex justify-center">
                         <img alt="Afbeelding" previewId="<?=$id?>" src="<?=$image_link?>" class="w-full h-64 object-cover">
                     </div>
-                    <input class="border border-primary-color mt-2 w-80" type="text" placeholder="Titel" name="blog-title-<?=$id?>" value="<?=$blog["title"]?>">
-                    <input class="border border-primary-color mt-2 w-80" type="text" placeholder="Auteur" name="blog-author-<?=$id?>" value="<?=$blog["author"]?>">
-                    <input class="border border-primary-color mt-2 w-80" type="text" placeholder="Afbeelding URL" name="blog-image_link-<?=$id?>" previewId="<?=$id?>" value="<?=$image_link?>">
+                    <input class="border border-primary-color mt-2 w-full" type="text" placeholder="Titel" name="blog-title-<?=$id?>" value="<?=$blog["title"]?>">
+                    <input class="border border-primary-color mt-2 w-full" type="text" placeholder="Auteur" name="blog-author-<?=$id?>" value="<?=$blog["author"]?>">
+                    <input class="border border-primary-color mt-2 w-full" type="text" placeholder="Afbeelding URL" name="blog-image_link-<?=$id?>" previewId="<?=$id?>" value="<?=$image_link?>">
                     <p>Gebruik ",,, " om meerdere categories te scheiden</p>
-                    <input class="border border-primary-color mt-2 w-80" type="text" placeholder="Categorie,,, Categorie" name="blog-categories-<?=$id?>" value="<?=$categories?>">
-                    <input class="border border-primary-color mt-2 w-80" type="text" placeholder="2025-12-25 14:44:59" name="blog-publication_date-<?=$id?>" value="<?=$blog["publication_date"]?>">
-                    <textarea class="border border-primary-color mt-2 w-80" name="preview_text" id="blog-preview_text-<?=$id?>" placeholder="Preview Tekst"><?=$blog["preview_text"]?></textarea>
-                    <textarea class="border border-primary-color mt-2 w-80" name="text" id="blog-text-<?=$id?>" placeholder="Tekst"><?=$blog["text"]?></textarea>
+                    <input class="border border-primary-color mt-2 w-full" type="text" placeholder="Categorie,,, Categorie" name="blog-categories-<?=$id?>" value="<?=$categories?>">
+                    <input class="border border-primary-color mt-2 w-full" type="text" placeholder="2025-12-25 14:44:59" name="blog-publication_date-<?=$id?>" value="<?=$blog["publication_date"]?>">
+                    <textarea class="border border-primary-color mt-2 w-full" name="preview_text" id="blog-preview_text-<?=$id?>" placeholder="Preview Tekst"><?=$blog["preview_text"]?></textarea>
+                    <textarea class="border border-primary-color mt-2 w-full" name="text" id="blog-text-<?=$id?>" placeholder="Tekst"><?=$blog["text"]?></textarea>
                 </div>
                 <?php }
 

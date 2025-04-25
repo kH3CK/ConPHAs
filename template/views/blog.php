@@ -47,26 +47,6 @@ $filter = isset($_GET["filter"]) ? $_GET["filter"] : false;
                     }
 
                     ?>
-
-                    <div class="flex justify-center mt-12">
-                        <nav class="inline-flex rounded-md shadow">
-                            <a href="#" class="py-2 px-4 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 rounded-l-md border border-gray-300">
-                                Vorige
-                            </a>
-                            <a href="#" class="py-2 px-4 bg-conphas-green text-sm font-medium text-white hover:bg-green-700 border border-conphas-green">
-                                1
-                            </a>
-                            <a href="#" class="py-2 px-4 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 border border-gray-300">
-                                2
-                            </a>
-                            <a href="#" class="py-2 px-4 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 border border-gray-300">
-                                3
-                            </a>
-                            <a href="#" class="py-2 px-4 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 rounded-r-md border border-gray-300">
-                                Volgende
-                            </a>
-                        </nav>
-                    </div>
                 </div>
 
                 <div class="mt-12 lg:mt-0 lg:col-span-4">
