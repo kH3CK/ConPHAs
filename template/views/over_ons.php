@@ -4,14 +4,14 @@ require_once("../template/components/head.php");
 require_once("../template/components/navbar.php");
 ?>
 
-<div class="bg-[url('/public/images/bg.png')] bg-cover bg-center h-screen w-full relative xl:h-screen xl:w-full">
+<div class="bg-[url('/public/images/bg.png')] bg-cover bg-center h-screen w-full relative">
   <img src="images/bg.png" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="line">
   <div class="absolute top-0 right-0 m-4 hidden sm:block">
 
 
   </div>
   <div class="flex justify-center h-screen items-center">
-    <<div class="relative md:h-1/2 md:w-3/4 xl:h-1/2 xl:w-3/4">
+    <div class="relative md:h-1/2 md:w-3/4">
       <svg viewBox="0 0 1231 438" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <path d="M1 188.768C54.5 78.768 204.568 -79.842 329.5 188.768C471 493 605.5 298.768 659.5 188.768C741.9 -65.232 851.833 82.9347 896.5 188.768C1019 385 1115.9 556.768 1229.5 188.768" stroke="black" stroke-width="2" />
         <circle class="menu1" cx="169" cy="50" r="48.5" fill="white" stroke="#37852D" stroke-width="3" />
@@ -41,16 +41,16 @@ require_once("../template/components/navbar.php");
         </defs>
       </svg>
 
-      <div class="w-48 hidden absolute left-[120px] -top-[140px] md:left-[80px] md:top-[100px] xl:left-[120px] xl:top-[80px] text-sm" id="text1">
+      <div class="w-48 hidden absolute  left-[120px] -top-[140px] md:left-[80px] md:top-[100px] text-sm" id="text1">
         <p>Plastic word voor van alles gebruikt en vervuilt onze aarde. Dit is natuurlijk niet goed, daarom maken wij een materiaal wat lijkt op plastic. Dit is gemaakt van Polyhydroxyalkanoaten (PHA's). Die worden in de natuur geproduceerd door een grote hoeveelheid aan micro-organismen, waaronder bacteriën.</p>
       </div>
-      <div class="w-48 hidden absolute left-93 mx-auto -top-10 xl:left-[400px] xl:top-[20px] text-sm" id="text2">
+      <div class="w-48 hidden absolute left-93 mx-auto -top-10 text-sm" id="text2">
         <p>PHA kan worden gemaakt uit reststromen zoals drijfmest en snijresten. Studenten hebben berekend hoeveel PHA we uit deze stromen kunnen halen. Ze schatten dat er zo'n 11 kton PHA geproduceerd kan worden. Dit is ongeveer 0,6% van het totale plasticgebruik in Nederland.</p>
       </div>
-      <div class="w-48 hidden absolute left-[645px] top-[160px] xl:left-[645px] xl:top-[160px] text-sm" id="text3">
+      <div class="w-48 hidden absolute left-[645px] top-[160px] text-sm" id="text3">
         <p>Het SSDT-diagram toont de verbinding tussen systemen. Grondstoffen voor PHA komen uit de koolstofkringloop. Deze grondstoffen worden na gebruik teruggevoerd. Lang-cyclische koolstofketen komt via aardolie, maar recyclet. Bioplastics kunnen niet in bestaande recyclinginstallaties.</p>
       </div>
-      <div class="w-48 hidden absolute left-[925px] -top-[10px] xl:left-[925px] xl:top-[20px] text-sm" id="text4">
+      <div class="w-48 hidden absolute left-[925px] -top-[10px] text-sm" id="text4">
         <p>De PHA-waardeketen werd in kaart gebracht met SSDT-methode. SSDT identificeert materiaalstromen en vermindert verspilling in de waardeketen. Het doel is kosten door verspilling om te zetten in kringlopen. SSDT combineert verschillende duurzaamheidprincipes en creëert nieuwe verdienmodellen.</p>
       </div>
     </div>
