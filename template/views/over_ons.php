@@ -55,19 +55,4 @@ require_once("../template/components/navbar.php");
       </div>
     </div>
   </div>
-
-<script>
-  function checkScreenSize() {
-    if (window.innerWidth < 800) { 
-      window.location.href = "over_phone"; 
-    }
-  }
-
-  window.onload = checkScreenSize;
-
-  window.onresize = checkScreenSize;
-</script>
-
-
   <script src="js/menu.js"></script>
-  </body>

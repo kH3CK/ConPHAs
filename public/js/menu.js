@@ -43,3 +43,12 @@ menu4.forEach(menu => {
         text4.classList.add('hidden');
     });
 });
+function checkScreenSize() {
+  if (window.innerWidth < 800) { 
+    window.location.href = "over_phone"; 
+  }
+}
+
+window.onload = checkScreenSize;
+
+window.onresize = checkScreenSize;
