@@ -16,8 +16,15 @@ foreach ($_POST as $key => $value) {
         $splitkey = $split[1];
         $lastsplitvalue = $split[count($split) - 1];
         if ($lastsplitvalue == "new") {
-            $newblogvalues[$splitkey] = $value;
-        } elseif ($splitkey != "categories") {
+            if ($value) { // zo dat het array leeg is en geldt als false voor een if als er geen data is voor een nieuwe blog
+                $newblogvalues[$splitkey] = $value;
+            }
+        } elseif ($splitkey == "categories") {
+            $pdo->prepare("DELETE FROM categories WHERE blog_id = ?")->execute([$lastsplitvalue]);
+            foreach (explode(",,, ", $value) as $categoryName) {
+                $pdo->prepare("INSERT INTO categories (blog_id, name) VALUES (?, ?)")->execute([$lastsplitvalue, $categoryName]);
+            }
+        } else {
             // ik weet dat direct data inserten in een prepated statement gaat tegen het doel van een prepared statement, maar dit is
             // onbelangrijk in deze situatie want alleen een admin kan naar deze pagina gaan
             $pdo->prepare("UPDATE blogs SET " . $splitkey . " = ? WHERE id = ?")->execute([$value, $lastsplitvalue]);
