@@ -72,8 +72,10 @@ $internship = $statement->fetch();
                     <p>&#x1F3E0; [plaatsnaam], [postcode]</p>
                     <p>&#x1F4CD; [straatnaam] [nummer]</p>
                 </div>
+                <button class="mt-4 p-4 bg-green-500 text-black rounded">
+                    Aanmelden
+                </button>
             </div>
-        </div>
     </div>
-</div>
+</div>  
 </div>
