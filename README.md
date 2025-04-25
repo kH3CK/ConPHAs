@@ -41,7 +41,8 @@ git clone git@github.com:kH3CK/ConPHAs.git
 Daarna:
 1. Installeer **XAMPP** met **Apache**, **PHP** en **MySQL**.
 2. Voeg dit toe aan **XAMPP installatie folder\apache\conf\extra\httpd-vhosts.conf**:
-    `<VirtualHost *:80>
+    ```
+    <VirtualHost *:80>
     ServerName scrum.conphas
     DocumentRoot "de pad naar de project folder"
     <Directory "de pad naar de project folder">
@@ -49,7 +50,7 @@ Daarna:
         AllowOverride All
         Require local
     </Directory>
-    </VirtualHost>`
+    </VirtualHost>```
 3. Voeg dit toe aan **C:\Windows\System32\drivers\etc\hosts**:
     `127.0.0.1 scrum.conphas`
 4. Start **Apache** en **MySQL**.
