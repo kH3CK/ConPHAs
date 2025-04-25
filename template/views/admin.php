@@ -3,6 +3,7 @@
 require_once("../src/imports/checkIfLoggedIn.php");
 require_once("../template/components/head.php");
 require_once("../src/imports/getTextFromDatabase.php");
+require_once("../template/components/navbar.php");
 
 $logo = getTextFromDatabase(2);
 
