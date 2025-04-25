@@ -1,7 +1,7 @@
 <?php
 
-require_once("../template/components/head.php");
-require_once("../template/components/navbar.php");
+require_once("template/components/head.php");
+require_once("template/components/navbar.php");
 $statement = $pdo->prepare("SELECT * FROM internships WHERE id = :id");
 $statement->execute($_GET);
 $internship = $statement->fetch();
@@ -71,6 +71,11 @@ $internship = $statement->fetch();
                     <p>&#x2709; info@aanPHA.nl</p>
                     <p>&#x1F3E0; [plaatsnaam], [postcode]</p>
                     <p>&#x1F4CD; [straatnaam] [nummer]</p>
+                </div>
+                <div class="mt-4">
+                    <a href="aanmelden.php" class="inline-block bg-primary-color text-white px-6 py-2 rounded-lg hover:bg-primary-color-dark transition-colors">
+                        Aanmelden
+                    </a>
                 </div>
             </div>
         </div>

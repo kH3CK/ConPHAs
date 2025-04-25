@@ -9,3 +9,8 @@ RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
 # PHP instellingen
 php_flag display_errors on
 php_value error_reporting E_ALL
+
+# Zorg ervoor dat PHP bestanden direct worden uitgevoerd
+<FilesMatch "\.php$">
+    SetHandler application/x-httpd-php
+</FilesMatch> 
