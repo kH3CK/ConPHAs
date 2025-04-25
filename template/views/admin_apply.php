@@ -57,5 +57,4 @@ if ($newblogvalues) {
         $pdo->prepare("INSERT INTO categories (blog_id, name) VALUES (?, ?)")->execute([$id, $category]);
     }
 }
-exit;
 header("Location: admin");
