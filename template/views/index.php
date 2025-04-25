@@ -120,12 +120,12 @@ require_once("../src/imports/convertDateToText.php");
 <div class="flex min-h-screen flex-col content-wrapper">
 
     <section class="py-16 relative bg-primary-background overflow-hidden hero-section">
-        <div class="max-w-7xl mx-auto z-20 mb-12">
+        <div class="max-w-7xl mx-auto xl:ml-12 z-20 mb-12">
             <div class="max-w-4xl">
                 <h1 class="text-primary-color text-3xl md:text-6xl font-bold mb-6">
                     <?=getTextFromDatabase(1)?>
                 </h1>
-                <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 ">
                     Jouw springplank naar een <span class="text-primary-color">groene carrière</span>
                 </h2>
                 <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl">
@@ -182,7 +182,7 @@ require_once("../src/imports/convertDateToText.php");
     </section>
 
     <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-7xl mx-auto xl:ml-12 px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                 <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
