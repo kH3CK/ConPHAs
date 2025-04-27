@@ -63,7 +63,7 @@ INSERT INTO internships (title, description, minimum_level, location, weeks, hou
 -- ("Bob", "de", "Dok", "1999-10-18", 40, 200, NULL, 1);
 
 CREATE TABLE admins (
-    iD MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(100),
     password VARCHAR(300)
 );
