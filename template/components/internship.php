@@ -2,8 +2,6 @@
 <?php
 
 function makeInternship($internship) {?>
-<!-- slechte HTML maar niet ik heb het geschreven en wij hebben niet veel tijd meer dus ik ga het niet aanraken behalve
-database data inserten en typos corrigeren -->
 <div class="flex items-center bg-green-50 p-4 rounded-lg shadow-md relative">
     <img src="<?=$internship["image_link"]?>" alt="Stage" class="w-20 h-20 rounded-md object-cover">
     <div class="ml-4">
