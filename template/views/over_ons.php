@@ -1,7 +1,9 @@
 <?php
 
+$pageTitle = "Over ConPHAs";
 require_once("../template/components/head.php");
 require_once("../template/components/navbar.php");
+
 ?>
 
 <div class="bg-[url('/public/images/bg.png')] bg-cover bg-center h-screen w-full relative">

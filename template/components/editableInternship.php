@@ -3,7 +3,7 @@
 function makeEditableInternship($internship = []) {
     $id = $internship["id"] ?? "new";?>
 <div class="inline-block">
-    <img src="<?=$internship["image_link"] ?? "https://picsum.photos/200/200"?>" alt="Afbeelding">
+    <img src="<?=$internship["image_link"] ?? "https://picsum.photos/200/200"?>" alt="Afbeelding" class="w-48 h-48">
     <div class="m-2">
         <label for="image_link-<?=$id?>" class="block mb-1">Afbeelding URL</label>
         <input id="image_link-<?=$id?>" type="text" name="image_link-<?=$id?>" value="<?=@$internship["image_link"]?>" class="border border-primary-color w-48" placeholder="https://picsum.photos/200/200">

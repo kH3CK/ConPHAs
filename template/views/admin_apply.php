@@ -1,9 +1,24 @@
+<!-- deze bestand is gebruikt voor verwerken van alles dat werd aangepast op de admin pagina. De hele pagina is een grote form
+element die dan wordt gesubmit door Opslaan knop -->
 <?php
 
 require_once("../src/imports/checkIfLoggedIn.php");
+if (!(isset($_POST["title"]) && isset($_POST["logo"]) && isset($_POST["font-link"]) && $_POST["font-code"])) {
+    exit; // kan alleen gebeuren als jij ga proberen om de pagina bewust te misbruiken, dus heb geen moeie afhandeling zoals een
+    // error text nodig
+}
 foreach ([$_POST["title"], $_POST["logo"], $_POST["font-link"], $_POST["font-code"]] as $key => $value) {
     $pdo->prepare("UPDATE texts SET text = ? WHERE id = ?")->execute([$value, ++$key]);
 }
+define("ALLOWED_BLOG_ROWS", [
+    "title" => true,
+    "author" => true,
+    "image_link" => true,
+    "categories" => true,
+    "publication_date" => true,
+    "preview_text" => true,
+    "text" => true
+]);
 $newblogvalues = [];
 foreach ($_POST as $key => $value) {
     $first5letters = substr($key, 0, 5);
@@ -35,9 +50,7 @@ foreach ($_POST as $key => $value) {
                     $pdo->prepare("DELETE FROM categories WHERE blog_id = ? AND name = ?")->execute([$lastsplitvalue, $oldcategory]);
                 }
             }
-        } elseif ($splitkey != "categories_old") {
-            // ik weet dat direct data inserten in een prepated statement gaat tegen het doel van een prepared statement, maar dit is
-            // onbelangrijk in deze situatie want alleen een admin kan naar deze pagina gaan
+        } elseif ($splitkey != "categories_old" && isset(ALLOWED_BLOG_ROWS[$splitkey])) {
             $pdo->prepare("UPDATE blogs SET " . $splitkey . " = ? WHERE id = ?")->execute([$value, $lastsplitvalue]);
         }
     }

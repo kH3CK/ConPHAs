@@ -1,5 +1,9 @@
 <?php
 
+if (!isset($_GET["id"])) {
+    exit; // kan alleen gebeuren als jij ga proberen om de pagina bewust te misbruiken, dus heb geen moeie afhandeling zoals een
+    // error text nodig
+}
 require_once("../template/components/head.php");
 require_once("../template/components/navbar.php");
 $statement = $pdo->prepare("SELECT * FROM internships WHERE id = :id");

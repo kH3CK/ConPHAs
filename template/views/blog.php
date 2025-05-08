@@ -1,5 +1,6 @@
 <?php
 
+$pageTitle = "Blog van ConPHAs";
 require_once("../template/components/navbar.php");
 require_once("../template/components/head.php");
 require_once("../src/imports/connectToDatabase.php");

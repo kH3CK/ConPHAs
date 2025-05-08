@@ -1,7 +1,9 @@
 <?php
 
+$pageTitle = "Over ConPHAs";
 require_once("../template/components/head.php");
 require_once("../template/components/navbar.php");
+
 ?>
 <div class="bg-gray-100 text-gray-900">
     <header class="bg-blue-600 text-white p-5 text-center text-xl font-bold">

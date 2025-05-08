@@ -1,6 +1,20 @@
+<!-- deze bestand is gebruikt voor uitvoeren van alle aanpassingen die jij doe op stageplekken bewerken pagina. Alle stageplekken
+staan in een grote form element die dan stuurt alle data over ze hier naartoe -->
 <?php
 
 require_once("../src/imports/checkIfLoggedIn.php");
+define("ALLOWED_INTERNSHIP_ROWS", [
+    "image_link" => true,
+    "title" => true,
+    "start_date_and_time" => true,
+    "weeks" => true,
+    "hours" => true,
+    "location" => true,
+    "minimum_level" => true,
+    "type" => true,
+    "compensation" => true,
+    "description" => true
+]);
 $stufftochange = [];
 foreach ($_POST as $key => $value) {
     $splitkey = explode("-", $key);
@@ -14,12 +28,14 @@ foreach ($_POST as $key => $value) {
 foreach ($stufftochange as $id => $properties) {
     $setstring = "";
     foreach ($properties as $property => $value) {
-        $setstring = $setstring . $property . " = :" . $property . ", ";
+        if (isset(ALLOWED_INTERNSHIP_ROWS[$property])) {
+            $setstring = $setstring . $property . " = :" . $property . ", ";
+        }
     }
     $setstring = substr($setstring, 0, -2);
     $properties["id"] = $id;
-    // ik weet dat direct data inserten in een prepared statement gaat tegen het doel van een prepared statement, maar dit is
-    // onbelangrijk in deze situatie want alleen een admin kan naar deze pagina gaan
-    $pdo->prepare("UPDATE internships SET " . $setstring . " WHERE id = :id")->execute($properties);
+    if ($setstring) {
+        $pdo->prepare("UPDATE internships SET " . $setstring . " WHERE id = :id")->execute($properties);
+    }
 }
 header("Location: edit_internships");

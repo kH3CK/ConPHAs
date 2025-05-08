@@ -30,14 +30,7 @@ if (!isset($GLOBALS["editingPage"])) {
         ?>
     </style>
     <title>
-        <?php
-
-        $statement = $pdo->prepare("SELECT title FROM pages WHERE filename = ?");
-        $statement->execute([substr($uri, 1)]);
-        $result = $statement->fetch();
-        echo $result ? $result["title"] : $pdo->query("SELECT text FROM texts WHERE id = 1")->fetch()["text"];
-
-        ?>
+        <?=isset($pageTitle) ? $pageTitle : $pdo->query("SELECT text FROM texts WHERE id = 1")->fetch()["text"];?>
     </title>
 </head>
 <body>

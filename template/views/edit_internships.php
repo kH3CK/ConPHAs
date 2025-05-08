@@ -92,7 +92,7 @@ require_once("../template/components/editableInternship.php");
                     <a href="/remove_internship?id=<?=$internship["id"]?>" class="absolute w-10 h-10 bg-danger border border-primary-color -top-5 -right-5 flex justify-center items-center text-center">
                         <p class="text-primary-background text-xl">X</p>
                     </a>
-                    <?= makeEditableInternship($internship) ?>
+                    <?=makeEditableInternship($internship)?>
                 </div>
             <?php }
 
@@ -108,10 +108,12 @@ require_once("../template/components/editableInternship.php");
                         <input type="text" name="search-term" placeholder="Trefwoord" class="border border-primary-color block mb-2 rounded">
                         <strong>Minimum Nodig Niveau</strong>
                         <div class="mb-2">
-                            <input type="checkbox" class="me-2" name="mbo-1" id="mbo-1"><label for="mbo-1">MBO 1</label>
-                            <input type="checkbox" class="me-2" name="mbo-2" id="mbo-2"><label for="mbo-2">MBO 2</label>
-                            <input type="checkbox" class="me-2" name="mbo-3" id="mbo-3"><label for="mbo-3">MBO 3</label>
-                            <input type="checkbox" class="me-2" name="mbo-4" id="mbo-4"><label for="mbo-4">MBO 4</label>
+                            <div>
+                                <input type="checkbox" class="me-2" name="mbo-1" id="mbo-1"><label for="mbo-1">MBO 1</label>
+                                <input type="checkbox" class="me-2" name="mbo-2" id="mbo-2"><label for="mbo-2">MBO 2</label>
+                                <input type="checkbox" class="me-2" name="mbo-3" id="mbo-3"><label for="mbo-3">MBO 3</label>
+                                <input type="checkbox" class="me-2" name="mbo-4" id="mbo-4"><label for="mbo-4">MBO 4</label>
+                            </div>
                             <input type="checkbox" class="me-2" name="hbo" id="hbo"><label for="hbo">HBO</label>
                         </div>
                         <strong>Type Stage</strong>
@@ -121,17 +123,25 @@ require_once("../template/components/editableInternship.php");
                         </div>
                         <strong>Start Maand</strong>
                         <div class="mb-2">
-                            <input type="checkbox" class="me-2" name="month-1" id="month-1"><label for="month-1">Januari</label>
-                            <input type="checkbox" class="me-2" name="month-2" id="month-2"><label for="month-2">Februari</label>
-                            <input type="checkbox" class="me-2" name="month-3" id="month-3"><label for="month-3">Mart</label>
-                            <input type="checkbox" class="me-2" name="month-4" id="month-4"><label for="month-4">April</label>
-                            <input type="checkbox" class="me-2" name="month-5" id="month-5"><label for="month-5">Mei</label>
-                            <input type="checkbox" class="me-2" name="month-6" id="month-6"><label for="month-6">Juni</label>
-                            <input type="checkbox" class="me-2" name="month-7" id="month-7"><label for="month-7">Juli</label>
-                            <input type="checkbox" class="me-2" name="month-8" id="month-8"><label for="month-8">Augustus</label>
-                            <input type="checkbox" class="me-2" name="month-9" id="month-9"><label for="month-9">September</label>
-                            <input type="checkbox" class="me-2" name="month-10" id="month-10"><label for="month-10">Oktober</label>
-                            <input type="checkbox" class="me-2" name="month-11" id="month-11"><label for="month-11">November</label>
+                            <div>
+                                <input type="checkbox" class="me-2" name="month-1" id="month-1"><label for="month-1">Januari</label>
+                                <input type="checkbox" class="me-2" name="month-2" id="month-2"><label for="month-2">Februari</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" class="me-2" name="month-3" id="month-3"><label for="month-3">Mart</label>
+                                <input type="checkbox" class="me-2" name="month-4" id="month-4"><label for="month-4">April</label>
+                                <input type="checkbox" class="me-2" name="month-5" id="month-5"><label for="month-5">Mei</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" class="me-2" name="month-6" id="month-6"><label for="month-6">Juni</label>
+                                <input type="checkbox" class="me-2" name="month-7" id="month-7"><label for="month-7">Juli</label>
+                                <input type="checkbox" class="me-2" name="month-8" id="month-8"><label for="month-8">Augustus</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" class="me-2" name="month-9" id="month-9"><label for="month-9">September</label>
+                                <input type="checkbox" class="me-2" name="month-10" id="month-10"><label for="month-10">Oktober</label>
+                                <input type="checkbox" class="me-2" name="month-11" id="month-11"><label for="month-11">November</label>
+                            </div>
                             <input type="checkbox" class="me-2" name="month-12" id="month-12"><label for="month-12">December</label>
                         </div>
                         <strong>Stage weken</strong>
@@ -147,7 +157,7 @@ require_once("../template/components/editableInternship.php");
         </div>
         <form action="/add_internship" method="post">
             <div class="border border-primary-color m-6 relative">
-                <?= makeEditableInternship() ?>
+                <?=makeEditableInternship()?>
             </div>
             <div class="text-center">
                 <button class="bg-primary-color border border-primary-color p-2 text-primary-background m-2">Toevoegen</button>
