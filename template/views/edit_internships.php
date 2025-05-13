@@ -132,7 +132,7 @@ require_once("../template/components/editableInternship.php");
                                 <input type="checkbox" class="me-2" name="month-4" id="month-4"><label for="month-4">April</label>
                                 <input type="checkbox" class="me-2" name="month-5" id="month-5"><label for="month-5">Mei</label>
                             </div>
-                            <div class="bg-radial from-red-300 from-40% to-90% w-fit">
+                            <div class="bg-radial from-rose-300 from-40% to-90% w-fit">
                                 <input type="checkbox" class="me-2" name="month-6" id="month-6"><label for="month-6">Juni</label>
                                 <input type="checkbox" class="me-2" name="month-7" id="month-7"><label for="month-7">Juli</label>
                                 <input type="checkbox" class="me-2" name="month-8" id="month-8"><label for="month-8">Augustus</label>
