@@ -14,78 +14,78 @@ require_once("../template/components/editableInternship.php");
             </div>
             <?php
 
-            $monthstring = "";
-            $levelstring = "";
+            $monthString = "";
+            $levelString = "";
             for ($i = 1; $i < 12; $i++) {
                 if (isset($_GET["month-" . $i])) {
-                    $monthstring = $monthstring . "MONTH(start_date_and_time) = " . $i . " OR ";
+                    $monthString = $monthString . "MONTH(start_date_and_time) = " . $i . " OR ";
                 }
                 if ($i <= 4 && isset($_GET["mbo-" . $i])) {
-                    $levelstring = $levelstring . "minimum_level = 'MBO " . $i . "' OR ";
+                    $levelString = $levelString . "minimum_level = 'MBO " . $i . "' OR ";
                 }
             }
             if (isset($_GET["hbo"])) {
-                $levelstring = $levelstring . "minimum_level = 'HBO'";
+                $levelString = $levelString . "minimum_level = 'HBO'";
             } else {
-                $levelstring = substr($levelstring, 0, -4);
+                $levelString = substr($levelString, 0, -4);
             }
-            $weeksmin = @$_GET["weeks-min"];
-            $weeksminnotempty = !empty($weeksmin);
-            $weeksmax = @$_GET["weeks-max"];
-            $weeksmaxnotempty = !empty($weeksmax);
-            $hoursmin = @$_GET["hours-min"];
-            $hoursminnotempty = !empty($hoursmin);
-            $hoursmax = @$_GET["hours-max"];
-            $hoursmaxnotempty = !empty($hoursmax);
-            $compensationmin = @$_GET["compensation-min"];
-            $compensationminnotempty = !empty($compensationmin);
-            $checkminormax = $weeksminnotempty || $weeksmaxnotempty || $hoursminnotempty || $hoursmaxnotempty || $compensationminnotempty;
-            $monthstring = substr($monthstring, 0, -4);
-            $checktitle = !empty($_GET["search-term"]);
-            $checkstagetype = isset($_GET["afstudeerstage"]) != isset($_GET["meewerkstage"]);
-            if ($monthstring || $levelstring || $checktitle || $checkstagetype || $checkminormax) {
+            $weeksMin = @$_GET["weeks-min"];
+            $weeksMinNotEmpty = !empty($weeksMin);
+            $weeksMax = @$_GET["weeks-max"];
+            $weeksMaxNotEmpty = !empty($weeksMax);
+            $hoursMin = @$_GET["hours-min"];
+            $hoursMinNotEmpty = !empty($hoursMin);
+            $hoursMax = @$_GET["hours-max"];
+            $hoursMaxNotEmpty = !empty($hoursMax);
+            $compensationMin = @$_GET["compensation-min"];
+            $compensationMinNotEmpty = !empty($compensationMin);
+            $checkMinOrMax = $weeksMinNotEmpty || $weeksMaxNotEmpty || $hoursMinNotEmpty || $hoursMaxNotEmpty || $compensationMinNotEmpty;
+            $monthString = substr($monthString, 0, -4);
+            $checkTitle = !empty($_GET["search-term"]);
+            $checkInternshipType = isset($_GET["afstudeerstage"]) != isset($_GET["meewerkstage"]);
+            if ($monthString || $levelString || $checkTitle || $checkInternshipType || $checkMinOrMax) {
                 $checks = [];
-                $executearray = [];
-                if ($checktitle) {
+                $executeArray = [];
+                if ($checkTitle) {
                     $checks[] = "title LIKE CONCAT(CONCAT('%', :search_term), '%')";
-                    $executearray["search_term"] = $_GET["search-term"];
+                    $executeArray["search_term"] = $_GET["search-term"];
                 }
-                if ($monthstring) {
-                    $checks[] = $monthstring;
+                if ($monthString) {
+                    $checks[] = $monthString;
                 }
-                if ($levelstring) {
-                    $checks[] = $levelstring;
+                if ($levelString) {
+                    $checks[] = $levelString;
                 }
-                if ($checkstagetype) {
+                if ($checkInternshipType) {
                     $checks[] = "type = " . isset($_GET["afstudeerstage"]) ? "afstudeerstage" : "meewerkstage";
                 }
-                if ($weeksminnotempty) {
+                if ($weeksMinNotEmpty) {
                     $checks[] = "weeks >= :weeks_min";
-                    $executearray["weeks_min"] = $weeksmin;
+                    $executeArray["weeks_min"] = $weeksMin;
                 }
-                if ($weeksmaxnotempty) {
+                if ($weeksMaxNotEmpty) {
                     $checks[] = "weeks <= :weeks_max";
-                    $executearray["weeks_max"] = $weeksmax;
+                    $executeArray["weeks_max"] = $weeksMax;
                 }
-                if ($hoursminnotempty) {
+                if ($hoursMinNotEmpty) {
                     $checks[] = "hours >= :hours_min";
-                    $executearray["hours_min"] = $hoursmin;
+                    $executeArray["hours_min"] = $hoursMin;
                 }
-                if ($hoursmaxnotempty) {
+                if ($hoursMaxNotEmpty) {
                     $checks[] = "hours <= :hours_max";
-                    $executearray["hours_max"] = $hoursmax;
+                    $executeArray["hours_max"] = $hoursMax;
                 }
-                if ($compensationminnotempty) {
+                if ($compensationMinNotEmpty) {
                     $checks[] = "compensation >= :compensation_min";
-                    $executearray["compensation_min"] = $compensationmin;
+                    $executeArray["compensation_min"] = $compensationMin;
                 }
-                $searchstring = " WHERE " . implode(" AND ", $checks);
+                $searchString = " WHERE " . implode(" AND ", $checks);
             }
-            if ($checktitle || $checkminormax) {
-                $statement = $pdo->prepare("SELECT * FROM internships" . $searchstring);
-                $statement->execute($executearray);
+            if ($checkTitle || $checkMinOrMax) {
+                $statement = $pdo->prepare("SELECT * FROM internships" . $searchString);
+                $statement->execute($executeArray);
             } else {
-                $statement = $pdo->query("SELECT * FROM internships" . ($searchstring ?? ""));
+                $statement = $pdo->query("SELECT * FROM internships" . ($searchString ?? ""));
             }
             foreach ($statement->fetchAll() as $internship) {?>
                 <div class="border border-primary-color m-6 relative">

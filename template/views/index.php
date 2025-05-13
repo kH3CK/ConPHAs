@@ -6,7 +6,7 @@ require_once("../template/components/head.php");
 require_once("../src/imports/convertDateToText.php");
 
 ?>
-<style> /* dit bijna alles kan gewoon naar tailwind herschreven worden, dus TODO: dit */
+<style>
     .logo-slider {
         transition: transform 0.5s ease-in-out;
     }
