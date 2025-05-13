@@ -123,26 +123,28 @@ require_once("../template/components/editableInternship.php");
                         </div>
                         <strong>Start Maand</strong>
                         <div class="mb-2">
-                            <div>
+                            <div class="bg-radial from-blue-300 from-40% to-90% w-fit">
                                 <input type="checkbox" class="me-2" name="month-1" id="month-1"><label for="month-1">Januari</label>
                                 <input type="checkbox" class="me-2" name="month-2" id="month-2"><label for="month-2">Februari</label>
                             </div>
-                            <div>
+                            <div class="bg-radial from-lime-300 from-40% to-90% w-fit">
                                 <input type="checkbox" class="me-2" name="month-3" id="month-3"><label for="month-3">Mart</label>
                                 <input type="checkbox" class="me-2" name="month-4" id="month-4"><label for="month-4">April</label>
                                 <input type="checkbox" class="me-2" name="month-5" id="month-5"><label for="month-5">Mei</label>
                             </div>
-                            <div>
+                            <div class="bg-radial from-red-300 from-40% to-90% w-fit">
                                 <input type="checkbox" class="me-2" name="month-6" id="month-6"><label for="month-6">Juni</label>
                                 <input type="checkbox" class="me-2" name="month-7" id="month-7"><label for="month-7">Juli</label>
                                 <input type="checkbox" class="me-2" name="month-8" id="month-8"><label for="month-8">Augustus</label>
                             </div>
-                            <div>
+                            <div class="bg-radial from-orange-300 from-40% to-90% w-fit">
                                 <input type="checkbox" class="me-2" name="month-9" id="month-9"><label for="month-9">September</label>
                                 <input type="checkbox" class="me-2" name="month-10" id="month-10"><label for="month-10">Oktober</label>
                                 <input type="checkbox" class="me-2" name="month-11" id="month-11"><label for="month-11">November</label>
                             </div>
-                            <input type="checkbox" class="me-2" name="month-12" id="month-12"><label for="month-12">December</label>
+                            <div class="bg-radial from-blue-300 from-40% to-90% w-fit">
+                                <input type="checkbox" class="me-2" name="month-12" id="month-12"><label for="month-12">December</label>
+                            </div>
                         </div>
                         <strong>Stage weken</strong>
                         <p class="mb-2">van <input class="border border-primary-color rounded" type="text" name="weeks-min" placeholder="0"> tot <input class="border border-primary-color rounded" type="text" name="weeks-max" placeholder="99999"></p>
