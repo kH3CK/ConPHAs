@@ -1,14 +1,19 @@
 <?php
 
 if (!isset($_GET["id"])) {
-    exit; // kan alleen gebeuren als jij ga proberen om de pagina bewust te misbruiken, dus heb geen moeie afhandeling zoals een
-    // error text nodig
+    header("Location: 404");
+    exit;
 }
-require_once("../template/components/head.php");
-require_once("../template/components/navbar.php");
+require_once("../src/imports/connectToDatabase.php");
 $statement = $pdo->prepare("SELECT * FROM internships WHERE id = :id");
 $statement->execute($_GET);
 $internship = $statement->fetch();
+if (!$internship) {
+    header("Location: 404");
+    exit;
+}
+require_once("../template/components/head.php");
+require_once("../template/components/navbar.php");
 
 ?>
 <div class="container mx-auto p-4 mt-32">

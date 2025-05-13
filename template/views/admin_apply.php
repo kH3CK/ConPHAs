@@ -4,8 +4,8 @@ element die dan wordt gesubmit door Opslaan knop -->
 
 require_once("../src/imports/checkIfLoggedIn.php");
 if (!(isset($_POST["title"]) && isset($_POST["logo"]) && isset($_POST["font-link"]) && $_POST["font-code"])) {
-    exit; // kan alleen gebeuren als jij ga proberen om de pagina bewust te misbruiken, dus heb geen moeie afhandeling zoals een
-    // error text nodig
+    header("Location: admin");
+    exit;
 }
 foreach ([$_POST["title"], $_POST["logo"], $_POST["font-link"], $_POST["font-code"]] as $key => $value) {
     $pdo->prepare("UPDATE texts SET text = ? WHERE id = ?")->execute([$value, ++$key]);

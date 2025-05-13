@@ -1,8 +1,16 @@
 <?php
 
 if (!isset($_GET["id"])) {
-    exit; // kan alleen gebeuren als jij ga proberen om de pagina bewust te misbruiken, dus heb geen moeie afhandeling zoals een
-    // error text nodig
+    header("Location: 404");
+    exit;
+}
+require_once("../src/imports/connectToDatabase.php");
+$statement = $pdo->prepare("SELECT * FROM blogs WHERE id = :id");
+$statement->execute($_GET);
+$blog = $statement->fetch();
+if (!$blog) {
+    header("Location: 404");
+    exit;
 }
 require_once("../template/components/navbar.php");
 require_once("../template/components/head.php");
@@ -26,9 +34,7 @@ require_once("../template/components/blog.php");
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <?php
 
-            $statement = $pdo->prepare("SELECT * FROM blogs WHERE id = :id");
-            $statement->execute($_GET);
-            makeBlog($statement->fetch(), false);
+            makeBlog($blog, false);
 
             ?>
         </div>
