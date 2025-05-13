@@ -20,12 +20,12 @@
             <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#36B843] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             <span class="absolute inset-0 rounded-md bg-[#36B843]/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></span>
           </a>
-          <a href="/stage" class="relative px-5 py-2.5 font-medium text-gray-800 group">
+          <a href="/stageplekken" class="relative px-5 py-2.5 font-medium text-gray-800 group">
             <span class="relative z-10">Stage</span>
             <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#36B843] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             <span class="absolute inset-0 rounded-md bg-[#36B843]/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></span>
           </a>
-          <a href="/over-ons" class="relative px-5 py-2.5 font-medium text-gray-800 group">
+          <a href="/over_ons" class="relative px-5 py-2.5 font-medium text-gray-800 group">
             <span class="relative z-10">Over Ons</span>
             <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#36B843] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             <span class="absolute inset-0 rounded-md bg-[#36B843]/10 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"></span>
