@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
         dropdown.classList.toggle('hidden');
     });
 
-    // Close dropdown when clicking outside
+    // dropdown gaat dicht als je buiten de dropdown klikt
     document.addEventListener('click', function(event) {
         if (!dropdownButton.contains(event.target) && !dropdown.contains(event.target)) {
             dropdown.classList.add('hidden');
         }
     });
 
-    // Update button text when selections change
+    // Selecteer alle checkboxes in de dropdown
     const checkboxes = dropdown.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', function() {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Set initial button text
+    // zet essentiele tekst in de button
     const selectedOptions = Array.from(checkboxes)
         .filter(cb => cb.checked)
         .map(cb => cb.nextElementSibling.textContent.trim());
@@ -48,14 +48,14 @@ document.addEventListener('DOMContentLoaded', function() {
         monthDropdown.classList.toggle('hidden');
     });
 
-    // Close dropdown when clicking outside
+    // dropdown gaat dicht als je buiten de dropdown klikt
     document.addEventListener('click', function(event) {
         if (!monthDropdownButton.contains(event.target) && !monthDropdown.contains(event.target)) {
             monthDropdown.classList.add('hidden');
         }
     });
 
-    // Update button text when selections change
+    // Selecteer alle checkboxes in de dropdown
     const monthCheckboxes = monthDropdown.querySelectorAll('input[type="checkbox"]');
     monthCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', function() {
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Set initial button text
+    // zet essentiele tekst in de button
     const selectedMonths = Array.from(monthCheckboxes)
         .filter(cb => cb.checked)
         .map(cb => cb.nextElementSibling.textContent.trim());

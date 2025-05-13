@@ -57,4 +57,4 @@ require_once("../template/components/navbar.php");
       </div>
     </div>
   </div>
-  <script src="js/menu.js"></script>
+  <script src="js/over_ons.js"></script>
