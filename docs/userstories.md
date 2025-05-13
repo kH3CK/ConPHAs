@@ -1,6 +1,6 @@
 # Functioneel Ontwerp
 
-Auteurs : Koen, Ramon, Oleksander en Jason
+Auteurs : Koen, Ramon, Oleksandr en Jason
 Klas : 24 SDB
 
 ### Functionele eisen en omschrijving
@@ -39,34 +39,17 @@ Klas : 24 SDB
 
 ## Definition of Done
 
->Maak een definition of done.
->Zie voorbeeld hieronder. Aanpassen aan de wensen van je team of project.
-
 1. **Functionele Vereisten**:
     - Alle functionaliteiten zoals beschreven in de user story zijn geïmplementeerd.
     - De functionaliteiten voldoen aan de specificaties en acceptatiecriteria.
 2. **Code Kwaliteit**:
     - De code is geschreven volgens de vastgestelde coding standards.
-    - Er zijn geen onbehandelde compilerwaarschuwingen of -fouten.
     - De code is goed leesbaar en gedocumenteerd.
-3. **Unit Testing**:
-    - Unit tests zijn geschreven voor alle nieuwe functionaliteiten.
-    - Bestaande unit tests zijn bijgewerkt om wijzigingen in de code weer te geven.
-    - Alle tests slagen zonder fouten.
-4. **Integratietesting**:
-    - De nieuwe code is geïntegreerd in de bestaande codebase zonder conflicten.
-    - Integratietests zijn uitgevoerd en alle tests slagen zonder fouten.
-5. **Gebruikersacceptatietesting (UAT)**:
-    - De functionaliteiten zijn getest in de productieachtige omgeving.
-    - De gebruikersacceptatietests zijn succesvol afgerond.
 6. **Documentatie**:
-    - Alle benodigde documentatie is bijgewerkt, inclusief gebruikershandleidingen, API-documentatie, enz.
+    - Alle benodigde documentatie is bijgewerkt.
 7. **Deployment**:
     - De code is klaar voor implementatie naar de productieomgeving.
-    - Eventuele configuratie- of deploymentscripts zijn bijgewerkt.
-8. **Code Review**:
-    - Code reviews zijn uitgevoerd en eventuele feedback is geïmplementeerd.
-9. **Product Owner Goedkeuring**:
-    - De leidinggevende/opdrachtgever heeft de functionaliteit gecontroleerd en goedgekeurd.
+9. **Docent Goedkeuring**:
+    - De coach/docent heeft de functionaliteit gecontroleerd en goedgekeurd.
 10. **Geen Blokkerende Problemen**:
     - Er zijn geen bekende blokkerende problemen die de implementatie van de functionaliteit zouden verhinderen.
