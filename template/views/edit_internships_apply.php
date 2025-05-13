@@ -15,27 +15,27 @@ define("ALLOWED_INTERNSHIP_ROWS", [
     "compensation" => true,
     "description" => true
 ]);
-$stufftochange = [];
+$stuffToChange = [];
 foreach ($_POST as $key => $value) {
-    $splitkey = explode("-", $key);
-    $property = $splitkey[0];
-    $id = $splitkey[1];
-    if (!isset($stufftochange[$id])) {
-        $stufftochange[$id] = [];
+    $splitKey = explode("-", $key);
+    $property = $splitKey[0];
+    $id = $splitKey[1];
+    if (!isset($stuffToChange[$id])) {
+        $stuffToChange[$id] = [];
     }
-    $stufftochange[$id][$property] = $value;
+    $stuffToChange[$id][$property] = $value;
 }
-foreach ($stufftochange as $id => $properties) {
-    $setstring = "";
+foreach ($stuffToChange as $id => $properties) {
+    $setString = "";
     foreach ($properties as $property => $value) {
         if (isset(ALLOWED_INTERNSHIP_ROWS[$property])) {
-            $setstring = $setstring . $property . " = :" . $property . ", ";
+            $setString = $setString . $property . " = :" . $property . ", ";
         }
     }
-    $setstring = substr($setstring, 0, -2);
+    $setString = substr($setString, 0, -2);
     $properties["id"] = $id;
-    if ($setstring) {
-        $pdo->prepare("UPDATE internships SET " . $setstring . " WHERE id = :id")->execute($properties);
+    if ($setString) {
+        $pdo->prepare("UPDATE internships SET " . $setString . " WHERE id = :id")->execute($properties);
     }
 }
 header("Location: edit_internships");

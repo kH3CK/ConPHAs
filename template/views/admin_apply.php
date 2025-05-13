@@ -19,7 +19,7 @@ define("ALLOWED_BLOG_ROWS", [
     "preview_text" => true,
     "text" => true
 ]);
-$newblogvalues = [];
+$newBlogValues = [];
 foreach ($_POST as $key => $value) {
     $first5letters = substr($key, 0, 5);
     if ($first5letters == "page-") {
@@ -28,43 +28,43 @@ foreach ($_POST as $key => $value) {
         $pdo->prepare("UPDATE colors SET hex = ? WHERE id = ?")->execute([substr($value, 1), substr($key, 6)]);
     } else if ($first5letters == "blog-") {
         $split = explode("-", $key);
-        $splitkey = $split[1];
-        $lastsplitvalue = $split[count($split) - 1];
-        if ($lastsplitvalue == "new") {
+        $splitKey = $split[1];
+        $lastSplitValue = $split[count($split) - 1];
+        if ($lastSplitValue == "new") {
             if ($value) { // zo dat het array leeg is en geldt als false voor een if als er geen data is voor een nieuwe blog
-                $newblogvalues[$splitkey] = $value;
+                $newBlogValues[$splitKey] = $value;
             }
-        } elseif ($splitkey == "categories") {
-            $newcategories = explode(",,, ", $value);
-            $oldcategories = explode(",,, ", $_POST["blog-categories_old-" . $lastsplitvalue]);
-            if ($newcategories != $oldcategories) {
-                foreach ($newcategories as $newcategory) {
-                    $index = array_search($newcategory, $oldcategories);
+        } elseif ($splitKey == "categories") {
+            $newCategories = explode(",,, ", $value);
+            $oldCategories = explode(",,, ", $_POST["blog-categories_old-" . $lastSplitValue]);
+            if ($newCategories != $oldCategories) {
+                foreach ($newCategories as $newCategory) {
+                    $index = array_search($newCategory, $oldCategories);
                     if ($index) {
-                        unset($oldcategories[$index]);
+                        unset($oldCategories[$index]);
                     } else {
-                        $pdo->prepare("INSERT INTO categories (blog_id, name) VALUES (?, ?)")->execute([$lastsplitvalue, $newcategory]);
+                        $pdo->prepare("INSERT INTO categories (blog_id, name) VALUES (?, ?)")->execute([$lastSplitValue, $newCategory]);
                     }
                 }
-                foreach ($oldcategories as $oldcategory) {
-                    $pdo->prepare("DELETE FROM categories WHERE blog_id = ? AND name = ?")->execute([$lastsplitvalue, $oldcategory]);
+                foreach ($oldCategories as $oldCategory) {
+                    $pdo->prepare("DELETE FROM categories WHERE blog_id = ? AND name = ?")->execute([$lastSplitValue, $oldCategory]);
                 }
             }
-        } elseif ($splitkey != "categories_old" && isset(ALLOWED_BLOG_ROWS[$splitkey])) {
-            $pdo->prepare("UPDATE blogs SET " . $splitkey . " = ? WHERE id = ?")->execute([$value, $lastsplitvalue]);
+        } elseif ($splitKey != "categories_old" && isset(ALLOWED_BLOG_ROWS[$splitKey])) {
+            $pdo->prepare("UPDATE blogs SET " . $splitKey . " = ? WHERE id = ?")->execute([$value, $lastSplitValue]);
         }
     }
 }
-if ($newblogvalues) {
-    $categories = $newblogvalues["categories"];
-    unset($newblogvalues["categories"]);
-    $haspublicationdate = $newblogvalues["publication_date"] != "";
-    if (!$haspublicationdate) {
-        unset($newblogvalues["publication_date"]);
+if ($newBlogValues) {
+    $categories = $newBlogValues["categories"];
+    unset($newBlogValues["categories"]);
+    $hasPublicationDate = $newBlogValues["publication_date"] != "";
+    if (!$hasPublicationDate) {
+        unset($newBlogValues["publication_date"]);
     }
-    $statement = $pdo->prepare("INSERT INTO blogs (title, preview_text, text, author" . ($haspublicationdate ? ", publication_date" : "") .
-    ", image_link) VALUES (:title, :preview_text, :text, :author" . ($haspublicationdate ? ", :publication_date" : "") .
-    ", :image_link)")->execute($newblogvalues);
+    $statement = $pdo->prepare("INSERT INTO blogs (title, preview_text, text, author" . ($hasPublicationDate ? ", publication_date" : "") .
+    ", image_link) VALUES (:title, :preview_text, :text, :author" . ($hasPublicationDate ? ", :publication_date" : "") .
+    ", :image_link)")->execute($newBlogValues);
     $id = $pdo->query("SELECT id FROM blogs ORDER BY id DESC LIMIT 1")->fetch()["id"];
     foreach (explode(",,, ", $categories) as $category) {
         $pdo->prepare("INSERT INTO categories (blog_id, name) VALUES (?, ?)")->execute([$id, $category]);
